@@ -1,4 +1,10 @@
 #pragma once
+#include "Person_Management.h"
+#include "Customer_Management.h"
+#include "Order_Management.h"
+#include "Inventory_Management.h"
+#include "Statistics_Management.h"
+#include "MyForm.h"
 
 namespace ProjetPOO {
 
@@ -137,16 +143,36 @@ namespace ProjetPOO {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Person_Management^ form = gcnew Person_Management();
+		form->ShowDialog();	
+
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+	private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+
+		Order_Management^ form = gcnew Order_Management();
+		form->ShowDialog();
+
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Inventory_Management^ form = gcnew Inventory_Management();
+		form->ShowDialog();
+
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Statistics_Management^ form = gcnew Statistics_Management();
+		form->ShowDialog();
+
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		Customer_Management^ form = gcnew Customer_Management();
+		form->ShowDialog();
+
+	}
 };
 }

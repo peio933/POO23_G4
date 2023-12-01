@@ -115,21 +115,57 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Customer_Management.cpp" />
+    <ClCompile Include="Inventory_Management.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Order_Management.cpp" />
+    <ClCompile Include="Person_Management.cpp" />
+    <ClCompile Include="Statistics_Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Customer_Management.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Inventory_Management.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Order_Management.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Person_Management.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Statistics_Management.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Customer_Management.resx">
+      <DependentUpon>Customer_Management.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Management.resx">
+      <DependentUpon>Inventory_Management.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_Management.resx">
+      <DependentUpon>Order_Management.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person_Management.resx">
+      <DependentUpon>Person_Management.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics_Management.resx">
+      <DependentUpon>Statistics_Management.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
