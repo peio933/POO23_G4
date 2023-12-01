@@ -62,6 +62,6 @@ Welcome to our OOP project solution, ... *Project display*
 
 ## Authors
 * **Robin NOIRET** - [Robin GitHub](https://github.com/RobinNoiret)
-* **Peïo Picabea** - [Peïo GitHub](lien)
-* **ABDELMALIK MEBARKI** -  [Abdelmalik GitHub](https://github.com/mebmal)
-* **AXEL RUFFIN** - [Axel GitHub](https://github.com/AxelR69)
+* **Peïo PICABEA** - [Peïo GitHub](lien)
+* **Abdelmalik MEBARKI** - [Abdelmalik GitHub](https://github.com/mebmal)
+* **Axel RUFFIN** - [Axel GitHub](https://github.com/AxelR69)
