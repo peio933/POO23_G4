@@ -41,6 +41,9 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
 
+
+
+
 	protected:
 
 	private:
@@ -66,8 +69,9 @@ namespace ProjetPOO {
 			// 
 			// button1
 			// 
-			resources->ApplyResources(this->button1, L"button1");
 			this->button1->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button1->FlatAppearance->BorderSize = 0;
+			resources->ApplyResources(this->button1, L"button1");
 			this->button1->Name = L"button1";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
@@ -75,29 +79,46 @@ namespace ProjetPOO {
 			// button2
 			// 
 			this->button2->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button2, L"button2");
 			this->button2->Name = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// button3
 			// 
+			this->button3->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button3->FlatAppearance->BorderSize = 0;
+			this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button3, L"button3");
 			this->button3->Name = L"button3";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click_1);
 			// 
 			// button4
 			// 
+			this->button4->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button4->FlatAppearance->BorderSize = 0;
+			this->button4->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button4, L"button4");
 			this->button4->Name = L"button4";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// button5
 			// 
+			this->button5->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button5->FlatAppearance->BorderSize = 0;
+			this->button5->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button5->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button5, L"button5");
 			this->button5->Name = L"button5";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
 			// MyForm
 			// 
@@ -117,5 +138,15 @@ namespace ProjetPOO {
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void button3_Click_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
