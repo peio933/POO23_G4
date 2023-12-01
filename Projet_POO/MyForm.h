@@ -34,6 +34,14 @@ namespace ProjetPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::Button^ button1;
+	protected:
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +56,66 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// button1
+			// 
+			resources->ApplyResources(this->button1, L"button1");
+			this->button1->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button1->Name = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button2
+			// 
+			this->button2->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
+			resources->ApplyResources(this->button2, L"button2");
+			this->button2->Name = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			resources->ApplyResources(this->button3, L"button3");
+			this->button3->Name = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			resources->ApplyResources(this->button4, L"button4");
+			this->button4->Name = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			resources->ApplyResources(this->button5, L"button5");
+			this->button5->Name = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// MyForm
+			// 
+			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->Controls->Add(this->button5);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->HelpButton = true;
+			this->Name = L"MyForm";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
 	};
 }
