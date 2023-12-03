@@ -97,7 +97,6 @@ The activity diagram, integrated into the Unified Modeling Language (UML), provi
 ![Diagramme_activité_customer](https://github.com/peio933/POO23_G4/assets/116553253/697d34ff-e004-443e-9e05-3e07b02129ac)
 ![Diagramme_activité_stock](https://github.com/peio933/POO23_G4/assets/116553253/b9f7dcd2-40f7-49c3-80c9-a6a8875dc7a7)
 ![Diagramme_activité_Statistique](https://github.com/peio933/POO23_G4/assets/116553253/a470163f-9df4-474b-a3de-6d2ad45b9222)
-![Image1](https://github.com/peio933/POO23_G4/assets/116553253/57809348-3771-4851-bd78-fccfee3a4019)
 
 
 
