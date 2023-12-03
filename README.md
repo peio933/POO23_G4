@@ -1,7 +1,7 @@
 # OOP - Group 4 project
 
 
-Une entreprise émergente se lance dans le développement de son système d'information, axant son activité principale sur la vente en ligne de composants électroniques. Notre mission consiste à concevoir et mettre en œuvre une solution visant à numériser certains de ses processus opérationnels.
+An emerging company is embarking on the development of its information system, focusing its core business on online sales of electronic components. Our mission is to design and implement a solution aimed at digitizing some of its operational processes.
 
 ## Architecture 
 > **HCI** (Human-Computing Interaction)  
@@ -67,16 +67,39 @@ As a communication tool, they facilitate the understanding of execution flows be
 
 Focused on the chronology of events, they assist in anticipating and comprehending the system's behavior in various usage scenarios. Ultimately, sequence diagrams are adaptable to changes, allowing for updates to the representation based on the evolving needs of the system throughout the development cycle.
 
-- Management Customers
-- Management Employees
-- Management Orders
-- Management Stock
+- Customers Management 
+  
+  ![image](https://github.com/peio933/POO23_G4/assets/116553253/d67c5a2e-a45b-4c9d-87dc-56a4539d15a6)
 
+- Employee Management
+  
+  ![image](https://github.com/peio933/POO23_G4/assets/116553253/514cd5de-bbdf-4047-b9c6-dfd9c045bb45)
+
+- Order management
+
+  ![image](https://github.com/peio933/POO23_G4/assets/116553253/3150ca24-ebb4-4011-b70e-fa1fc4187198)
+
+  
+- Stock Management
+
+  ![image](https://github.com/peio933/POO23_G4/assets/116553253/82e2d79a-1a3f-47fe-bf35-e2b6cfe349b9)
+
+- Statistique Management
+
+  ![image](https://github.com/peio933/POO23_G4/assets/116553253/81b11c4a-e95e-4913-9392-b584f2491286)
 
 
 ### 4. Activities diagrams
-![ActivitiesDiagram]()  
-*Waiting for diagrams*
+
+The activity diagram, integrated into the Unified Modeling Language (UML), provides a graphical representation of the processes and workflows within a system. By highlighting actions, decisions, transitions, and activities through graphical symbols, this diagram allows for a clear visual understanding of the sequential steps in a process. It proves particularly valuable for modeling dynamic aspects and detailing complex behaviors within a software system. As an analysis and design tool, the activity diagram facilitates communication among development team members, offering a precise view of interactions between different entities within the system. It is essential for planning, documentation, and optimization of operational processes within a project, contributing to robust and efficient software design.
+
+![Diagramme_activité_person](https://github.com/peio933/POO23_G4/assets/116553253/51a70993-5291-4bea-9182-b99f5002f30f)
+![Diagramme_activité_customer](https://github.com/peio933/POO23_G4/assets/116553253/697d34ff-e004-443e-9e05-3e07b02129ac)
+![Diagramme_activité_stock](https://github.com/peio933/POO23_G4/assets/116553253/b9f7dcd2-40f7-49c3-80c9-a6a8875dc7a7)
+![Diagramme_activité_Statistique](https://github.com/peio933/POO23_G4/assets/116553253/a470163f-9df4-474b-a3de-6d2ad45b9222)
+![Image1](https://github.com/peio933/POO23_G4/assets/116553253/57809348-3771-4851-bd78-fccfee3a4019)
+
+
 
 ## Authors
 * **Robin NOIRET** - [Robin GitHub](https://github.com/RobinNoiret)
