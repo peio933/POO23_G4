@@ -84,7 +84,7 @@ INSERT INTO Customer_Order (R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID
 ('AVAN2005-LYON-001', '2005-11-10', '2005-11-15', '2005-11-20', 'Carte de credit', 220.00, 0.20, 264.00, 10);
 
 -- Peuplement de la table Article
-/*INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES
+INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES
 ('LED_J', 'LED_Jaune', 50, 20, 5, 50.00, 0.20, 'Led de couleur jaune'),
 ('LED_R', 'LED_Rouge', 45, 18, 4, 45.00, 0.18, 'Led de couleur rouge'),
 ('RES_1K', 'Résistance 1kΩ', 100, 50, 10, 10.00, 0.10, 'Résistance de 1 kilo-ohm'),
@@ -104,10 +104,10 @@ INSERT INTO Customer_Order (R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID
 ('TRANS_PNP', 'Transistor PNP', 22, 12, 7, 85.00, 0.22, 'Transistor bipolaire PNP'),
 ('DIODE_LED', 'Diode électroluminescente', 65, 30, 9, 1.50, 0.05, 'Diode LED standard'),
 ('IC_4017', 'Circuit intégré CD4017', 18, 10, 12, 180.00, 0.25, 'Décompteur/diviseur de fréquence CD4017'),
-('SWITCH_TACT', 'Interrupteur tactile', 32, 20, 6, 3.50, 0.10, 'Interrupteur tactile à bouton poussoir');*/
+('SWITCH_TACT', 'Interrupteur tactile', 32, 20, 6, 3.50, 0.10, 'Interrupteur tactile à bouton poussoir');
 
 
--- Peuplement de la table Adress
+-- Peuplement de la table Adress -- PAS OK
 INSERT INTO Adress (SNB, SN, N_V, PC, ID_C, ID_E) VALUES
 (13, 'Rue de la Liberté', 'Paris', 75001, NULL, 0),
 (76, 'Avenue des Gobelins', 'Marseille', 13002, NULL, 1),
@@ -162,7 +162,7 @@ INSERT INTO Adress (SNB, SN, N_V, PC, ID_C, ID_E) VALUES
 (12, 'Rue de la Guillotière', 'Lyon', 69003, NULL, 48),
 (103, 'Avenue de la Liberté', 'Lille', 59000, NULL, 49);
 
-INSERT INTO Adress (SNB, SN, N_V, PC, ID_C, ID_E) VALUES
+INSERT INTO Adress (SNB, SN, N_V, PC, ID_C, ID_E) VALUES -- PAS OK
 (5, 'Boulevard des Champs-Élysées', 'Paris', 75008, 0, NULL),
 (87, 'Rue de la République', 'Lyon', 69002, 1, NULL),
 (92, 'Avenue du Général de Gaulle', 'Angers', 49100, 2, NULL),
