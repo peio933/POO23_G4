@@ -123,6 +123,7 @@
   <ItemGroup>
     <ClCompile Include="CLMap.cpp" />
     <ClCompile Include="CLMapEmployees.cpp" />
+    <ClCompile Include="CLMapStock.cpp" />
     <ClCompile Include="CLStock.cpp" />
     <ClCompile Include="Customer_Management.cpp" />
     <ClCompile Include="Inventory_Management.cpp" />
@@ -134,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="CLMap.h" />
     <ClInclude Include="CLMapEmployees.h" />
+    <ClInclude Include="CLMapStock.h" />
     <ClInclude Include="CLStock.h" />
     <ClInclude Include="Customer_Management.h">
       <FileType>CppForm</FileType>
