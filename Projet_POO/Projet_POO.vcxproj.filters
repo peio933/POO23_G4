@@ -33,6 +33,9 @@
     <ClCompile Include="Statistics_Management.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CLMapEmployees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Statistics_Management.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapEmployees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
