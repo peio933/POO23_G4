@@ -16,6 +16,7 @@ public:
 	System::String^ Insert(void);
 	System::String^ Delete(void);
 	System::String^ Update(void);
+
 	void setID_A(System::String^);
 	void setR_A(System::String^);
 	void setN_A(System::String^);
