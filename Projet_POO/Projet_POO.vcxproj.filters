@@ -48,6 +48,15 @@
     <ClCompile Include="CLCAD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CLEmployees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMapOrders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLOrders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -81,6 +90,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLCAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLEmployees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapOrders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLOrders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
