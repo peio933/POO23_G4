@@ -33,10 +33,7 @@
     <ClCompile Include="Statistics_Management.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLCAD.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CLEmployees.cpp">
+
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,10 +56,7 @@
     <ClInclude Include="Statistics_Management.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLCAD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CLEmployees.h">
+
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
