@@ -44,7 +44,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLCAD.cpp" />
     <ClCompile Include="CLMap.cpp" />
     <ClCompile Include="CLMapEmployees.cpp" />
     <ClCompile Include="CLMapStock.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="Statistics_Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLCAD.h" />
     <ClInclude Include="CLMap.h" />
     <ClInclude Include="CLMapEmployees.h" />
     <ClInclude Include="CLMapStock.h" />
