@@ -34,25 +34,30 @@ void NS_Comp_Map_Employees::CLMapEmployees::setN_E(System::String^ N_E)
     this->N_E = N_E;
 }
 
+
 void NS_Comp_Map_Employees::CLMapEmployees::setS_E(System::String^ S_E)
 {
     this->S_E = S_E;
 }
+
 
 void NS_Comp_Map_Employees::CLMapEmployees::setHD_E(System::String^ HD_E)
 {
     this->HD_E = HD_E;
 }
 
+
 void NS_Comp_Map_Employees::CLMapEmployees::setN1_E(System::String^ N1_E)
 {
     this->N1_E = N1_E;
 }
 
+
 void NS_Comp_Map_Employees::CLMapEmployees::setST_E(System::String^ ST_E)
 {
     this->ST_E = ST_E;
 }
+
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getID_E(void) { return this->ID_E; }
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getN_E(void) { return this->N_E; }
