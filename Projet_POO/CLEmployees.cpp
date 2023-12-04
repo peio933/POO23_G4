@@ -10,7 +10,7 @@ System::Data::DataSet^ NS_Comp_Employees::CLEmployees::selectEmployee(System::St
 {
 	System::String^ sql;
 
-	// sql = this->oMappEmployees->Select();
+	sql = this->oMappEmployees->Select();
 	return this->oCAD->getRows(sql, dataTableName);
 }
 
