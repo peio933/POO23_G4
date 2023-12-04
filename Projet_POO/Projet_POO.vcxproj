@@ -44,9 +44,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -121,6 +121,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLCAD.cpp" />
+    <ClCompile Include="CLEmployees.cpp" />
+    <ClCompile Include="CLMapOrders.cpp" />
+    <ClCompile Include="CLOrders.cpp" />
     <ClCompile Include="Customer_Management.cpp" />
     <ClCompile Include="Inventory_Management.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -129,6 +133,10 @@
     <ClCompile Include="Statistics_Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLCAD.h" />
+    <ClInclude Include="CLEmployees.h" />
+    <ClInclude Include="CLMapOrders.h" />
+    <ClInclude Include="CLOrders.h" />
     <ClInclude Include="Customer_Management.h">
       <FileType>CppForm</FileType>
     </ClInclude>
