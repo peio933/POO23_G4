@@ -121,7 +121,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLMap.cpp" />
     <ClCompile Include="CLMapEmployees.cpp" />
+    <ClCompile Include="CLStock.cpp" />
     <ClCompile Include="Customer_Management.cpp" />
     <ClCompile Include="Inventory_Management.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -130,7 +132,9 @@
     <ClCompile Include="Statistics_Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLMap.h" />
     <ClInclude Include="CLMapEmployees.h" />
+    <ClInclude Include="CLStock.h" />
     <ClInclude Include="Customer_Management.h">
       <FileType>CppForm</FileType>
     </ClInclude>
