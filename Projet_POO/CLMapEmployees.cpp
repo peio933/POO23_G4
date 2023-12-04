@@ -7,19 +7,19 @@ System::String^ NS_Comp_Map_Employees::CLMapEmployees::Select(void)
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Insert(void)
 {
-    return "INSERT INTO Prosit_6 (ID_E, N_E, S_E, HD_E, N1_E, ST_E) VALUES('" + this->ID_E + "','" + this->N_E + "','" + this->S_E + "','" + this->HD_E + "','" + this->N1_E + "','" + this->ST_E + "');";
+    return "INSERT INTO Prosit_6 (ID_E, N_E, S_E, HD_E, N1_E, ST_E) VALUES('" + getID_E() + "','" + getN_E() + "','" + getS_E() + "','" + getHD_E() + "','" + getN1_E() + "','" + getST_E() + "');";
 
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Delete(void)
 {
-    return "DELETE FROM Prosit_6 WHERE id = " + this->ID_E + ";";
+    return "DELETE FROM Prosit_6 WHERE id = " + getID_E() + ";";
 
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Update(void)
 {
-    return "UPDATE Prosit_6 SET ID_E = '" + this->ID_E + "', N_E = '" + this->N_E + "', S_E = '" + this->S_E + "', HD_E = '" + this->HD_E + "', N1_E = '" + this->N1_E + "', ST_E = '" + this->ST_E + "' WHERE id = " + this->ID_E + ";";
+    return "UPDATE Prosit_6 SET ID_E = '" + getID_E() + "', N_E = '" + getN_E() + "', S_E = '" + getS_E() + "', HD_E = '" + getHD_E() + "', N1_E = '" + getN1_E() + "', ST_E = '" + getST_E() + "' WHERE id = " + getID_E() + ";";
 
 }
 

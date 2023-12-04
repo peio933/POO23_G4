@@ -1,8 +1,9 @@
 #pragma once
+#include "CLMap.h"
 
 namespace NS_Comp_Map_Employees
 {
-	ref class CLMapEmployees
+	ref class CLMapEmployees : public CLMap
 	{
 	private:
 		System::String^ ID_E;
@@ -12,10 +13,11 @@ namespace NS_Comp_Map_Employees
 		System::String^ N1_E;
 		System::String^ ST_E;
 	public:
-		System::String^ Select(void);
-		System::String^ Insert(void);
-		System::String^ Delete(void);
-		System::String^ Update(void);
+		System::String^ Select(void) override;
+		System::String^ Insert(void) override;
+		System::String^ Delete(void) override;
+		System::String^ Update(void) override;
+
 		void setID_E(System::String^);
 		void setN_E(System::String^);
 		void setS_E(System::String^);

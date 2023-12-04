@@ -1,5 +1,5 @@
 #pragma once
-ref class CLMap
+ref class CLMap abstract
 {
 protected:
 	System::String^ sSql;
