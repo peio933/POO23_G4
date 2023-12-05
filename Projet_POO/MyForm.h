@@ -46,16 +46,6 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::ToolTip^ toolTip1;
-	private: System::Windows::Forms::ToolTip^ toolTip2;
-	private: System::Windows::Forms::ToolTip^ toolTip3;
-	private: System::Windows::Forms::ToolTip^ toolTip4;
-	private: System::Windows::Forms::ToolTip^ toolTip5;
-
-
-
-
-	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -66,7 +56,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-
+		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -75,18 +65,12 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->toolTip1 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->toolTip2 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->toolTip3 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->toolTip4 = (gcnew System::Windows::Forms::ToolTip(this->components));
-			this->toolTip5 = (gcnew System::Windows::Forms::ToolTip(this->components));
 			this->SuspendLayout();
 			// 
 			// button1
@@ -95,7 +79,6 @@ namespace ProjetPOO {
 			this->button1->FlatAppearance->BorderSize = 0;
 			resources->ApplyResources(this->button1, L"button1");
 			this->button1->Name = L"button1";
-			this->toolTip1->SetToolTip(this->button1, resources->GetString(L"button1.ToolTip"));
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
@@ -107,7 +90,6 @@ namespace ProjetPOO {
 			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button2, L"button2");
 			this->button2->Name = L"button2";
-			this->toolTip2->SetToolTip(this->button2, resources->GetString(L"button2.ToolTip"));
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
@@ -119,7 +101,6 @@ namespace ProjetPOO {
 			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button3, L"button3");
 			this->button3->Name = L"button3";
-			this->toolTip3->SetToolTip(this->button3, resources->GetString(L"button3.ToolTip"));
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click_1);
 			// 
@@ -131,7 +112,6 @@ namespace ProjetPOO {
 			this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button4, L"button4");
 			this->button4->Name = L"button4";
-			this->toolTip4->SetToolTip(this->button4, resources->GetString(L"button4.ToolTip"));
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
@@ -143,7 +123,6 @@ namespace ProjetPOO {
 			this->button5->FlatAppearance->MouseOverBackColor = System::Drawing::SystemColors::ActiveCaption;
 			resources->ApplyResources(this->button5, L"button5");
 			this->button5->Name = L"button5";
-			this->toolTip5->SetToolTip(this->button5, resources->GetString(L"button5.ToolTip"));
 			this->button5->UseVisualStyleBackColor = true;
 			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
 			// 
@@ -195,9 +174,5 @@ namespace ProjetPOO {
 		form->ShowDialog();
 
 	}
-private: System::Void toolTip1_Popup(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
-}
-private: System::Void toolTip1_Popup_1(System::Object^ sender, System::Windows::Forms::PopupEventArgs^ e) {
-}
 };
 }
