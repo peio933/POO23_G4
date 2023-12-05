@@ -17,7 +17,7 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
-    return "UPDATE Prosit_6 SET ID_O = '" + getID_O() + "', R_O = '" + getR_O() + "', DD_O = '" + getDD_O() + "', SD_O = '" + getSD_O() + "', PD_O = '" + getPD_O() + "', MOP_O = '" + getMOP_O() + "', HT_O = '" + getHT_O() + "', TVA_O = '" + getTVA_O() + "', TTC_O = '" + getTTC_O() + "' WHERE id = " + getID_O() + ";";
+    return "UPDATE Prosit_6 SET R_O = '" + getR_O() + "', DD_O = '" + getDD_O() + "', SD_O = '" + getSD_O() + "', PD_O = '" + getPD_O() + "', MOP_O = '" + getMOP_O() + "', HT_O = '" + getHT_O() + "', TVA_O = '" + getTVA_O() + "', TTC_O = '" + getTTC_O() + "' WHERE id = " + getID_O() + ";";
 }
 
 void NS_Comp_Map_Orders::CLMapOrders::setID_O(System::String^ ID_O)
