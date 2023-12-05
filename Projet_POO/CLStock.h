@@ -9,8 +9,9 @@ namespace NS_Comp_Stock {
 		NS_Comp_Map_Stock::CLMapStock^ oMapStock;
 	public:
 		CLStock(void);
+		System::Data::DataSet^ loadArticles(System::String^);
 		System::Data::DataSet^ selectArticle(System::String^, System::String^);
-		void insertArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void insertArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void updateArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void deleteArticle(System::String^, System::String^);
 	};
