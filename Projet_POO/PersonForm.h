@@ -89,7 +89,7 @@ namespace ProjetPOO {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &PersonForm::button1_Click);
 			// 
-			// Person_Management
+			// PersonForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -98,7 +98,7 @@ namespace ProjetPOO {
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"PersonForm";
-			this->Text = L"Person Management";
+			this->Text = L"Employees Management";
 			this->Load += gcnew System::EventHandler(this, &PersonForm::Person_Management_Load);
 			this->ResumeLayout(false);
 
