@@ -43,8 +43,8 @@ VALUES (@NumRue, @NomRue, @Ville, @CodePostal, @EmployeeID);
 
 -- _____________________ Read _____________________ --
 SELECT 
-    Employee.N_E AS Nom,
-    Employee.S_E AS Prénom,
+    Employee.N_E AS Prénom,
+    Employee.S_E AS Nom,
     Employee.HD_E AS [Date dEmbauche],
     Employee.N1_E AS Responsable,
     Employee.ST_E AS Statut,
@@ -61,8 +61,8 @@ WHERE
 
 -- ____________________ Update ____________________ --
 UPDATE Employee
-SET N_E = 'NouveauNom', S_E = 'NouveauPrenom', HD_E = 'NouvelleDateEmbauche'
-WHERE S_E = @Nom AND N_E = @Prenom AND HD_E = @DateEmbauche;
+SET N_E = 'NouveauPrénom', S_E = 'NouveauNom', HD_E = 'NouvelleDateEmbauche'
+WHERE N_E = @Prenom AND S_E = @Nom AND HD_E = @DateEmbauche;
 
 -- ____________________ Delete ____________________ --
 DELETE FROM Employee 
