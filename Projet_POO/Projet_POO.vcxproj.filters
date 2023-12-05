@@ -62,19 +62,19 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Person_Management.h">
+    <ClInclude Include="PersonForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Customer_Management.h">
+    <ClInclude Include="CustomerForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Order_Management.h">
+    <ClInclude Include="OrderForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Inventory_Management.h">
+    <ClInclude Include="InventoryForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Statistics_Management.h">
+    <ClInclude Include="StatisticsForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLMapEmployees.h">

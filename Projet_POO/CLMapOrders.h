@@ -1,4 +1,5 @@
 #pragma once
+#include "CLMap.h"
 
 namespace NS_Comp_Map_Orders {
 	ref class CLMapOrders
@@ -16,10 +17,10 @@ namespace NS_Comp_Map_Orders {
 		System::String^ TTC_O;
 
 	public:
-		System::String^ Select(void);
-		System::String^ Insert(void);
-		System::String^ Delete(void);
-		System::String^ Update(void);
+		System::String^ Select(void) override;
+		System::String^ Insert(void) override;
+		System::String^ Delete(void) override;
+		System::String^ Update(void) override;
 		void setID_O(System::String^);
 		void setR_O(System::String^);
 		void setDD_O(System::String^);
