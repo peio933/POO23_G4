@@ -64,7 +64,7 @@ namespace ProjetPOO {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &StatisticsForm::button1_Click);
 			// 
-			// Statistics_Management
+			// StatisticsForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -73,6 +73,7 @@ namespace ProjetPOO {
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"StatisticsForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Statistics Management";
 			this->Load += gcnew System::EventHandler(this, &StatisticsForm::Statistics_Management_Load);
 			this->ResumeLayout(false);
