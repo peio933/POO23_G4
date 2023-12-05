@@ -12,10 +12,10 @@ namespace ProjetPOO {
 	/// <summary>
 	/// Summary for customer_Management
 	/// </summary>
-	public ref class Customer_Management : public System::Windows::Forms::Form
+	public ref class CustomerForm : public System::Windows::Forms::Form
 	{
 	public:
-		Customer_Management(void)
+		CustomerForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Customer_Management()
+		~CustomerForm()
 		{
 			if (components)
 			{
@@ -50,7 +50,7 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Customer_Management::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -62,7 +62,7 @@ namespace ProjetPOO {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Customer_Management::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &CustomerForm::button1_Click);
 			// 
 			// Customer_Management
 			// 
@@ -72,8 +72,9 @@ namespace ProjetPOO {
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"Customer_Management";
+			this->Name = L"CustomerForm";
 			this->Text = L"Customer Management";
+			this->Load += gcnew System::EventHandler(this, &CustomerForm::Customer_Management_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -83,6 +84,8 @@ namespace ProjetPOO {
 	this->Hide();
 	this->Close();
 
+	}
+	private: System::Void Customer_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

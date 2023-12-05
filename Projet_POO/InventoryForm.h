@@ -12,10 +12,10 @@ namespace ProjetPOO {
 	/// <summary>
 	/// Summary for Inventory_Management
 	/// </summary>
-	public ref class Inventory_Management : public System::Windows::Forms::Form
+	public ref class InventoryForm : public System::Windows::Forms::Form
 	{
 	public:
-		Inventory_Management(void)
+		InventoryForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Inventory_Management()
+		~InventoryForm()
 		{
 			if (components)
 			{
@@ -50,7 +50,7 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Inventory_Management::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InventoryForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -62,7 +62,7 @@ namespace ProjetPOO {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Inventory_Management::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &InventoryForm::button1_Click);
 			// 
 			// Inventory_Management
 			// 
@@ -72,8 +72,9 @@ namespace ProjetPOO {
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"Inventory_Management";
+			this->Name = L"InventoryForm";
 			this->Text = L"Inventory Management";
+			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -82,6 +83,8 @@ namespace ProjetPOO {
 
 		this->Hide();
 		this->Close();
+	}
+	private: System::Void Inventory_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }
