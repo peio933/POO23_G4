@@ -22,11 +22,10 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
             "SET QC_A = getQC_A()"
             "WHERE R_A = getR_A();"
             "INSERT INTO composed(ID_O, ID_A)"
-            "VALUES(@OrderID, (SELECT ID_A FROM Article WHERE R_A = getR_O()));"
+            "VALUES(ID_O = getID_O(), (SELECT ID_A FROM Article WHERE R_A = getR_O()));"
             "UPDATE Article"
             "SET QS_A = QS_A - getQS_A()"
-            "WHERE R_A = getR_O();"
-            "END";
+            "WHERE R_A = getR_O();";
 
 }
 
@@ -37,9 +36,9 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
-    return  "UPDATE a"
+    return  "UPDATE"
             "SET QC_A = getQC_A()"
-            "FROM Article a"
+            "FROM Article"
             "INNER JOIN composed ON ID_A = ID_A"
             "INNER JOIN Customer_Order ON ID_O = ID_O"
             "WHERE R_O = getR_O();";
