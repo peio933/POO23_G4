@@ -16,39 +16,33 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
 {
-    return  "IF @CustomerID IS NOT NULL"
-            "BEGIN"
-            "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C)"
-            "VALUES(@ReferenceCommande, @DateCommande, @DateLivraison, @DatePaiement, @MoyenPaiement, @PrixHT, @TVA, @PrixTTC, @CustomerID);"
+    return  "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C)"
+            "VALUES(getR_O(), getDD_O(), getSD_O(), getPD_O(), getMOP_O(), getHT_O(), TVA_O(), getTTC_O(),getID_C());"
             "UPDATE Article"
-            "SET QC_A = @QuantiteArticle"
-            "WHERE R_A = @ReferenceArticle;"
+            "SET QC_A = getQC_A()"
+            "WHERE R_A = getR_A();"
             "INSERT INTO composed(ID_O, ID_A)"
-            "VALUES(@OrderID, (SELECT ID_A FROM Article WHERE R_A = @ReferenceArticle));"
+            "VALUES(@OrderID, (SELECT ID_A FROM Article WHERE R_A = getR_O()));"
             "UPDATE Article"
-            "SET QS_A = QS_A - @QuantiteArticle"
-            "WHERE R_A = @ReferenceArticle;"
-            "END"
-            "ELSE"
-            "BEGIN"
-            "PRINT @Message;"
+            "SET QS_A = QS_A - getQS_A()"
+            "WHERE R_A = getR_O();"
             "END";
 
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 {
-    return  "DELETE FROM composed WHERE ID_O = @ID_Commande;"
-            "DELETE FROM Customer_Order WHERE ID_O = @ID_Commande;";
+    return  "DELETE FROM composed WHERE ID_O = getID_O();"
+            "DELETE FROM Customer_Order WHERE ID_O = getID_O();";
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
     return  "UPDATE a"
-            "SET QC_A = @NewQuantiteArticle"
+            "SET QC_A = getQC_A()"
             "FROM Article a"
             "INNER JOIN composed ON ID_A = ID_A"
             "INNER JOIN Customer_Order ON ID_O = ID_O"
-            "WHERE R_O = @ReferenceCommandeToUpdate;";
+            "WHERE R_O = getR_O();";
 }
 
 void NS_Comp_Map_Orders::CLMapOrders::setID_O(System::String^ ID_O)
