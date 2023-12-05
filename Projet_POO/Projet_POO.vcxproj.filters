@@ -33,6 +33,21 @@
     <ClCompile Include="Statistics_Management.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CLAdress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLCustomers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMapCustomers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMapStats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -51,6 +66,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Statistics_Management.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLAdress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLCustomers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapCustomers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLStats.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapStats.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
