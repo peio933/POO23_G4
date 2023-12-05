@@ -94,21 +94,32 @@ The creation and population of the database are fundamental steps in ensuring th
   **1. Database Creation Script**
 The initial step involves executing the database creation script available in the GitHub repository.
 
-<a href="https://github.com/peio933/POO23_G4/blob/892086add2378a222e1e28eb6f38bd80809b6e2b/Requ%C3%AAte%20SQL/DatabaseCreation.sql" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Database creation code</a>
-
+<p align="center">
+    <a href="https://github.com/peio933/POO23_G4/blob/892086add2378a222e1e28eb6f38bd80809b6e2b/Requ%C3%AAte%20SQL/DatabaseCreation.sql">
+      <img alt="Database creation code" src="https://github.com/RobinNoiret/RobinNoiret/blob/07d45aae2b0c3af0553d027a52d1c73c33934839/Btn_creation.svg" />
+    </a>
+</p>
+<br>
 
   **2. Data Population Script**
 Once the database structure is in place, the data population script is executed. This script inserts sample data or necessary initial records into the tables, allowing for testing and functionality validation.
 
-<a href="https://github.com/peio933/POO23_G4/blob/11c99df1bbb004325f3a12bc2a1cff1997a53b53/Requ%C3%AAte%20SQL/DataBase%20Population.sql" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Database population code</a>
-
+<p align="center">
+    <a href="https://github.com/peio933/POO23_G4/blob/11c99df1bbb004325f3a12bc2a1cff1997a53b53/Requ%C3%AAte%20SQL/DataBase%20Population.sql">
+      <img alt="Database population code" src="https://github.com/RobinNoiret/RobinNoiret/blob/07d45aae2b0c3af0553d027a52d1c73c33934839/Btn_population.svg" />
+    </a>
+</p>
+<br>
 
   **3. Database Population Test**
 After running the data population script, it's crucial to perform a thorough test to ensure that the database is correctly populated. This involves executing predefined queries to retrieve and verify the inserted data. You have the different requests separated by categories
 
-<a href="" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Test queries</a>
-
-<br><br>
+<p align="center">
+    <a href="https://github.com/peio933/POO23_G4/tree/12156c977966878de624288e6343156f1bf44262/Requ%C3%AAte%20SQL">
+      <img alt="Tests Passing" src="https://github.com/RobinNoiret/RobinNoiret/blob/07d45aae2b0c3af0553d027a52d1c73c33934839/Btn_test.svg" />
+    </a>
+</p>
+<br>
 
 ## Authors
 * **Robin NOIRET** - [Robin GitHub](https://github.com/RobinNoiret)
