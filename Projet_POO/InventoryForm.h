@@ -64,7 +64,7 @@ namespace ProjetPOO {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &InventoryForm::button1_Click);
 			// 
-			// Inventory_Management
+			// InventoryForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
