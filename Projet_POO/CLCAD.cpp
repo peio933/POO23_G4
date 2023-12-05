@@ -2,6 +2,7 @@
 
 NS_Comp_Data::CLCAD::CLCAD(void)
 {
+
 	this->sCnx = "Data Source=ROBIN\\MYSQL_A2_ROBIN;Initial Catalog=POO_Groupe4;Integrated Security=True";
 
 

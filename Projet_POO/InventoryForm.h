@@ -40,13 +40,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ SHOW;
 	private: System::Windows::Forms::Button^ INSERT;
 	private: System::Windows::Forms::Button^ UPDATE;
-
-
-
 	private: System::Windows::Forms::Button^ DELETE;
-
 	private: System::Windows::Forms::Button^ LOAD;
-
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox1;
@@ -356,7 +351,7 @@ namespace ProjetPOO {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"InventoryForm";
-			this->Text = L"Inventory Management";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
