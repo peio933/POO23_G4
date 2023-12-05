@@ -50,7 +50,7 @@ FROM
 INNER JOIN 
     Adress ON Customers.ID_C = Adress.ID_C
 WHERE 
-    Customers.N_C = @NomClient;
+    Customers.S_C = @NomClient;
 
 -- ____________________ Update ____________________ --
 
