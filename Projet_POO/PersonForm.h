@@ -12,10 +12,10 @@ namespace ProjetPOO {
 	/// <summary>
 	/// Summary for Person_Management
 	/// </summary>
-	public ref class Person_Management : public System::Windows::Forms::Form
+	public ref class PersonForm : public System::Windows::Forms::Form
 	{
 	public:
-		Person_Management(void)
+		PersonForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Person_Management()
+		~PersonForm()
 		{
 			if (components)
 			{
@@ -75,7 +75,7 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Person_Management::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PersonForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -87,7 +87,7 @@ namespace ProjetPOO {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Person_Management::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &PersonForm::button1_Click);
 			// 
 			// Person_Management
 			// 
@@ -97,9 +97,9 @@ namespace ProjetPOO {
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"Person_Management";
+			this->Name = L"PersonForm";
 			this->Text = L"Person Management";
-			this->Load += gcnew System::EventHandler(this, &Person_Management::Person_Management_Load);
+			this->Load += gcnew System::EventHandler(this, &PersonForm::Person_Management_Load);
 			this->ResumeLayout(false);
 
 		}
