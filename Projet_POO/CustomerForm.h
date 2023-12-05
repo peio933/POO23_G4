@@ -10,12 +10,12 @@ namespace ProjetPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Order_Management
+	/// Summary for customer_Management
 	/// </summary>
-	public ref class Order_Management : public System::Windows::Forms::Form
+	public ref class CustomerForm : public System::Windows::Forms::Form
 	{
 	public:
-		Order_Management(void)
+		CustomerForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Order_Management()
+		~CustomerForm()
 		{
 			if (components)
 			{
@@ -50,7 +50,7 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Order_Management::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(CustomerForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -62,9 +62,9 @@ namespace ProjetPOO {
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Order_Management::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &CustomerForm::button1_Click);
 			// 
-			// Order_Management
+			// Customer_Management
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -72,16 +72,20 @@ namespace ProjetPOO {
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"Order_Management";
-			this->Text = L"Order Management ";
+			this->Name = L"CustomerForm";
+			this->Text = L"Customer Management";
+			this->Load += gcnew System::EventHandler(this, &CustomerForm::Customer_Management_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		this->Hide();
-		this->Close();
+	this->Hide();
+	this->Close();
+
+	}
+	private: System::Void Customer_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	};
 }

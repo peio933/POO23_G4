@@ -49,6 +49,28 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CLAdress.cpp">
+    <ClCompile Include="CLMapEmployees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLStock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMapStock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLCAD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLEmployees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLMapOrders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CLOrders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,19 +78,43 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Person_Management.h">
+    <ClInclude Include="PersonForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Customer_Management.h">
+    <ClInclude Include="CustomerForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Order_Management.h">
+    <ClInclude Include="OrderForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Inventory_Management.h">
+    <ClInclude Include="InventoryForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Statistics_Management.h">
+    <ClInclude Include="StatisticsForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapEmployees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLStock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapStock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLCAD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLEmployees.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLMapOrders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CLOrders.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLAdress.h">

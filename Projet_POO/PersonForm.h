@@ -10,12 +10,12 @@ namespace ProjetPOO {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for Inventory_Management
+	/// Summary for Person_Management
 	/// </summary>
-	public ref class Inventory_Management : public System::Windows::Forms::Form
+	public ref class PersonForm : public System::Windows::Forms::Form
 	{
 	public:
-		Inventory_Management(void)
+		PersonForm(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~Inventory_Management()
+		~PersonForm()
 		{
 			if (components)
 			{
@@ -37,11 +37,36 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 
+	protected:
+
+	protected:
+
+	protected:
+
+
+
+
+
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+
+	protected:
+	private: System::ComponentModel::IContainer^ components;
+
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -50,7 +75,7 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Inventory_Management::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PersonForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -59,12 +84,12 @@ namespace ProjetPOO {
 			this->button1->Location = System::Drawing::Point(12, 481);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 1;
+			this->button1->TabIndex = 0;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Inventory_Management::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &PersonForm::button1_Click);
 			// 
-			// Inventory_Management
+			// Person_Management
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -72,16 +97,28 @@ namespace ProjetPOO {
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"Inventory_Management";
-			this->Text = L"Inventory Management";
+			this->Name = L"PersonForm";
+			this->Text = L"Person Management";
+			this->Load += gcnew System::EventHandler(this, &PersonForm::Person_Management_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		this->Hide();
-		this->Close();
+	private: System::Void Person_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void hScrollBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
+	}
+	private: System::Void backgroundWorker1_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e) {
+	}
+	private: System::Void notifyIcon1_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+	}
+	private: System::Void maskedTextBox1_MaskInputRejected(System::Object^ sender, System::Windows::Forms::MaskInputRejectedEventArgs^ e) {
+	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Hide();
+	this->Close();
+
+}
+};
 }
