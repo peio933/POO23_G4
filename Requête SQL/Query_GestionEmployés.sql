@@ -33,7 +33,7 @@ Set @CodePostal = '69002';
 
 -- ____________________ Create ____________________ --
 INSERT INTO Employee (N_E, S_E, HD_E, N1_E, ST_E)
-VALUES (@Nom, @Prenom, @DateEmbauche, @Responsable, 1);
+VALUES (@Prenom, @Nom, @DateEmbauche, @Responsable, 1);
 
 DECLARE @EmployeeID INT;
 SET @EmployeeID = SCOPE_IDENTITY();
@@ -57,7 +57,7 @@ FROM
 INNER JOIN 
     Adress ON Employee.ID_E = Adress.ID_E
 WHERE 
-    Employee.N_E = @Nom;
+    Employee.S_E = @Nom
 
 -- ____________________ Update ____________________ --
 UPDATE Employee
