@@ -5,10 +5,10 @@ USE POO_Groupe4;
 
 -- _______________ Variables Client ______________ --
 DECLARE @NomClient VARCHAR(30);
-SET @NomClient = 'Douvre';
+SET @NomClient = 'Laurent';
 
 DECLARE @PrenomClient VARCHAR(30);
-SET @PrenomClient = 'Laurent';
+SET @PrenomClient = 'Douvre';
 
 DECLARE @DateNaissance DATE;
 SET @DateNaissance = '1990-01-15';
@@ -27,7 +27,7 @@ SET @CodePostalClient = '75008';
 
 -- ____________________ Create ____________________ --
 INSERT INTO Customers (N_C, S_C, BD_C)
-VALUES (@NomClient, @PrenomClient, @DateNaissance);
+VALUES (@PrenomClient, @NomClient, @DateNaissance);
 
 DECLARE @CustomerID INT;
 SET @CustomerID = SCOPE_IDENTITY();
@@ -55,7 +55,7 @@ WHERE
 -- ____________________ Update ____________________ --
 
 UPDATE Customers
-SET N_C = 'NouveauNomClient', S_C = 'NouveauPrenomClient', BD_C = 'NouvelleDateNaissanceClient'
+SET N_C = 'Laurent', S_C = 'Douvre', BD_C = '1990-01-15'
 WHERE S_C = @NomClient AND N_C = @PrenomClient AND BD_C = @DateNaissance;
 
 -- ____________________ Delete ____________________ --
