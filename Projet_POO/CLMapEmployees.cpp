@@ -2,24 +2,42 @@
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Select(void)
 {
-    return "SELECT * FROM Prosit_6;";
+    return "SELECT Employee.N_E AS Prénom," 
+        "Employee.S_E AS Nom,"
+        "Employee.HD_E AS[Date dEmbauche]," 
+        "Employee.N1_E AS Responsable," 
+        "Employee.ST_E AS Statut," 
+        "Adress.SNB AS[Numéro de rue]," 
+        "Adress.SN AS[Nom de rue]," 
+        "Adress.N_V AS Ville," 
+        "Adress.PC AS[Code postal]"
+        "FROM Employee "
+        "INNER JOIN Adress ON Employee.ID_E = Adress.ID_E "
+        "WHERE Employee.N_E = " + getN_E(); +"; ";
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Insert(void)
 {
-    return "INSERT INTO Prosit_6 (ID_E, N_E, S_E, HD_E, N1_E, ST_E) VALUES('" + getID_E() + "','" + getN_E() + "','" + getS_E() + "','" + getHD_E() + "','" + getN1_E() + "','" + getST_E() + "');";
-
+    return "INSERT INTO Employee (N_E, S_E, HD_E, N1_E, ST_E)"
+        "VALUES(" + getN_E() + ", " + getS_E() + ", " + getHD_E() + ", " + getN1_E() + ", " + getST_E() + ");"
+        "DECLARE " + getID_E() + " INT;"
+        "SET " + getID_E() + " = SCOPE_IDENTITY();"
+        "INSERT INTO Adress(SNB, SN, N_V, PC, ID_E)"
+        "VALUES(" + oAdress->getSNB() + ", " + oAdress->getSN() + ", " + oAdress->getN_V() + ", " + oAdress->getPC() + ", " + getID_E() + "); ";
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Delete(void)
 {
-    return "DELETE FROM Prosit_6 WHERE id = " + getID_E() + ";";
+    return "DELETE FROM Employee" 
+           "WHERE S_E = " + getS_E() + " AND N_E = " + getN_E() + " AND HD_E = " + getHD_E() + "; ";
 
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Update(void)
 {
-    return "UPDATE Prosit_6 SET ID_E = '" + getID_E() + "', N_E = '" + getN_E() + "', S_E = '" + getS_E() + "', HD_E = '" + getHD_E() + "', N1_E = '" + getN1_E() + "', ST_E = '" + getST_E() + "' WHERE id = " + getID_E() + ";";
+    return "UPDATE Employee"
+        "SET N_E = 'NouveauPrénom', S_E = 'NouveauNom', HD_E = 'NouvelleDateEmbauche'"
+        "WHERE S_E = " + getS_E() + " AND N_E = " + getN_E() + " AND HD_E = " + getHD_E() + ";";
 
 }
 
