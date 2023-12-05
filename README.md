@@ -1,12 +1,21 @@
 # OOP - Group 4 project
 
-
 An emerging company is embarking on the development of its information system, focusing its core business on online sales of electronic components. Our mission is to design and implement a solution aimed at digitizing some of its operational processes.
+
+<br><br>
+
+### Requirements
+
+For the smooth execution of our solution, it is essential to set up and configure the following components in your development environment :
+- Visual Studio Comunity 2010 with CLI : [Download](https://visualstudio.microsoft.com/fr/vs/older-downloads/)
+- SQL server 2019 : [Download](https://www.microsoft.com/fr-fr/sql-server/sql-server-2019)
+- SQL server management studio 19 : [Download](https://learn.microsoft.com/fr-fr/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16)
+
+<br><br>
 
 ## Architecture 
 > **HCI** (Human-Computing Interaction)  
 > &nbsp;&nbsp;&nbsp; MyForm/Main
-
 
 > **Services**  
 > &nbsp;&nbsp;&nbsp; CLstock
@@ -14,7 +23,6 @@ An emerging company is embarking on the development of its information system, f
 > &nbsp;&nbsp;&nbsp; CLcustomers
 > &nbsp;&nbsp;&nbsp; CLorders
 > &nbsp;&nbsp;&nbsp; CLstats
-
 
 > **Components**
 > >**mother classes** <br>
@@ -31,34 +39,23 @@ An emerging company is embarking on the development of its information system, f
 > >**of connexion**  
 > >&nbsp;&nbsp;&nbsp; CLcad
 
+<br><br>
 
 ## Diagrams
-
 ###  1. Use case diagram
 
-Using a use case diagram is essential to ensure a clear understanding of our project and system. It provides a visual representation of the system's features from the perspective of its users, identifying actors and interactions. It abstracts features by highlighting the main interactions between actors and the system, thus simplifying complexity.
+A use case diagram is crucial for understanding our project, simplifying system complexities through visual representation. As a communication tool, it fosters clarity among stakeholders and guides development by defining requirements. Emphasizing concrete scenarios, it anticipates user needs and adapts to changes in the development cycle.
 
-As a communication tool, it facilitates understanding of major features and expected interactions among stakeholders and development team members. These diagrams establish a solid foundation for development by defining functional requirements and guiding the design and implementation processes.
-
-Emphasizing concrete usage scenarios, they assist in anticipating user needs while remaining adaptable to evolutions and changes throughout the development cycle.
-
-![Capture d'écran 2023-12-03 211233](https://github.com/peio933/POO23_G4/assets/116553253/e8ddf7ae-7bff-4c4f-bc8f-9f7be90eaae9)
-![Capture d'écran 2023-12-03 211321](https://github.com/peio933/POO23_G4/assets/116553253/de46be1a-5e7a-427f-8fee-246f419f3c1f)
-![Capture d'écran 2023-12-03 211258](https://github.com/peio933/POO23_G4/assets/116553253/059e2a7e-da64-4051-a3fc-58de729b1fc1)
+![Capture d'écran 2023-12-03 211233](https://github.com/peio933/POO23_G4/assets/116553253/e8ddf7ae-7bff-4c4f-bc8f-9f7be90eaae9 "Use Case")
+<!-- ![Capture d'écran 2023-12-03 211321](https://github.com/peio933/POO23_G4/assets/116553253/de46be1a-5e7a-427f-8fee-246f419f3c1f) -->
+<!-- ![Capture d'écran 2023-12-03 211258](https://github.com/peio933/POO23_G4/assets/116553253/059e2a7e-da64-4051-a3fc-58de729b1fc1) -->
 
 ### 2. Class diagram
-Utilizing a class diagram is crucial for ensuring a clear understanding of our project and system. It provides a visual representation of the static structure of the system, identifying classes, relationships between classes, attributes, and methods. It abstracts the system's features by grouping similar concepts into classes, simplifying the overall system complexity.
+Class diagrams are essential for understanding the static structure of our project, visually representing classes, relationships, attributes, and methods. Serving as a communication tool, they foster team collaboration and maintain consistency between design and implementation. These diagrams provide a robust foundation for development, aiding code reference, promoting reuse, and facilitating static analysis, contributing to efficient system maintenance and reducing errors.
 
-As a communication tool, class diagrams facilitate effective communication among team members by offering a shared view of the system. This aids in comprehending different aspects of the structure and serves as a reference for maintaining consistency between the system's design and its implementation during the development process.
+![MicrosoftTeams-image](https://github.com/peio933/POO23_G4/assets/116553253/d8984da1-131e-4bd3-82ca-997881b6f2fa "Class diagram")
 
-Providing a robust foundation for development, class diagrams enable developers to use them as a reference when writing code, ensuring that the system's structure aligns with the initial design. They also promote code reuse by identifying relationships between classes, allowing well-designed classes to be reused in other parts of the system or even in different projects.
-
-By easily identifying various relationships such as inheritance, association, composition, and aggregation, class diagrams help developers understand how different parts of the system interact. They facilitate static analysis, emphasizing the structure without delving into dynamic behavior, which proves particularly beneficial in the initial design phase of the project.
-
-Moreover, class diagrams contribute to the ease of maintenance by providing a clear view of the system's structure. Necessary changes can be identified more efficiently, reducing errors and maintenance costs. In summary, class diagrams are powerful tools for designing and communicating the static structure of an object-oriented system, offering numerous advantages throughout the software development lifecycle.
-
-![MicrosoftTeams-image](https://github.com/peio933/POO23_G4/assets/116553253/d8984da1-131e-4bd3-82ca-997881b6f2fa)
-
+<!--
 ### 3. Sequence diagrams
 
 Using sequence diagrams is crucial to ensure a clear understanding of our project and system. They provide a dynamic visual representation of interactions between objects in a system over time. Detailing the sequence of events between objects, illustrating how they collaborate to accomplish specific functionalities, these diagrams offer a clear abstraction by highlighting message exchanges between objects, simplifying the understanding of the system's operational logic.
@@ -67,27 +64,16 @@ As a communication tool, they facilitate the understanding of execution flows be
 
 Focused on the chronology of events, they assist in anticipating and comprehending the system's behavior in various usage scenarios. Ultimately, sequence diagrams are adaptable to changes, allowing for updates to the representation based on the evolving needs of the system throughout the development cycle.
 
-- Customers Management 
-  
-  ![image](https://github.com/peio933/POO23_G4/assets/116553253/d67c5a2e-a45b-4c9d-87dc-56a4539d15a6)
-
-- Employee Management
-  
-  ![image](https://github.com/peio933/POO23_G4/assets/116553253/514cd5de-bbdf-4047-b9c6-dfd9c045bb45)
-
-- Order management
-
-  ![image](https://github.com/peio933/POO23_G4/assets/116553253/3150ca24-ebb4-4011-b70e-fa1fc4187198)
-
-  
-- Stock Management
-
-  ![image](https://github.com/peio933/POO23_G4/assets/116553253/82e2d79a-1a3f-47fe-bf35-e2b6cfe349b9)
-
+- Create an employee
+  ![image]() *in progress*
+- 'Read' an employee
+  ![image]() *in progress*
+- Update an employee
+  ![image]() *in progress*
+- Delete an employee
+  ![image]() *in progress*
 - Statistique Management
-
   ![image](https://github.com/peio933/POO23_G4/assets/116553253/81b11c4a-e95e-4913-9392-b584f2491286)
-
 
 ### 4. Activities diagrams
 
@@ -98,7 +84,31 @@ The activity diagram, integrated into the Unified Modeling Language (UML), provi
 ![Diagramme_activité_stock](https://github.com/peio933/POO23_G4/assets/116553253/b9f7dcd2-40f7-49c3-80c9-a6a8875dc7a7)
 ![Diagramme_activité_Statistique](https://github.com/peio933/POO23_G4/assets/116553253/a470163f-9df4-474b-a3de-6d2ad45b9222)
 
+-->
 
+<br><br>
+
+## DataBase
+The creation and population of the database are fundamental steps in ensuring the functionality of our project. We have added fictitious data, however for your use we leave it to you to enter the values ​​linked to your activity. The following outlines the process using the codes you've developed and shared on our GitHub project:
+
+  **1. Database Creation Script**
+The initial step involves executing the database creation script available in the GitHub repository.
+
+<a href="https://github.com/peio933/POO23_G4/blob/892086add2378a222e1e28eb6f38bd80809b6e2b/Requ%C3%AAte%20SQL/DatabaseCreation.sql" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Database creation code</a>
+
+
+  **2. Data Population Script**
+Once the database structure is in place, the data population script is executed. This script inserts sample data or necessary initial records into the tables, allowing for testing and functionality validation.
+
+<a href="https://github.com/peio933/POO23_G4/blob/11c99df1bbb004325f3a12bc2a1cff1997a53b53/Requ%C3%AAte%20SQL/DataBase%20Population.sql" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Database population code</a>
+
+
+  **3. Database Population Test**
+After running the data population script, it's crucial to perform a thorough test to ensure that the database is correctly populated. This involves executing predefined queries to retrieve and verify the inserted data. You have the different requests separated by categories
+
+<a href="" style="background-color: #606060; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px; font-size: 16px; cursor: pointer;">Test queries</a>
+
+<br><br>
 
 ## Authors
 * **Robin NOIRET** - [Robin GitHub](https://github.com/RobinNoiret)
