@@ -35,6 +35,32 @@ namespace ProjetPOO {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	protected:
 
 	private:
@@ -73,7 +99,7 @@ namespace ProjetPOO {
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"InventoryForm";
-			this->Text = L"Inventory Management";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
 			this->ResumeLayout(false);
 
