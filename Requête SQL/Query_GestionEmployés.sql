@@ -5,13 +5,13 @@ USE POO_Groupe4;
 
 -- _______________ Variables Employé ______________ --
 DECLARE @Nom VARCHAR(30);
-SET @Nom = 'Noiret';
+SET @Nom = 'Rigaud';
 
 DECLARE @Prenom VARCHAR(30);
-SET @Prenom = 'Robin';
+SET @Prenom = 'Ulysses';
 
 DECLARE @DateEmbauche DATE;
-SET @DateEmbauche = '2022-04-26';
+SET @DateEmbauche = '1986-11-23';
 
 DECLARE @Responsable VARCHAR(30);
 SET @Responsable = 'NULL';
@@ -42,6 +42,7 @@ INSERT INTO Adress (SNB, SN, N_V, PC, ID_E)
 VALUES (@NumRue, @NomRue, @Ville, @CodePostal, @EmployeeID);
 
 -- _____________________ Read _____________________ --
+
 SELECT 
     Employee.N_E AS Prénom,
     Employee.S_E AS Nom,
@@ -60,9 +61,15 @@ WHERE
     Employee.S_E = @Nom
 
 -- ____________________ Update ____________________ --
+
 UPDATE Employee
-SET N_E = 'NouveauPrénom', S_E = 'NouveauNom', HD_E = 'NouvelleDateEmbauche'
+SET N_E = 'Peïo', S_E = 'Rigaud'
 WHERE N_E = @Prenom AND S_E = @Nom AND HD_E = @DateEmbauche;
+
+UPDATE Adress
+SET SNB = '14', SN = 'Rue du CESI', N_V = 'Lyon', PC = '69003' FROM Adress
+INNER JOIN Employee ON Adress.ID_E = Employee.ID_E
+WHERE Employee.N_E = 'Peïo' AND Employee.S_E = 'Rigaud' AND Employee.HD_E = @DateEmbauche;
 
 -- ____________________ Delete ____________________ --
 DELETE FROM Employee 
