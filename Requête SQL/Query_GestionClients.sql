@@ -38,8 +38,8 @@ VALUES (@NumRueClient, @NomRueClient, @VilleClient, @CodePostalClient, @Customer
 
 -- _____________________ Read _____________________ --
 SELECT 
-    Customers.N_C AS Nom,
-    Customers.S_C AS Prénom,
+    Customers.N_C AS Prénom,
+    Customers.S_C AS Nom,
     Customers.BD_C AS [Date de Naissance],
     Adress.SNB AS [Numéro de rue],
     Adress.SN AS [Nom de rue],
