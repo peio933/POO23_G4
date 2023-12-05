@@ -46,7 +46,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -121,6 +121,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CLAdress.cpp" />
+    <ClCompile Include="CLCustomers.cpp" />
+    <ClCompile Include="CLMapCustomers.cpp" />
+    <ClCompile Include="CLMapStats.cpp" />
+    <ClCompile Include="CLStats.cpp" />
     <ClCompile Include="CLCAD.cpp" />
     <ClCompile Include="CLEmployees.cpp" />
     <ClCompile Include="CLMap.cpp" />
@@ -137,6 +142,12 @@
     <ClCompile Include="Statistics_Management.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CLAdress.h" />
+    <ClInclude Include="CLCustomers.h" />
+    <ClInclude Include="CLMapCustomers.h" />
+    <ClInclude Include="CLMapStats.h" />
+    <ClInclude Include="CLStats.h" />
+    <ClInclude Include="Customer_Management.h">
     <ClInclude Include="CLCAD.h" />
     <ClInclude Include="CLEmployees.h" />
     <ClInclude Include="CLMap.h" />
