@@ -7,17 +7,17 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
 {
-    return "INSERT INTO Prosit_6 (ID_O, R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O) VALUES('" + this->ID_O + "','" + this->R_O + "','" + this->DD_O + "','" + this->SD_O + "','" + this->PD_O + "','" + this->MOP_O + "','" + this->HT_O + "','" + this->TVA_O + "','" + this->TTC_O + "');";
+    return "INSERT INTO Prosit_6 (ID_O, R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O) VALUES('" + getID_O() + "','" + getR_O() + "','" + getDD_O() + "','" + getSD_O() + "','" + getPD_O() + "','" + getMOP_O() + "','" + getHT_O() + "','" + getTVA_O() + "','" + getTTC_O() + "');";
 
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 {
-    return "DELETE FROM Prosit_6 WHERE id = " + this->ID_O + ";";
+    return "DELETE FROM Prosit_6 WHERE id = " + getID_O() + ";";
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
-    return "UPDATE Prosit_6 SET ID_O = '" + this->ID_O + "', R_O = '" + this->R_O + "', DD_O = '" + this->DD_O + "', SD_O = '" + this->SD_O + "', PD_O = '" + this->PD_O + "', MOP_O = '" + this->MOP_O + "', HT_O = '" + this->HT_O + "', TVA_O = '" + this->TVA_O + "', TTC_O = '" + this->TTC_O + "' WHERE id = " + this->ID_O + ";";
+    return "UPDATE Prosit_6 SET ID_O = '" + getID_O() + "', R_O = '" + getR_O() + "', DD_O = '" + getDD_O() + "', SD_O = '" + getSD_O() + "', PD_O = '" + getPD_O() + "', MOP_O = '" + getMOP_O() + "', HT_O = '" + getHT_O() + "', TVA_O = '" + getTVA_O() + "', TTC_O = '" + getTTC_O() + "' WHERE id = " + getID_O() + ";";
 }
 
 void NS_Comp_Map_Orders::CLMapOrders::setID_O(System::String^ ID_O)

@@ -145,43 +145,43 @@
     <ClInclude Include="CLMapStock.h" />
     <ClInclude Include="CLOrders.h" />
     <ClInclude Include="CLStock.h" />
-    <ClInclude Include="Customer_Management.h">
+    <ClInclude Include="CustomerForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Inventory_Management.h">
+    <ClInclude Include="InventoryForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Order_Management.h">
+    <ClInclude Include="OrderForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Person_Management.h">
+    <ClInclude Include="PersonForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Statistics_Management.h">
+    <ClInclude Include="StatisticsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Customer_Management.resx">
-      <DependentUpon>Customer_Management.h</DependentUpon>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory_Management.resx">
-      <DependentUpon>Inventory_Management.h</DependentUpon>
+    <EmbeddedResource Include="InventoryForm.resx">
+      <DependentUpon>InventoryForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Order_Management.resx">
-      <DependentUpon>Order_Management.h</DependentUpon>
+    <EmbeddedResource Include="OrderForm.resx">
+      <DependentUpon>OrderForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Person_Management.resx">
-      <DependentUpon>Person_Management.h</DependentUpon>
+    <EmbeddedResource Include="PersonForm.resx">
+      <DependentUpon>PersonForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Statistics_Management.resx">
-      <DependentUpon>Statistics_Management.h</DependentUpon>
+    <EmbeddedResource Include="StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
