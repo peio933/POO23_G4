@@ -2,22 +2,53 @@
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 {
-    return "SELECT * FROM Prosit_6;";
+    return  "SELECT R_O AS ReferenceCommande,"
+            "DD_O AS DateCommande, SD_O AS DateLivraison,"
+            "PD_O AS DatePaiement, MOP_O AS MoyenPaiement,"
+            "HT_O AS PrixHT,TVA_O AS TVA,"
+            "TTC_O AS PrixTTC, R_A AS ReferenceArticle,"
+            "QC_A AS QuantiteCommandee"
+            "FROM Customer_Order"
+            "JOIN composed ON ID_O = ID_O"
+            "JOIN Article ON ID_A = ID_A"
+            "WHERE R_O = @ReferenceCommande;";
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
 {
-    return "INSERT INTO Prosit_6 (ID_O, R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O) VALUES('" + getID_O() + "','" + getR_O() + "','" + getDD_O() + "','" + getSD_O() + "','" + getPD_O() + "','" + getMOP_O() + "','" + getHT_O() + "','" + getTVA_O() + "','" + getTTC_O() + "');";
+    return  "IF @CustomerID IS NOT NULL"
+            "BEGIN"
+            "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C)"
+            "VALUES(@ReferenceCommande, @DateCommande, @DateLivraison, @DatePaiement, @MoyenPaiement, @PrixHT, @TVA, @PrixTTC, @CustomerID);"
+            "UPDATE Article"
+            "SET QC_A = @QuantiteArticle"
+            "WHERE R_A = @ReferenceArticle;"
+            "INSERT INTO composed(ID_O, ID_A)"
+            "VALUES(@OrderID, (SELECT ID_A FROM Article WHERE R_A = @ReferenceArticle));"
+            "UPDATE Article"
+            "SET QS_A = QS_A - @QuantiteArticle"
+            "WHERE R_A = @ReferenceArticle;"
+            "END"
+            "ELSE"
+            "BEGIN"
+            "PRINT @Message;"
+            "END";
 
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 {
-    return "DELETE FROM Prosit_6 WHERE id = " + getID_O() + ";";
+    return  "DELETE FROM composed WHERE ID_O = @ID_Commande;"
+            "DELETE FROM Customer_Order WHERE ID_O = @ID_Commande;";
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
-    return "UPDATE Prosit_6 SET R_O = '" + getR_O() + "', DD_O = '" + getDD_O() + "', SD_O = '" + getSD_O() + "', PD_O = '" + getPD_O() + "', MOP_O = '" + getMOP_O() + "', HT_O = '" + getHT_O() + "', TVA_O = '" + getTVA_O() + "', TTC_O = '" + getTTC_O() + "' WHERE id = " + getID_O() + ";";
+    return  "UPDATE a"
+            "SET QC_A = @NewQuantiteArticle"
+            "FROM Article a"
+            "INNER JOIN composed ON ID_A = ID_A"
+            "INNER JOIN Customer_Order ON ID_O = ID_O"
+            "WHERE R_O = @ReferenceCommandeToUpdate;";
 }
 
 void NS_Comp_Map_Orders::CLMapOrders::setID_O(System::String^ ID_O)
