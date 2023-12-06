@@ -161,10 +161,9 @@ namespace ProjetPOO {
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(18, 740);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
+			this->button1->Location = System::Drawing::Point(12, 481);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(112, 35);
+			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
@@ -234,9 +233,11 @@ namespace ProjetPOO {
 			this->Group_Infos->Controls->Add(this->Label_Threshold);
 			this->Group_Infos->Controls->Add(this->Lab_Name);
 			this->Group_Infos->Controls->Add(this->Lab_ref);
-			this->Group_Infos->Location = System::Drawing::Point(830, 165);
+			this->Group_Infos->Location = System::Drawing::Point(553, 107);
+			this->Group_Infos->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Group_Infos->Name = L"Group_Infos";
-			this->Group_Infos->Size = System::Drawing::Size(636, 557);
+			this->Group_Infos->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Group_Infos->Size = System::Drawing::Size(424, 362);
 			this->Group_Infos->TabIndex = 29;
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
@@ -301,9 +302,10 @@ namespace ProjetPOO {
 			// Lab_mensPayment
 			// 
 			this->Lab_mensPayment->AutoSize = true;
-			this->Lab_mensPayment->Location = System::Drawing::Point(8, 174);
+			this->Lab_mensPayment->Location = System::Drawing::Point(5, 113);
+			this->Lab_mensPayment->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_mensPayment->Name = L"Lab_mensPayment";
-			this->Lab_mensPayment->Size = System::Drawing::Size(0, 20);
+			this->Lab_mensPayment->Size = System::Drawing::Size(0, 13);
 			this->Lab_mensPayment->TabIndex = 4;
 			// 
 			// Lab_StockQuantity
@@ -327,9 +329,10 @@ namespace ProjetPOO {
 			// Lab_ref
 			// 
 			this->Lab_ref->AutoSize = true;
-			this->Lab_ref->Location = System::Drawing::Point(8, 45);
+			this->Lab_ref->Location = System::Drawing::Point(5, 29);
+			this->Lab_ref->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_ref->Name = L"Lab_ref";
-			this->Lab_ref->Size = System::Drawing::Size(144, 20);
+			this->Lab_ref->Size = System::Drawing::Size(98, 13);
 			this->Lab_ref->TabIndex = 0;
 			this->Lab_ref->Text = L"Article Reference : ";
 			// 
@@ -340,9 +343,10 @@ namespace ProjetPOO {
 			this->Btn_Delete->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->Btn_Delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Btn_Delete->Location = System::Drawing::Point(416, 643);
+			this->Btn_Delete->Location = System::Drawing::Point(277, 418);
+			this->Btn_Delete->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Delete->Name = L"Btn_Delete";
-			this->Btn_Delete->Size = System::Drawing::Size(384, 77);
+			this->Btn_Delete->Size = System::Drawing::Size(256, 50);
 			this->Btn_Delete->TabIndex = 28;
 			this->Btn_Delete->Text = L"Delete an article";
 			this->Btn_Delete->UseVisualStyleBackColor = false;
@@ -351,9 +355,10 @@ namespace ProjetPOO {
 			// Btn_Update
 			// 
 			this->Btn_Update->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_Update->Location = System::Drawing::Point(18, 643);
+			this->Btn_Update->Location = System::Drawing::Point(12, 418);
+			this->Btn_Update->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Update->Name = L"Btn_Update";
-			this->Btn_Update->Size = System::Drawing::Size(384, 77);
+			this->Btn_Update->Size = System::Drawing::Size(256, 50);
 			this->Btn_Update->TabIndex = 27;
 			this->Btn_Update->Text = L"Update an article";
 			this->Btn_Update->UseVisualStyleBackColor = true;
@@ -362,9 +367,10 @@ namespace ProjetPOO {
 			// Btn_Show
 			// 
 			this->Btn_Show->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_Show->Location = System::Drawing::Point(416, 558);
+			this->Btn_Show->Location = System::Drawing::Point(277, 363);
+			this->Btn_Show->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Show->Name = L"Btn_Show";
-			this->Btn_Show->Size = System::Drawing::Size(384, 77);
+			this->Btn_Show->Size = System::Drawing::Size(256, 50);
 			this->Btn_Show->TabIndex = 26;
 			this->Btn_Show->Text = L"Show an article";
 			this->Btn_Show->UseVisualStyleBackColor = true;
@@ -373,9 +379,10 @@ namespace ProjetPOO {
 			// Btn_create
 			// 
 			this->Btn_create->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_create->Location = System::Drawing::Point(18, 558);
+			this->Btn_create->Location = System::Drawing::Point(12, 363);
+			this->Btn_create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_create->Name = L"Btn_create";
-			this->Btn_create->Size = System::Drawing::Size(384, 77);
+			this->Btn_create->Size = System::Drawing::Size(256, 50);
 			this->Btn_create->TabIndex = 25;
 			this->Btn_create->Text = L"Create an article";
 			this->Btn_create->UseVisualStyleBackColor = true;
@@ -390,9 +397,10 @@ namespace ProjetPOO {
 			this->Btn_Load->FlatAppearance->MouseDownBackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->FlatAppearance->MouseOverBackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Btn_Load->Location = System::Drawing::Point(16, 474);
+			this->Btn_Load->Location = System::Drawing::Point(11, 308);
+			this->Btn_Load->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Load->Name = L"Btn_Load";
-			this->Btn_Load->Size = System::Drawing::Size(783, 77);
+			this->Btn_Load->Size = System::Drawing::Size(522, 50);
 			this->Btn_Load->TabIndex = 24;
 			this->Btn_Load->Text = L"Load articles";
 			this->Btn_Load->UseVisualStyleBackColor = false;
@@ -403,16 +411,17 @@ namespace ProjetPOO {
 			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->View_Database->Location = System::Drawing::Point(18, 165);
+			this->View_Database->Location = System::Drawing::Point(12, 107);
+			this->View_Database->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->View_Database->Name = L"View_Database";
 			this->View_Database->RowHeadersWidth = 51;
 			this->View_Database->RowTemplate->Height = 24;
-			this->View_Database->Size = System::Drawing::Size(782, 297);
+			this->View_Database->Size = System::Drawing::Size(521, 193);
 			this->View_Database->TabIndex = 23;
 			// 
 			// InventoryForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -427,7 +436,6 @@ namespace ProjetPOO {
 			this->Controls->Add(this->View_Database);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->Name = L"InventoryForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
