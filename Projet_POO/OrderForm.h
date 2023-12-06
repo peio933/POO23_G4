@@ -55,10 +55,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_Show;
 	private: System::Windows::Forms::Button^ Btn_create;
 	private: System::Windows::Forms::Button^ Btn_Load;
-
 	private: System::Windows::Forms::DataGridView^ View_Database;
 	private: System::Windows::Forms::ListBox^ List_mensPayment;
-
 	private: System::Windows::Forms::DateTimePicker^ Date_payment;
 	private: System::Windows::Forms::DateTimePicker^ Date_Sending;
 	private: System::Windows::Forms::DateTimePicker^ Date_Delivery;
@@ -108,7 +106,7 @@ namespace ProjetPOO {
 			this->Btn_Delete = (gcnew System::Windows::Forms::Button());
 			this->Btn_Update = (gcnew System::Windows::Forms::Button());
 			this->Btn_Show = (gcnew System::Windows::Forms::Button());
-			this->Btn_create = (gcnew System::Windows::Forms::Button());
+			this->Btn_Create = (gcnew System::Windows::Forms::Button());
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
 			this->Btn_GoBack = (gcnew System::Windows::Forms::Button());
 			this->Group_prix->SuspendLayout();
@@ -277,7 +275,6 @@ namespace ProjetPOO {
 			this->Group_Infos->TabIndex = 13;
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
-			this->Group_Infos->Enter += gcnew System::EventHandler(this, &OrderForm::Group_Infos_Enter);
 			// 
 			// List_mensPayment
 			// 
@@ -378,17 +375,17 @@ namespace ProjetPOO {
 			this->Btn_Show->UseVisualStyleBackColor = true;
 			this->Btn_Show->Click += gcnew System::EventHandler(this, &OrderForm::Btn_Show_Click);
 			// 
-			// Btn_create
+			// Btn_Create
 			// 
-			this->Btn_create->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_create->Location = System::Drawing::Point(12, 363);
-			this->Btn_create->Margin = System::Windows::Forms::Padding(2);
-			this->Btn_create->Name = L"Btn_create";
-			this->Btn_create->Size = System::Drawing::Size(256, 50);
-			this->Btn_create->TabIndex = 9;
-			this->Btn_create->Text = L"Create an article";
-			this->Btn_create->UseVisualStyleBackColor = true;
-			this->Btn_create->Click += gcnew System::EventHandler(this, &OrderForm::Btn_create_Click);
+			this->Btn_Create->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Btn_Create->Location = System::Drawing::Point(12, 363);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Create->Name = L"Btn_Create";
+			this->Btn_Create->Size = System::Drawing::Size(256, 50);
+			this->Btn_Create->TabIndex = 9;
+			this->Btn_Create->Text = L"Create an article";
+			this->Btn_Create->UseVisualStyleBackColor = true;
+			this->Btn_Create->Click += gcnew System::EventHandler(this, &OrderForm::Btn_create_Click);
 			// 
 			// Btn_Load
 			// 
@@ -426,7 +423,7 @@ namespace ProjetPOO {
 			this->Controls->Add(this->Btn_Delete);
 			this->Controls->Add(this->Btn_Update);
 			this->Controls->Add(this->Btn_Show);
-			this->Controls->Add(this->Btn_create);
+			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Btn_Load);
 			this->Controls->Add(this->View_Database);
 			this->Controls->Add(this->Btn_GoBack);
@@ -445,7 +442,6 @@ namespace ProjetPOO {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		this->Hide();
 		this->Close();
 	}
@@ -472,16 +468,39 @@ private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void Group_Infos_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	this->View_Database->Refresh();
+	this->oDs = this->oOrders->loadOrders("Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
 }
-private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
-private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+ 	this->View_Database->Refresh();
+	this->oOrders->selectOrders(this->TxtBox_ref->Text, "Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
 }
-private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
-private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
+
+
 private: System::Void View_Database_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };

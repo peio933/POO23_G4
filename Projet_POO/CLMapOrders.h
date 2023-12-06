@@ -17,10 +17,12 @@ namespace NS_Comp_Map_Orders {
 		System::String^ TTC_O;
 
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void) override;
 		System::String^ Insert(void) override;
 		System::String^ Delete(void) override;
 		System::String^ Update(void) override;
+
 		void setID_O(System::String^);
 		void setR_O(System::String^);
 		void setDD_O(System::String^);
@@ -30,6 +32,7 @@ namespace NS_Comp_Map_Orders {
 		void setHT_O(System::String^);
 		void setTVA_O(System::String^);
 		void setTTC_O(System::String^);
+
 		System::String^ getID_O(void);
 		System::String^ getR_O(void);
 		System::String^ getDD_O(void);
