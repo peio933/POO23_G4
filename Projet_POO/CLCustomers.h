@@ -11,9 +11,10 @@ namespace NS_Comp_Cus {
 		NS_Comp_Map_Cus::CLMapCustomers^ oMapCustomers;
 	public:
 		CLCustomers(void);
+		System::Data::DataSet^ loadCustomer(System::String^);
 		System::Data::DataSet^ selectCustomer(System::String^, System::String^);
-		void insertCustomer(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void updateCustomer(System::String^, System::String^, System::String^);
+		void recordCustomer(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void modifyCustomer(System::String^, System::String^, System::String^);
 		void deleteCustomer(System::String^, System::String^, System::String^);
 	};
 }

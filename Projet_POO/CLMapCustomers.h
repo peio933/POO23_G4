@@ -2,7 +2,7 @@
 #include "CLAdress.h"
 #include "CLMap.h"
 namespace NS_Comp_Map_Cus {
-	ref class CLMapCustomers
+	ref class CLMapCustomers : public CLMap
 	{
 	private:
 		System::String^ ID_C;
@@ -10,6 +10,7 @@ namespace NS_Comp_Map_Cus {
 		System::String^ S_C;
 		System::String^ BD_C;
 	public:
+		System::String^ SelectAll(void);
 		System::String^ Select(void) override;
 		System::String^ Insert(void) override;
 		System::String^ Delete(void) override;
@@ -28,4 +29,3 @@ namespace NS_Comp_Map_Cus {
 		NS_Comp_Adr::CLAdress^ oAdress;
 	};
 }
-
