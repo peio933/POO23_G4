@@ -1,4 +1,5 @@
 #pragma once
+#include "CLOrders.h"
 
 namespace ProjetPOO {
 
@@ -34,83 +35,36 @@ namespace ProjetPOO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ TxtBox_ref;
-
-
-
-
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Label^ label6;
 
 	private: System::Windows::Forms::GroupBox^ Group_prix;
-	private: System::Windows::Forms::Label^ Lab_mensPayment;
-
-
-	private: System::Windows::Forms::Label^ Lab_payment;
-
-	private: System::Windows::Forms::Label^ Lab_delivery;
-
-	private: System::Windows::Forms::Label^ Lab_ref;
-
 	private: System::Windows::Forms::GroupBox^ Group_Infos;
-	private: System::Windows::Forms::Label^ Lab_sending;
-
-
-	private: System::Windows::Forms::Button^ Btn_Delete;
-
-	private: System::Windows::Forms::Button^ Btn_Update;
-
-	private: System::Windows::Forms::Button^ Btn_Show;
-
-	private: System::Windows::Forms::Button^ Btn_create;
-
-	private: System::Windows::Forms::Button^ Btn_Load;
-
-	private: System::Windows::Forms::DataGridView^ View_Database;
 
 	private: System::Windows::Forms::Label^ Title_order;
+	private: System::Windows::Forms::Label^ Lab_mensPayment;
+	private: System::Windows::Forms::Label^ Lab_payment;
+	private: System::Windows::Forms::Label^ Lab_delivery;
+	private: System::Windows::Forms::Label^ Lab_ref;
+	private: System::Windows::Forms::Label^ Lab_sending;
+	private: System::Windows::Forms::Label^ Lab_TTCprice;
+	private: System::Windows::Forms::Label^ Lab_TVA;
+	private: System::Windows::Forms::Label^ Lab_HTprice;
+
+	private: System::Windows::Forms::Button^ Btn_GoBack;
+	private: System::Windows::Forms::Button^ Btn_Delete;
+	private: System::Windows::Forms::Button^ Btn_Update;
+	private: System::Windows::Forms::Button^ Btn_Show;
+	private: System::Windows::Forms::Button^ Btn_create;
+	private: System::Windows::Forms::Button^ Btn_Load;
+	private: System::Windows::Forms::DataGridView^ View_Database;
 	private: System::Windows::Forms::ListBox^ List_mensPayment;
-
 	private: System::Windows::Forms::DateTimePicker^ Date_payment;
-
 	private: System::Windows::Forms::DateTimePicker^ Date_Sending;
-
 	private: System::Windows::Forms::DateTimePicker^ Date_Delivery;
+
 	private: System::Windows::Forms::TextBox^ TxtBox_HTprice;
 	private: System::Windows::Forms::TextBox^ TxtBox_TVA;
 	private: System::Windows::Forms::TextBox^ TxtBox_TTC;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::TextBox^ TxtBox_ref;
 
 
 	protected:
@@ -129,126 +83,54 @@ namespace ProjetPOO {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(OrderForm::typeid));
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->TxtBox_ref = (gcnew System::Windows::Forms::TextBox());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->Group_prix = (gcnew System::Windows::Forms::GroupBox());
-			this->TxtBox_HTprice = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_TVA = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_TTC = (gcnew System::Windows::Forms::TextBox());
+			this->Title_order = (gcnew System::Windows::Forms::Label());
 			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
 			this->Lab_payment = (gcnew System::Windows::Forms::Label());
 			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
 			this->Lab_ref = (gcnew System::Windows::Forms::Label());
+			this->Lab_sending = (gcnew System::Windows::Forms::Label());
+			this->Lab_TTCprice = (gcnew System::Windows::Forms::Label());
+			this->Lab_TVA = (gcnew System::Windows::Forms::Label());
+			this->Lab_HTprice = (gcnew System::Windows::Forms::Label());
+			this->Group_prix = (gcnew System::Windows::Forms::GroupBox());
+			this->TxtBox_HTprice = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_TVA = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_TTC = (gcnew System::Windows::Forms::TextBox());
 			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
 			this->List_mensPayment = (gcnew System::Windows::Forms::ListBox());
 			this->Date_payment = (gcnew System::Windows::Forms::DateTimePicker());
 			this->Date_Sending = (gcnew System::Windows::Forms::DateTimePicker());
 			this->Date_Delivery = (gcnew System::Windows::Forms::DateTimePicker());
-			this->Lab_sending = (gcnew System::Windows::Forms::Label());
+			this->TxtBox_ref = (gcnew System::Windows::Forms::TextBox());
+			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
 			this->Btn_Delete = (gcnew System::Windows::Forms::Button());
 			this->Btn_Update = (gcnew System::Windows::Forms::Button());
 			this->Btn_Show = (gcnew System::Windows::Forms::Button());
-			this->Btn_create = (gcnew System::Windows::Forms::Button());
+			this->Btn_Create = (gcnew System::Windows::Forms::Button());
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
-			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
-			this->Title_order = (gcnew System::Windows::Forms::Label());
+			this->Btn_GoBack = (gcnew System::Windows::Forms::Button());
 			this->Group_prix->SuspendLayout();
 			this->Group_Infos->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->SuspendLayout();
+
+//___________________________________________________________________________________
+//___________________________________________________________________________________
+
 			// 
-			// button1
+			// Title_order
 			// 
-			this->button1->Location = System::Drawing::Point(12, 481);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"<<";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &OrderForm::button1_Click);
-			// 
-			// TxtBox_ref
-			// 
-			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
-			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_ref->Name = L"TxtBox_ref";
-			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_ref->TabIndex = 6;
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(4, 99);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(98, 13);
-			this->label8->TabIndex = 8;
-			this->label8->Text = L"All taxes included : ";
-			this->label8->Click += gcnew System::EventHandler(this, &OrderForm::label8_Click);
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(4, 67);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(37, 13);
-			this->label7->TabIndex = 7;
-			this->label7->Text = L"VAT : ";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(4, 32);
-			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(94, 13);
-			this->label6->TabIndex = 6;
-			this->label6->Text = L"Price without tax : ";
-			// 
-			// Group_prix
-			// 
-			this->Group_prix->Controls->Add(this->TxtBox_HTprice);
-			this->Group_prix->Controls->Add(this->TxtBox_TVA);
-			this->Group_prix->Controls->Add(this->TxtBox_TTC);
-			this->Group_prix->Controls->Add(this->label8);
-			this->Group_prix->Controls->Add(this->label7);
-			this->Group_prix->Controls->Add(this->label6);
-			this->Group_prix->Location = System::Drawing::Point(8, 201);
-			this->Group_prix->Margin = System::Windows::Forms::Padding(2);
-			this->Group_prix->Name = L"Group_prix";
-			this->Group_prix->Padding = System::Windows::Forms::Padding(2);
-			this->Group_prix->Size = System::Drawing::Size(412, 154);
-			this->Group_prix->TabIndex = 5;
-			this->Group_prix->TabStop = false;
-			this->Group_prix->Text = L"Prices";
-			// 
-			// TxtBox_HTprice
-			// 
-			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
-			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
-			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_HTprice->TabIndex = 20;
-			// 
-			// TxtBox_TVA
-			// 
-			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
-			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TVA->Name = L"TxtBox_TVA";
-			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_TVA->TabIndex = 19;
-			// 
-			// TxtBox_TTC
-			// 
-			this->TxtBox_TTC->Location = System::Drawing::Point(106, 99);
-			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TTC->Name = L"TxtBox_TTC";
-			this->TxtBox_TTC->Size = System::Drawing::Size(302, 20);
-			this->TxtBox_TTC->TabIndex = 18;
+			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->Title_order->AutoSize = true;
+			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
+			this->Title_order->Location = System::Drawing::Point(205, 20);
+			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Title_order->Name = L"Title_order";
+			this->Title_order->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->Title_order->Size = System::Drawing::Size(589, 70);
+			this->Title_order->TabIndex = 14;
+			this->Title_order->Text = L"Orders management";
+			this->Title_order->Click += gcnew System::EventHandler(this, &OrderForm::label9_Click);
 			// 
 			// Lab_mensPayment
 			// 
@@ -290,6 +172,88 @@ namespace ProjetPOO {
 			this->Lab_ref->TabIndex = 0;
 			this->Lab_ref->Text = L"Order reference : ";
 			// 
+			// Lab_sending
+			// 
+			this->Lab_sending->AutoSize = true;
+			this->Lab_sending->Location = System::Drawing::Point(5, 83);
+			this->Lab_sending->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Lab_sending->Name = L"Lab_sending";
+			this->Lab_sending->Size = System::Drawing::Size(79, 13);
+			this->Lab_sending->TabIndex = 2;
+			this->Lab_sending->Text = L"Sending date : ";
+			// 
+			// Lab_TTCprice
+			// 
+			this->Lab_TTCprice->AutoSize = true;
+			this->Lab_TTCprice->Location = System::Drawing::Point(4, 99);
+			this->Lab_TTCprice->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Lab_TTCprice->Name = L"Lab_TTCprice";
+			this->Lab_TTCprice->Size = System::Drawing::Size(98, 13);
+			this->Lab_TTCprice->TabIndex = 8;
+			this->Lab_TTCprice->Text = L"All taxes included : ";
+			this->Lab_TTCprice->Click += gcnew System::EventHandler(this, &OrderForm::label8_Click);
+			// 
+			// Lab_TVA
+			// 
+			this->Lab_TVA->AutoSize = true;
+			this->Lab_TVA->Location = System::Drawing::Point(4, 67);
+			this->Lab_TVA->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Lab_TVA->Name = L"Lab_TVA";
+			this->Lab_TVA->Size = System::Drawing::Size(37, 13);
+			this->Lab_TVA->TabIndex = 7;
+			this->Lab_TVA->Text = L"VAT : ";
+			// 
+			// Lab_HTprice
+			// 
+			this->Lab_HTprice->AutoSize = true;
+			this->Lab_HTprice->Location = System::Drawing::Point(4, 32);
+			this->Lab_HTprice->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Lab_HTprice->Name = L"Lab_HTprice";
+			this->Lab_HTprice->Size = System::Drawing::Size(94, 13);
+			this->Lab_HTprice->TabIndex = 6;
+			this->Lab_HTprice->Text = L"Price without tax : ";
+			// 
+			// Group_prix
+			// 
+			this->Group_prix->Controls->Add(this->TxtBox_HTprice);
+			this->Group_prix->Controls->Add(this->TxtBox_TVA);
+			this->Group_prix->Controls->Add(this->TxtBox_TTC);
+			this->Group_prix->Controls->Add(this->Lab_TTCprice);
+			this->Group_prix->Controls->Add(this->Lab_TVA);
+			this->Group_prix->Controls->Add(this->Lab_HTprice);
+			this->Group_prix->Location = System::Drawing::Point(8, 201);
+			this->Group_prix->Margin = System::Windows::Forms::Padding(2);
+			this->Group_prix->Name = L"Group_prix";
+			this->Group_prix->Padding = System::Windows::Forms::Padding(2);
+			this->Group_prix->Size = System::Drawing::Size(412, 154);
+			this->Group_prix->TabIndex = 5;
+			this->Group_prix->TabStop = false;
+			this->Group_prix->Text = L"Prices";
+			// 
+			// TxtBox_HTprice
+			// 
+			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
+			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
+			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_HTprice->TabIndex = 20;
+			// 
+			// TxtBox_TVA
+			// 
+			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
+			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_TVA->Name = L"TxtBox_TVA";
+			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_TVA->TabIndex = 19;
+			// 
+			// TxtBox_TTC
+			// 
+			this->TxtBox_TTC->Location = System::Drawing::Point(106, 99);
+			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_TTC->Name = L"TxtBox_TTC";
+			this->TxtBox_TTC->Size = System::Drawing::Size(302, 20);
+			this->TxtBox_TTC->TabIndex = 18;
+			// 
 			// Group_Infos
 			// 
 			this->Group_Infos->Controls->Add(this->List_mensPayment);
@@ -311,7 +275,6 @@ namespace ProjetPOO {
 			this->Group_Infos->TabIndex = 13;
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
-			this->Group_Infos->Enter += gcnew System::EventHandler(this, &OrderForm::Group_Infos_Enter);
 			// 
 			// List_mensPayment
 			// 
@@ -351,15 +314,27 @@ namespace ProjetPOO {
 			this->Date_Delivery->Size = System::Drawing::Size(304, 20);
 			this->Date_Delivery->TabIndex = 15;
 			// 
-			// Lab_sending
+			// TxtBox_ref
 			// 
-			this->Lab_sending->AutoSize = true;
-			this->Lab_sending->Location = System::Drawing::Point(5, 83);
-			this->Lab_sending->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Lab_sending->Name = L"Lab_sending";
-			this->Lab_sending->Size = System::Drawing::Size(79, 13);
-			this->Lab_sending->TabIndex = 2;
-			this->Lab_sending->Text = L"Sending date : ";
+			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
+			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_ref->Name = L"TxtBox_ref";
+			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_ref->TabIndex = 6;
+			// 
+			// View_Database
+			// 
+			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->View_Database->Location = System::Drawing::Point(12, 107);
+			this->View_Database->Margin = System::Windows::Forms::Padding(2);
+			this->View_Database->Name = L"View_Database";
+			this->View_Database->RowHeadersWidth = 51;
+			this->View_Database->RowTemplate->Height = 24;
+			this->View_Database->Size = System::Drawing::Size(521, 193);
+			this->View_Database->TabIndex = 7;
+			this->View_Database->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &OrderForm::View_Database_CellContentClick);
 			// 
 			// Btn_Delete
 			// 
@@ -400,17 +375,17 @@ namespace ProjetPOO {
 			this->Btn_Show->UseVisualStyleBackColor = true;
 			this->Btn_Show->Click += gcnew System::EventHandler(this, &OrderForm::Btn_Show_Click);
 			// 
-			// Btn_create
+			// Btn_Create
 			// 
-			this->Btn_create->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_create->Location = System::Drawing::Point(12, 363);
-			this->Btn_create->Margin = System::Windows::Forms::Padding(2);
-			this->Btn_create->Name = L"Btn_create";
-			this->Btn_create->Size = System::Drawing::Size(256, 50);
-			this->Btn_create->TabIndex = 9;
-			this->Btn_create->Text = L"Create an article";
-			this->Btn_create->UseVisualStyleBackColor = true;
-			this->Btn_create->Click += gcnew System::EventHandler(this, &OrderForm::Btn_create_Click);
+			this->Btn_Create->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Btn_Create->Location = System::Drawing::Point(12, 363);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Create->Name = L"Btn_Create";
+			this->Btn_Create->Size = System::Drawing::Size(256, 50);
+			this->Btn_Create->TabIndex = 9;
+			this->Btn_Create->Text = L"Create an article";
+			this->Btn_Create->UseVisualStyleBackColor = true;
+			this->Btn_Create->Click += gcnew System::EventHandler(this, &OrderForm::Btn_create_Click);
 			// 
 			// Btn_Load
 			// 
@@ -427,33 +402,15 @@ namespace ProjetPOO {
 			this->Btn_Load->UseVisualStyleBackColor = false;
 			this->Btn_Load->Click += gcnew System::EventHandler(this, &OrderForm::Btn_Load_Click);
 			// 
-			// View_Database
+			// Btn_GoBack
 			// 
-			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->View_Database->Location = System::Drawing::Point(12, 107);
-			this->View_Database->Margin = System::Windows::Forms::Padding(2);
-			this->View_Database->Name = L"View_Database";
-			this->View_Database->RowHeadersWidth = 51;
-			this->View_Database->RowTemplate->Height = 24;
-			this->View_Database->Size = System::Drawing::Size(521, 193);
-			this->View_Database->TabIndex = 7;
-			this->View_Database->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &OrderForm::View_Database_CellContentClick);
-			// 
-			// Title_order
-			// 
-			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->Title_order->AutoSize = true;
-			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
-			this->Title_order->Location = System::Drawing::Point(205, 20);
-			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Title_order->Name = L"Title_order";
-			this->Title_order->RightToLeft = System::Windows::Forms::RightToLeft::No;
-			this->Title_order->Size = System::Drawing::Size(589, 70);
-			this->Title_order->TabIndex = 14;
-			this->Title_order->Text = L"Orders management";
-			this->Title_order->Click += gcnew System::EventHandler(this, &OrderForm::label9_Click);
+			this->Btn_GoBack->Location = System::Drawing::Point(12, 481);
+			this->Btn_GoBack->Name = L"Btn_GoBack";
+			this->Btn_GoBack->Size = System::Drawing::Size(75, 23);
+			this->Btn_GoBack->TabIndex = 1;
+			this->Btn_GoBack->Text = L"<<";
+			this->Btn_GoBack->UseVisualStyleBackColor = true;
+			this->Btn_GoBack->Click += gcnew System::EventHandler(this, &OrderForm::button1_Click);
 			// 
 			// OrderForm
 			// 
@@ -466,10 +423,10 @@ namespace ProjetPOO {
 			this->Controls->Add(this->Btn_Delete);
 			this->Controls->Add(this->Btn_Update);
 			this->Controls->Add(this->Btn_Show);
-			this->Controls->Add(this->Btn_create);
+			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Btn_Load);
 			this->Controls->Add(this->View_Database);
-			this->Controls->Add(this->button1);
+			this->Controls->Add(this->Btn_GoBack);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"OrderForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -485,16 +442,18 @@ namespace ProjetPOO {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		this->Hide();
 		this->Close();
 	}
 	private: System::Void Order_Management_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oOrder = gcnew NS_Comp_Order::CLOrders();
 	}
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^ e) {
 	}
+
+
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -509,16 +468,39 @@ private: System::Void label8_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void Group_Infos_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+	this->View_Database->Refresh();
+	this->oDs = this->oOrders->loadOrders("Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
 }
-private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
-private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+ 	this->View_Database->Refresh();
+	this->oOrders->selectOrders(this->TxtBox_ref->Text, "Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
 }
-private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
-private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) 
+{
+
 }
+
+
 private: System::Void View_Database_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 };
