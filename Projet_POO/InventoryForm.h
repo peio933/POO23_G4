@@ -202,7 +202,6 @@ namespace ProjetPOO {
 			this->Title_order->TabIndex = 30;
 			this->Title_order->Text = L"Inventory management";
 			this->Title_order->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-			this->Title_order->Click += gcnew System::EventHandler(this, &InventoryForm::Title_order_Click);
 			// 
 			// Group_Infos
 			// 
@@ -433,35 +432,6 @@ namespace ProjetPOO {
 	private: System::Void Inventory_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oStock = gcnew NS_Comp_Stock::CLStock();
 	}
-	private: System::Void DELETE_Click(System::Object^ sender, System::EventArgs^ e) {
-		//this->oStock->deleteArticle(this->textBox1->Text, this->textBox2->Text);
-	}
-private: System::Void UPDATE_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->oStock->updateArticle(this->textBox1->Text, this->textBox3->Text, this->textBox4->Text, this->textBox5->Text, this->textBox6->Text, this->richTextBox1->Text);
-	}
-private: System::Void INSERT_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->oStock->insertArticle(this->textBox1->Text, this->textBox2->Text, this->textBox3->Text, this->textBox4->Text, this->textBox5->Text, this->textBox6->Text, this->richTextBox1->Text);
-	}
-private: System::Void SHOW_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*this->dataGridView1->Refresh();
-	this->oStock->selectArticle(this->textBox1->Text, "Rsl");
-	this->dataGridView1->DataSource = this->oDs;
-	this->dataGridView1->DataMember = "Rsl";*/
-	}
-private: System::Void LOAD_Click(System::Object^ sender, System::EventArgs^ e) {
-	/*this->dataGridView1->Refresh();
-	this->oDs = this->oStock->loadArticles("Rsl");
-	this->dataGridView1->DataSource = this->oDs;
-	this->dataGridView1->DataMember = "Rsl";*/
-	}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->View_Database->Refresh();
 	this->oDs = this->oStock->loadArticles("Rsl");
@@ -475,14 +445,10 @@ private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ 
 	this->View_Database->DataMember = "Rsl";
 }
 private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->oStock->updateArticle(this->textBox1->Text, this->textBox3->Text, this->textBox4->Text, this->textBox5->Text, this->textBox6->Text, this->richTextBox1->Text);
+	this->oStock->updateArticle(this->textBox1->Text, this->textBox3->Text, this->textBox4->Text, this->textBox5->Text, this->textBox6->Text, this->richTextBox1->Text);
 }
 private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->oStock->deleteArticle(this->textBox1->Text, this->textBox2->Text);
-}
-private: System::Void label3_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void Title_order_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oStock->deleteArticle(this->textBox1->Text, this->textBox2->Text);
 }
 };
 }
