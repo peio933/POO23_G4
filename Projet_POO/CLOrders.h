@@ -13,8 +13,8 @@ namespace NS_Comp_Orders {
 		CLOrders(void);
 		System::Data::DataSet^ loadOrders(System::String^);
 		System::Data::DataSet^ selectOrders(System::String^, System::String^);
-		void insertOrders(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void updateOrders(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void insertOrders(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void updateOrders(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void deleteOrders(System::String^);
 	};
 
