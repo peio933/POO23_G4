@@ -33,7 +33,7 @@ void NS_Comp_Stock::CLStock::insertArticle(System::String^ R_A, System::String^ 
     this->oCAD->actionRows(this->oMapStock->Insert());
 }
 
-void NS_Comp_Stock::CLStock::updateArticle(System::String^ R_A, System::String^ QS_A, System::String^ HT_A, System::String^ RT_A, System::String^ TVA_A, System::String^ D_A)
+void NS_Comp_Stock::CLStock::updateArticle(System::String^ R_A, System::String^ QS_A, System::String^ RT_A, System::String^ HT_A, System::String^ TVA_A, System::String^ D_A)
 {
     this->oMapStock->setQS_A(QS_A);
     this->oMapStock->setHT_A(HT_A);

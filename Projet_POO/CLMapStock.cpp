@@ -12,7 +12,7 @@ System::String^ NS_Comp_Map_Stock::CLMapStock::Select(void)
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Insert(void)
 {
-    return "INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES('" + getR_A() + "', '" + getN_A() + "', NULL, " + getQS_A() + ", " + getRT_A() + ", " + getHT_A() + ", " + getTVA_A() + ", '" + getD_A() + "';";
+    return "INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES('" + getR_A() + "', '" + getN_A() + "', NULL, " + getQS_A() + ", " + getRT_A() + ", " + getHT_A() + ", " + getTVA_A() + ", '" + getD_A() + "');";
 }
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Delete(void)
@@ -50,17 +50,17 @@ void NS_Comp_Map_Stock::CLMapStock::setHT_A(System::String^ HT_A)
     this->HT_A = HT_A;
 }
 
-void NS_Comp_Map_Stock::CLMapStock::setRT_A(System::String^)
+void NS_Comp_Map_Stock::CLMapStock::setRT_A(System::String^ RT_A)
 {
     this->RT_A = RT_A;
 }
 
-void NS_Comp_Map_Stock::CLMapStock::setTVA_A(System::String^)
+void NS_Comp_Map_Stock::CLMapStock::setTVA_A(System::String^ TVA_A)
 {
     this->TVA_A = TVA_A;
 }
 
-void NS_Comp_Map_Stock::CLMapStock::setD_A(System::String^)
+void NS_Comp_Map_Stock::CLMapStock::setD_A(System::String^ D_A)
 {
     this->D_A = D_A;
 }
@@ -87,7 +87,7 @@ System::String^ NS_Comp_Map_Stock::CLMapStock::getQS_A(void)
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::getHT_A(void)
 {
-    return this->R_A;
+    return this->HT_A;
 }
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::getRT_A(void)
