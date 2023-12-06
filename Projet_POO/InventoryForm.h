@@ -379,6 +379,7 @@ namespace ProjetPOO {
 			this->Btn_create->TabIndex = 25;
 			this->Btn_create->Text = L"Create an article";
 			this->Btn_create->UseVisualStyleBackColor = true;
+			this->Btn_create->Click += gcnew System::EventHandler(this, &InventoryForm::Btn_create_Click);
 			// 
 			// Btn_Load
 			// 
@@ -465,5 +466,9 @@ namespace ProjetPOO {
 	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
 	}
+	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
+	}
+
 	};
 }
