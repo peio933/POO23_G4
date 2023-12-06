@@ -161,10 +161,10 @@ namespace ProjetPOO {
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(16, 592);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+
+			this->button1->Location = System::Drawing::Point(12, 481);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 28);
+			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"<<";
 			this->button1->UseVisualStyleBackColor = true;
@@ -172,10 +172,10 @@ namespace ProjetPOO {
 			// 
 			// txtBox_HTPrice
 			// 
-			this->txtBox_HTPrice->Location = System::Drawing::Point(149, 171);
-			this->txtBox_HTPrice->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+
+			this->txtBox_HTPrice->Location = System::Drawing::Point(112, 143);
 			this->txtBox_HTPrice->Name = L"txtBox_HTPrice";
-			this->txtBox_HTPrice->Size = System::Drawing::Size(404, 22);
+			this->txtBox_HTPrice->Size = System::Drawing::Size(304, 20);
 			this->txtBox_HTPrice->TabIndex = 9;
 			// 
 			// Label_HTPrice
@@ -183,18 +183,21 @@ namespace ProjetPOO {
 			this->Label_HTPrice->AutoSize = true;
 			this->Label_HTPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Label_HTPrice->Location = System::Drawing::Point(7, 171);
+
+			this->Label_HTPrice->Location = System::Drawing::Point(5, 146);
 			this->Label_HTPrice->Name = L"Label_HTPrice";
-			this->Label_HTPrice->Size = System::Drawing::Size(71, 17);
+			this->Label_HTPrice->Size = System::Drawing::Size(55, 13);
+
 			this->Label_HTPrice->TabIndex = 8;
 			this->Label_HTPrice->Text = L"HT Price :";
 			// 
 			// txtBox_Threshold
 			// 
-			this->txtBox_Threshold->Location = System::Drawing::Point(149, 135);
-			this->txtBox_Threshold->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+
+
+			this->txtBox_Threshold->Location = System::Drawing::Point(112, 113);
 			this->txtBox_Threshold->Name = L"txtBox_Threshold";
-			this->txtBox_Threshold->Size = System::Drawing::Size(404, 22);
+			this->txtBox_Threshold->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Threshold->TabIndex = 7;
 			// 
 			// Label_Threshold
@@ -202,9 +205,9 @@ namespace ProjetPOO {
 			this->Label_Threshold->AutoSize = true;
 			this->Label_Threshold->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Label_Threshold->Location = System::Drawing::Point(7, 139);
+			this->Label_Threshold->Location = System::Drawing::Point(5, 116);
 			this->Label_Threshold->Name = L"Label_Threshold";
-			this->Label_Threshold->Size = System::Drawing::Size(136, 17);
+			this->Label_Threshold->Size = System::Drawing::Size(101, 13);
 			this->Label_Threshold->TabIndex = 6;
 			this->Label_Threshold->Text = L"Reorder Threshold :";
 			// 
@@ -213,9 +216,9 @@ namespace ProjetPOO {
 			this->Title_inventory->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Title_inventory->AutoSize = true;
 			this->Title_inventory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
-			this->Title_inventory->Location = System::Drawing::Point(219, 25);
+			this->Title_inventory->Location = System::Drawing::Point(171, 20);
 			this->Title_inventory->Name = L"Title_inventory";
-			this->Title_inventory->Size = System::Drawing::Size(809, 86);
+			this->Title_inventory->Size = System::Drawing::Size(655, 70);
 			this->Title_inventory->TabIndex = 30;
 			this->Title_inventory->Text = L"Inventory management";
 			this->Title_inventory->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -236,21 +239,21 @@ namespace ProjetPOO {
 			this->Group_Infos->Controls->Add(this->Label_Threshold);
 			this->Group_Infos->Controls->Add(this->Lab_Name);
 			this->Group_Infos->Controls->Add(this->Lab_ref);
-			this->Group_Infos->Location = System::Drawing::Point(738, 132);
-			this->Group_Infos->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+
+			this->Group_Infos->Location = System::Drawing::Point(553, 107);
+			this->Group_Infos->Margin = System::Windows::Forms::Padding(2);
 			this->Group_Infos->Name = L"Group_Infos";
-			this->Group_Infos->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->Group_Infos->Size = System::Drawing::Size(565, 446);
+			this->Group_Infos->Padding = System::Windows::Forms::Padding(2);
+			this->Group_Infos->Size = System::Drawing::Size(424, 362);
 			this->Group_Infos->TabIndex = 29;
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
 			// 
 			// txtBox_TVA
 			// 
-			this->txtBox_TVA->Location = System::Drawing::Point(149, 206);
-			this->txtBox_TVA->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtBox_TVA->Location = System::Drawing::Point(112, 173);
 			this->txtBox_TVA->Name = L"txtBox_TVA";
-			this->txtBox_TVA->Size = System::Drawing::Size(404, 22);
+			this->txtBox_TVA->Size = System::Drawing::Size(304, 20);
 			this->txtBox_TVA->TabIndex = 15;
 			// 
 			// Label_TVA
@@ -258,91 +261,88 @@ namespace ProjetPOO {
 			this->Label_TVA->AutoSize = true;
 			this->Label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->Label_TVA->Location = System::Drawing::Point(7, 206);
+			this->Label_TVA->Location = System::Drawing::Point(5, 176);
 			this->Label_TVA->Name = L"Label_TVA";
-			this->Label_TVA->Size = System::Drawing::Size(43, 17);
+			this->Label_TVA->Size = System::Drawing::Size(34, 13);
 			this->Label_TVA->TabIndex = 14;
 			this->Label_TVA->Text = L"TVA :";
 			// 
 			// txtBox_StockQuantity
 			// 
-			this->txtBox_StockQuantity->Location = System::Drawing::Point(149, 102);
-			this->txtBox_StockQuantity->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtBox_StockQuantity->Location = System::Drawing::Point(112, 83);
 			this->txtBox_StockQuantity->Name = L"txtBox_StockQuantity";
-			this->txtBox_StockQuantity->Size = System::Drawing::Size(404, 22);
+			this->txtBox_StockQuantity->Size = System::Drawing::Size(304, 20);
 			this->txtBox_StockQuantity->TabIndex = 20;
 			// 
 			// txtBox_Name
 			// 
-			this->txtBox_Name->Location = System::Drawing::Point(149, 66);
-			this->txtBox_Name->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtBox_Name->Location = System::Drawing::Point(112, 54);
 			this->txtBox_Name->Name = L"txtBox_Name";
-			this->txtBox_Name->Size = System::Drawing::Size(404, 22);
+			this->txtBox_Name->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Name->TabIndex = 18;
 			// 
 			// txtBox_Ref
 			// 
-			this->txtBox_Ref->Location = System::Drawing::Point(149, 30);
-			this->txtBox_Ref->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtBox_Ref->Location = System::Drawing::Point(112, 25);
 			this->txtBox_Ref->Name = L"txtBox_Ref";
-			this->txtBox_Ref->Size = System::Drawing::Size(404, 22);
+			this->txtBox_Ref->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Ref->TabIndex = 6;
 			// 
 			// Group_Description
 			// 
 			this->Group_Description->Controls->Add(this->txtBox_Description);
-			this->Group_Description->Location = System::Drawing::Point(11, 247);
-			this->Group_Description->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Group_Description->Location = System::Drawing::Point(8, 201);
 			this->Group_Description->Name = L"Group_Description";
-			this->Group_Description->Padding = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->Group_Description->Size = System::Drawing::Size(549, 190);
+			this->Group_Description->Size = System::Drawing::Size(412, 154);
 			this->Group_Description->TabIndex = 5;
 			this->Group_Description->TabStop = false;
 			this->Group_Description->Text = L"Description";
 			// 
 			// txtBox_Description
 			// 
-			this->txtBox_Description->Location = System::Drawing::Point(25, 34);
-			this->txtBox_Description->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->txtBox_Description->Location = System::Drawing::Point(17, 27);
 			this->txtBox_Description->Name = L"txtBox_Description";
-			this->txtBox_Description->Size = System::Drawing::Size(493, 127);
+			this->txtBox_Description->Size = System::Drawing::Size(378, 108);
 			this->txtBox_Description->TabIndex = 14;
 			this->txtBox_Description->Text = L"";
 			// 
 			// Lab_mensPayment
 			// 
 			this->Lab_mensPayment->AutoSize = true;
-			this->Lab_mensPayment->Location = System::Drawing::Point(7, 139);
+			this->Lab_mensPayment->Location = System::Drawing::Point(5, 113);
+			this->Lab_mensPayment->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_mensPayment->Name = L"Lab_mensPayment";
-			this->Lab_mensPayment->Size = System::Drawing::Size(0, 17);
+			this->Lab_mensPayment->Size = System::Drawing::Size(0, 13);
 			this->Lab_mensPayment->TabIndex = 4;
 			// 
 			// Lab_StockQuantity
 			// 
 			this->Lab_StockQuantity->AutoSize = true;
-			this->Lab_StockQuantity->Location = System::Drawing::Point(7, 102);
+			this->Lab_StockQuantity->Location = System::Drawing::Point(5, 86);
 			this->Lab_StockQuantity->Name = L"Lab_StockQuantity";
-			this->Lab_StockQuantity->Size = System::Drawing::Size(112, 17);
+			this->Lab_StockQuantity->Size = System::Drawing::Size(86, 13);
 			this->Lab_StockQuantity->TabIndex = 2;
 			this->Lab_StockQuantity->Text = L"Stock Quantity : ";
 			// 
 			// Lab_Name
 			// 
 			this->Lab_Name->AutoSize = true;
-			this->Lab_Name->Location = System::Drawing::Point(7, 66);
+			this->Lab_Name->Location = System::Drawing::Point(5, 57);
 			this->Lab_Name->Name = L"Lab_Name";
-			this->Lab_Name->Size = System::Drawing::Size(57, 17);
+			this->Lab_Name->Size = System::Drawing::Size(44, 13);
 			this->Lab_Name->TabIndex = 1;
 			this->Lab_Name->Text = L"Name : ";
 			// 
 			// Lab_ref
 			// 
 			this->Lab_ref->AutoSize = true;
-			this->Lab_ref->Location = System::Drawing::Point(7, 36);
+			this->Lab_ref->Location = System::Drawing::Point(5, 28);
+			this->Lab_ref->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_ref->Name = L"Lab_ref";
-			this->Lab_ref->Size = System::Drawing::Size(129, 17);
+			this->Lab_ref->Size = System::Drawing::Size(98, 13);
 			this->Lab_ref->TabIndex = 0;
 			this->Lab_ref->Text = L"Article Reference : ";
+			this->Lab_ref->Click += gcnew System::EventHandler(this, &InventoryForm::Lab_ref_Click);
 			// 
 			// Btn_Delete
 			// 
@@ -351,10 +351,10 @@ namespace ProjetPOO {
 			this->Btn_Delete->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)),
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
 			this->Btn_Delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Btn_Delete->Location = System::Drawing::Point(370, 514);
-			this->Btn_Delete->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Delete->Location = System::Drawing::Point(277, 418);
+			this->Btn_Delete->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Delete->Name = L"Btn_Delete";
-			this->Btn_Delete->Size = System::Drawing::Size(341, 62);
+			this->Btn_Delete->Size = System::Drawing::Size(256, 50);
 			this->Btn_Delete->TabIndex = 28;
 			this->Btn_Delete->Text = L"Delete an article";
 			this->Btn_Delete->UseVisualStyleBackColor = false;
@@ -363,10 +363,10 @@ namespace ProjetPOO {
 			// Btn_Update
 			// 
 			this->Btn_Update->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_Update->Location = System::Drawing::Point(16, 514);
-			this->Btn_Update->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Update->Location = System::Drawing::Point(12, 418);
+			this->Btn_Update->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Update->Name = L"Btn_Update";
-			this->Btn_Update->Size = System::Drawing::Size(341, 62);
+			this->Btn_Update->Size = System::Drawing::Size(256, 50);
 			this->Btn_Update->TabIndex = 27;
 			this->Btn_Update->Text = L"Update an article";
 			this->Btn_Update->UseVisualStyleBackColor = true;
@@ -375,10 +375,10 @@ namespace ProjetPOO {
 			// Btn_Show
 			// 
 			this->Btn_Show->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_Show->Location = System::Drawing::Point(370, 446);
-			this->Btn_Show->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Show->Location = System::Drawing::Point(277, 363);
+			this->Btn_Show->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Show->Name = L"Btn_Show";
-			this->Btn_Show->Size = System::Drawing::Size(341, 62);
+			this->Btn_Show->Size = System::Drawing::Size(256, 50);
 			this->Btn_Show->TabIndex = 26;
 			this->Btn_Show->Text = L"Show an article";
 			this->Btn_Show->UseVisualStyleBackColor = true;
@@ -387,10 +387,10 @@ namespace ProjetPOO {
 			// Btn_create
 			// 
 			this->Btn_create->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Btn_create->Location = System::Drawing::Point(16, 446);
-			this->Btn_create->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_create->Location = System::Drawing::Point(12, 363);
+			this->Btn_create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_create->Name = L"Btn_create";
-			this->Btn_create->Size = System::Drawing::Size(341, 62);
+			this->Btn_create->Size = System::Drawing::Size(256, 50);
 			this->Btn_create->TabIndex = 25;
 			this->Btn_create->Text = L"Create an article";
 			this->Btn_create->UseVisualStyleBackColor = true;
@@ -405,10 +405,10 @@ namespace ProjetPOO {
 			this->Btn_Load->FlatAppearance->MouseDownBackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->FlatAppearance->MouseOverBackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->Btn_Load->Location = System::Drawing::Point(14, 379);
-			this->Btn_Load->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Load->Location = System::Drawing::Point(11, 308);
+			this->Btn_Load->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Load->Name = L"Btn_Load";
-			this->Btn_Load->Size = System::Drawing::Size(696, 62);
+			this->Btn_Load->Size = System::Drawing::Size(522, 50);
 			this->Btn_Load->TabIndex = 24;
 			this->Btn_Load->Text = L"Load articles";
 			this->Btn_Load->UseVisualStyleBackColor = false;
@@ -419,21 +419,21 @@ namespace ProjetPOO {
 			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->View_Database->Location = System::Drawing::Point(16, 132);
-			this->View_Database->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->View_Database->Location = System::Drawing::Point(12, 107);
+			this->View_Database->Margin = System::Windows::Forms::Padding(2);
 			this->View_Database->Name = L"View_Database";
 			this->View_Database->RowHeadersWidth = 51;
 			this->View_Database->RowTemplate->Height = 24;
-			this->View_Database->Size = System::Drawing::Size(695, 238);
+			this->View_Database->Size = System::Drawing::Size(521, 193);
 			this->View_Database->TabIndex = 23;
 			// 
 			// InventoryForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(1331, 635);
+			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->Title_inventory);
 			this->Controls->Add(this->Group_Infos);
 			this->Controls->Add(this->Btn_Delete);
@@ -444,7 +444,6 @@ namespace ProjetPOO {
 			this->Controls->Add(this->View_Database);
 			this->Controls->Add(this->button1);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"InventoryForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
@@ -454,11 +453,9 @@ namespace ProjetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
 		this->Hide();
 		this->Close();
 	}
@@ -484,6 +481,6 @@ namespace ProjetPOO {
 		this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
 	}
 	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
 	}
-};
 }
