@@ -36,6 +36,8 @@ namespace ProjetPOO {
 			}
 		}
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TextBox^ txtBox_HTPrice;
+	private: System::Windows::Forms::Label^ Label_HTPrice;
 
 
 
@@ -51,24 +53,31 @@ namespace ProjetPOO {
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox5;
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox4;
-	private: System::Windows::Forms::Label^ label4;
+
+
+	private: System::Windows::Forms::TextBox^ txtBox_Threshold;
+	private: System::Windows::Forms::Label^ Label_Threshold;
+
+
 
 
 	private: NS_Comp_Stock::CLStock^ oStock;
 	private: System::Data::DataSet^ oDs;
-	private: System::Windows::Forms::Label^ Title_order;
+	private: System::Windows::Forms::Label^ Title_inventory;
+
 	private: System::Windows::Forms::GroupBox^ Group_Infos;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ txtBox_Name;
+
+	private: System::Windows::Forms::TextBox^ txtBox_Ref;
+	private: System::Windows::Forms::GroupBox^ Group_Description;
 
 
 
-	private: System::Windows::Forms::TextBox^ textBox1;
 
 
-	private: System::Windows::Forms::GroupBox^ Group_prix;
+
+
+
 
 
 
@@ -78,8 +87,10 @@ namespace ProjetPOO {
 
 
 	private: System::Windows::Forms::Label^ Lab_mensPayment;
-	private: System::Windows::Forms::Label^ Lab_sending;
-	private: System::Windows::Forms::Label^ Lab_delivery;
+	private: System::Windows::Forms::Label^ Lab_StockQuantity;
+
+	private: System::Windows::Forms::Label^ Lab_Name;
+
 	private: System::Windows::Forms::Label^ Lab_ref;
 	private: System::Windows::Forms::Button^ Btn_Delete;
 	private: System::Windows::Forms::Button^ Btn_Update;
@@ -87,12 +98,16 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_create;
 	private: System::Windows::Forms::Button^ Btn_Load;
 	private: System::Windows::Forms::DataGridView^ View_Database;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ txtBox_StockQuantity;
+	private: System::Windows::Forms::TextBox^ txtBox_TVA;
+	private: System::Windows::Forms::Label^ Label_TVA;
 
 
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+
+
+
+	private: System::Windows::Forms::RichTextBox^ txtBox_Description;
+
 
 
 
@@ -104,7 +119,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -115,22 +130,22 @@ namespace ProjetPOO {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(InventoryForm::typeid));
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->Title_order = (gcnew System::Windows::Forms::Label());
+			this->txtBox_HTPrice = (gcnew System::Windows::Forms::TextBox());
+			this->Label_HTPrice = (gcnew System::Windows::Forms::Label());
+			this->txtBox_Threshold = (gcnew System::Windows::Forms::TextBox());
+			this->Label_Threshold = (gcnew System::Windows::Forms::Label());
+			this->Title_inventory = (gcnew System::Windows::Forms::Label());
 			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->Group_prix = (gcnew System::Windows::Forms::GroupBox());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->txtBox_TVA = (gcnew System::Windows::Forms::TextBox());
+			this->Label_TVA = (gcnew System::Windows::Forms::Label());
+			this->txtBox_StockQuantity = (gcnew System::Windows::Forms::TextBox());
+			this->txtBox_Name = (gcnew System::Windows::Forms::TextBox());
+			this->txtBox_Ref = (gcnew System::Windows::Forms::TextBox());
+			this->Group_Description = (gcnew System::Windows::Forms::GroupBox());
+			this->txtBox_Description = (gcnew System::Windows::Forms::RichTextBox());
 			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
-			this->Lab_sending = (gcnew System::Windows::Forms::Label());
-			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
+			this->Lab_StockQuantity = (gcnew System::Windows::Forms::Label());
+			this->Lab_Name = (gcnew System::Windows::Forms::Label());
 			this->Lab_ref = (gcnew System::Windows::Forms::Label());
 			this->Btn_Delete = (gcnew System::Windows::Forms::Button());
 			this->Btn_Update = (gcnew System::Windows::Forms::Button());
@@ -139,7 +154,7 @@ namespace ProjetPOO {
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
 			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
 			this->Group_Infos->SuspendLayout();
-			this->Group_prix->SuspendLayout();
+			this->Group_Description->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -154,74 +169,69 @@ namespace ProjetPOO {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &InventoryForm::button1_Click);
 			// 
-			// textBox5
+			// txtBox_HTPrice
 			// 
-			this->textBox5->Location = System::Drawing::Point(112, 139);
-			this->textBox5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(304, 20);
-			this->textBox5->TabIndex = 9;
+			this->txtBox_HTPrice->Location = System::Drawing::Point(168, 214);
+			this->txtBox_HTPrice->Name = L"txtBox_HTPrice";
+			this->txtBox_HTPrice->Size = System::Drawing::Size(454, 26);
+			this->txtBox_HTPrice->TabIndex = 9;
 			// 
-			// label5
+			// Label_HTPrice
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Label_HTPrice->AutoSize = true;
+			this->Label_HTPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(5, 139);
-			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(55, 13);
-			this->label5->TabIndex = 8;
-			this->label5->Text = L"HT Price :";
+			this->Label_HTPrice->Location = System::Drawing::Point(8, 214);
+			this->Label_HTPrice->Name = L"Label_HTPrice";
+			this->Label_HTPrice->Size = System::Drawing::Size(77, 20);
+			this->Label_HTPrice->TabIndex = 8;
+			this->Label_HTPrice->Text = L"HT Price :";
 			// 
-			// textBox4
+			// txtBox_Threshold
 			// 
-			this->textBox4->Location = System::Drawing::Point(112, 110);
-			this->textBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(304, 20);
-			this->textBox4->TabIndex = 7;
+			this->txtBox_Threshold->Location = System::Drawing::Point(168, 169);
+			this->txtBox_Threshold->Name = L"txtBox_Threshold";
+			this->txtBox_Threshold->Size = System::Drawing::Size(454, 26);
+			this->txtBox_Threshold->TabIndex = 7;
 			// 
-			// label4
+			// Label_Threshold
 			// 
-			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Label_Threshold->AutoSize = true;
+			this->Label_Threshold->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(5, 113);
-			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(101, 13);
-			this->label4->TabIndex = 6;
-			this->label4->Text = L"Reorder Threshold :";
+			this->Label_Threshold->Location = System::Drawing::Point(8, 174);
+			this->Label_Threshold->Name = L"Label_Threshold";
+			this->Label_Threshold->Size = System::Drawing::Size(149, 20);
+			this->Label_Threshold->TabIndex = 6;
+			this->Label_Threshold->Text = L"Reorder Threshold :";
 			// 
-			// Title_order
+			// Title_inventory
 			// 
-			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
-			this->Title_order->AutoSize = true;
-			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
-			this->Title_order->Location = System::Drawing::Point(164, 20);
-			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Title_order->Name = L"Title_order";
-			this->Title_order->Size = System::Drawing::Size(655, 70);
-			this->Title_order->TabIndex = 30;
-			this->Title_order->Text = L"Inventory management";
-			this->Title_order->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			this->Title_inventory->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->Title_inventory->AutoSize = true;
+			this->Title_inventory->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
+			this->Title_inventory->Location = System::Drawing::Point(246, 31);
+			this->Title_inventory->Name = L"Title_inventory";
+			this->Title_inventory->Size = System::Drawing::Size(985, 104);
+			this->Title_inventory->TabIndex = 30;
+			this->Title_inventory->Text = L"Inventory management";
+			this->Title_inventory->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Group_Infos
 			// 
-			this->Group_Infos->Controls->Add(this->textBox6);
-			this->Group_Infos->Controls->Add(this->label12);
-			this->Group_Infos->Controls->Add(this->textBox3);
-			this->Group_Infos->Controls->Add(this->textBox2);
-			this->Group_Infos->Controls->Add(this->textBox1);
-			this->Group_Infos->Controls->Add(this->Group_prix);
-			this->Group_Infos->Controls->Add(this->textBox5);
-			this->Group_Infos->Controls->Add(this->label5);
+			this->Group_Infos->Controls->Add(this->txtBox_TVA);
+			this->Group_Infos->Controls->Add(this->Label_TVA);
+			this->Group_Infos->Controls->Add(this->txtBox_StockQuantity);
+			this->Group_Infos->Controls->Add(this->txtBox_Name);
+			this->Group_Infos->Controls->Add(this->txtBox_Ref);
+			this->Group_Infos->Controls->Add(this->Group_Description);
+			this->Group_Infos->Controls->Add(this->txtBox_HTPrice);
+			this->Group_Infos->Controls->Add(this->Label_HTPrice);
 			this->Group_Infos->Controls->Add(this->Lab_mensPayment);
-			this->Group_Infos->Controls->Add(this->textBox4);
-			this->Group_Infos->Controls->Add(this->Lab_sending);
-			this->Group_Infos->Controls->Add(this->label4);
-			this->Group_Infos->Controls->Add(this->Lab_delivery);
+			this->Group_Infos->Controls->Add(this->txtBox_Threshold);
+			this->Group_Infos->Controls->Add(this->Lab_StockQuantity);
+			this->Group_Infos->Controls->Add(this->Label_Threshold);
+			this->Group_Infos->Controls->Add(this->Lab_Name);
 			this->Group_Infos->Controls->Add(this->Lab_ref);
 			this->Group_Infos->Location = System::Drawing::Point(553, 107);
 			this->Group_Infos->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
@@ -232,70 +242,62 @@ namespace ProjetPOO {
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
 			// 
-			// textBox6
+			// txtBox_TVA
 			// 
-			this->textBox6->Location = System::Drawing::Point(112, 167);
-			this->textBox6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(304, 20);
-			this->textBox6->TabIndex = 15;
+			this->txtBox_TVA->Location = System::Drawing::Point(168, 257);
+			this->txtBox_TVA->Name = L"txtBox_TVA";
+			this->txtBox_TVA->Size = System::Drawing::Size(454, 26);
+			this->txtBox_TVA->TabIndex = 15;
 			// 
-			// label12
+			// Label_TVA
 			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Label_TVA->AutoSize = true;
+			this->Label_TVA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(5, 167);
-			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(34, 13);
-			this->label12->TabIndex = 14;
-			this->label12->Text = L"TVA :";
+			this->Label_TVA->Location = System::Drawing::Point(8, 257);
+			this->Label_TVA->Name = L"Label_TVA";
+			this->Label_TVA->Size = System::Drawing::Size(48, 20);
+			this->Label_TVA->TabIndex = 14;
+			this->Label_TVA->Text = L"TVA :";
 			// 
-			// textBox3
+			// txtBox_StockQuantity
 			// 
-			this->textBox3->Location = System::Drawing::Point(112, 83);
-			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(304, 20);
-			this->textBox3->TabIndex = 20;
+			this->txtBox_StockQuantity->Location = System::Drawing::Point(168, 128);
+			this->txtBox_StockQuantity->Name = L"txtBox_StockQuantity";
+			this->txtBox_StockQuantity->Size = System::Drawing::Size(454, 26);
+			this->txtBox_StockQuantity->TabIndex = 20;
 			// 
-			// textBox2
+			// txtBox_Name
 			// 
-			this->textBox2->Location = System::Drawing::Point(112, 54);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(304, 20);
-			this->textBox2->TabIndex = 18;
+			this->txtBox_Name->Location = System::Drawing::Point(168, 83);
+			this->txtBox_Name->Name = L"txtBox_Name";
+			this->txtBox_Name->Size = System::Drawing::Size(454, 26);
+			this->txtBox_Name->TabIndex = 18;
 			// 
-			// textBox1
+			// txtBox_Ref
 			// 
-			this->textBox1->Location = System::Drawing::Point(112, 25);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(304, 20);
-			this->textBox1->TabIndex = 6;
+			this->txtBox_Ref->Location = System::Drawing::Point(168, 38);
+			this->txtBox_Ref->Name = L"txtBox_Ref";
+			this->txtBox_Ref->Size = System::Drawing::Size(454, 26);
+			this->txtBox_Ref->TabIndex = 6;
 			// 
-			// Group_prix
+			// Group_Description
 			// 
-			this->Group_prix->Controls->Add(this->richTextBox1);
-			this->Group_prix->Location = System::Drawing::Point(8, 201);
-			this->Group_prix->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->Group_prix->Name = L"Group_prix";
-			this->Group_prix->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->Group_prix->Size = System::Drawing::Size(412, 154);
-			this->Group_prix->TabIndex = 5;
-			this->Group_prix->TabStop = false;
-			this->Group_prix->Text = L"Description";
+			this->Group_Description->Controls->Add(this->txtBox_Description);
+			this->Group_Description->Location = System::Drawing::Point(12, 309);
+			this->Group_Description->Name = L"Group_Description";
+			this->Group_Description->Size = System::Drawing::Size(618, 237);
+			this->Group_Description->TabIndex = 5;
+			this->Group_Description->TabStop = false;
+			this->Group_Description->Text = L"Description";
 			// 
-			// richTextBox1
+			// txtBox_Description
 			// 
-			this->richTextBox1->Location = System::Drawing::Point(19, 28);
-			this->richTextBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(371, 104);
-			this->richTextBox1->TabIndex = 14;
-			this->richTextBox1->Text = L"";
+			this->txtBox_Description->Location = System::Drawing::Point(28, 43);
+			this->txtBox_Description->Name = L"txtBox_Description";
+			this->txtBox_Description->Size = System::Drawing::Size(554, 158);
+			this->txtBox_Description->TabIndex = 14;
+			this->txtBox_Description->Text = L"";
 			// 
 			// Lab_mensPayment
 			// 
@@ -306,25 +308,23 @@ namespace ProjetPOO {
 			this->Lab_mensPayment->Size = System::Drawing::Size(0, 13);
 			this->Lab_mensPayment->TabIndex = 4;
 			// 
-			// Lab_sending
+			// Lab_StockQuantity
 			// 
-			this->Lab_sending->AutoSize = true;
-			this->Lab_sending->Location = System::Drawing::Point(5, 83);
-			this->Lab_sending->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Lab_sending->Name = L"Lab_sending";
-			this->Lab_sending->Size = System::Drawing::Size(86, 13);
-			this->Lab_sending->TabIndex = 2;
-			this->Lab_sending->Text = L"Stock Quantity : ";
+			this->Lab_StockQuantity->AutoSize = true;
+			this->Lab_StockQuantity->Location = System::Drawing::Point(8, 128);
+			this->Lab_StockQuantity->Name = L"Lab_StockQuantity";
+			this->Lab_StockQuantity->Size = System::Drawing::Size(125, 20);
+			this->Lab_StockQuantity->TabIndex = 2;
+			this->Lab_StockQuantity->Text = L"Stock Quantity : ";
 			// 
-			// Lab_delivery
+			// Lab_Name
 			// 
-			this->Lab_delivery->AutoSize = true;
-			this->Lab_delivery->Location = System::Drawing::Point(5, 54);
-			this->Lab_delivery->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Lab_delivery->Name = L"Lab_delivery";
-			this->Lab_delivery->Size = System::Drawing::Size(44, 13);
-			this->Lab_delivery->TabIndex = 1;
-			this->Lab_delivery->Text = L"Name : ";
+			this->Lab_Name->AutoSize = true;
+			this->Lab_Name->Location = System::Drawing::Point(8, 83);
+			this->Lab_Name->Name = L"Lab_Name";
+			this->Lab_Name->Size = System::Drawing::Size(63, 20);
+			this->Lab_Name->TabIndex = 1;
+			this->Lab_Name->Text = L"Name : ";
 			// 
 			// Lab_ref
 			// 
@@ -425,8 +425,8 @@ namespace ProjetPOO {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(998, 516);
-			this->Controls->Add(this->Title_order);
+			this->ClientSize = System::Drawing::Size(1497, 794);
+			this->Controls->Add(this->Title_inventory);
 			this->Controls->Add(this->Group_Infos);
 			this->Controls->Add(this->Btn_Delete);
 			this->Controls->Add(this->Btn_Update);
@@ -441,7 +441,7 @@ namespace ProjetPOO {
 			this->Load += gcnew System::EventHandler(this, &InventoryForm::Inventory_Management_Load);
 			this->Group_Infos->ResumeLayout(false);
 			this->Group_Infos->PerformLayout();
-			this->Group_prix->ResumeLayout(false);
+			this->Group_Description->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -456,25 +456,27 @@ namespace ProjetPOO {
 	private: System::Void Inventory_Management_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oStock = gcnew NS_Comp_Stock::CLStock();
 	}
-private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->View_Database->Refresh();
-	this->oDs = this->oStock->loadArticles("Rsl");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
-}
-private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->View_Database->Refresh();
-	this->oStock->selectArticle(this->textBox1->Text, "Rsl");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
-}
-private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oStock->updateArticle(this->textBox1->Text, this->textBox3->Text, this->textBox4->Text, this->textBox5->Text, this->textBox6->Text, this->richTextBox1->Text);
-}
-private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oStock->deleteArticle(this->textBox1->Text, this->textBox2->Text);
-}
-private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->View_Database->Refresh();
+		this->oDs = this->oStock->loadArticles("Rsl");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl";
+	}
+	private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->View_Database->Refresh();
+		this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl";
+	}
+	private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock->updateArticle(this->txtBox_Ref->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
+	}
+	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
+	}
+	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
+	}
+
+	};
 }
