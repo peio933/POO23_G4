@@ -84,9 +84,10 @@ namespace ProjetPOO {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(131, 406);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(147, 13);
+			this->label1->Size = System::Drawing::Size(145, 13);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"© Tous droits réservés - 2023";
+			this->label1->Text = L"© All Rights Reserved - 2023";
+			this->label1->Click += gcnew System::EventHandler(this, &MyForm1::label1_Click);
 			// 
 			// MyForm1
 			// 
@@ -126,5 +127,7 @@ namespace ProjetPOO {
 	}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

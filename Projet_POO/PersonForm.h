@@ -1,4 +1,5 @@
 #pragma once
+#include "CLEmployees.h"
 
 namespace ProjetPOO {
 
@@ -90,6 +91,9 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::TextBox^ textBox8;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
+
+	private: NS_Comp_Employees::CLEmployees^ oEmployees;
+	private: System::Data::DataSet^ oDs;
 
 
 
@@ -214,6 +218,7 @@ namespace ProjetPOO {
 			this->Btn_Delete->TabIndex = 20;
 			this->Btn_Delete->Text = L"Delete an employee";
 			this->Btn_Delete->UseVisualStyleBackColor = false;
+			this->Btn_Delete->Click += gcnew System::EventHandler(this, &PersonForm::Btn_Delete_Click);
 			// 
 			// Btn_Update
 			// 
@@ -236,6 +241,7 @@ namespace ProjetPOO {
 			this->Btn_Show->TabIndex = 18;
 			this->Btn_Show->Text = L"Show an employee";
 			this->Btn_Show->UseVisualStyleBackColor = true;
+			this->Btn_Show->Click += gcnew System::EventHandler(this, &PersonForm::Btn_Show_Click);
 			// 
 			// Btn_create
 			// 
@@ -247,15 +253,13 @@ namespace ProjetPOO {
 			this->Btn_create->TabIndex = 17;
 			this->Btn_create->Text = L"Record an employee";
 			this->Btn_create->UseVisualStyleBackColor = true;
+			this->Btn_create->Click += gcnew System::EventHandler(this, &PersonForm::Btn_create_Click);
 			// 
 			// Btn_Load
 			// 
 			this->Btn_Load->BackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Btn_Load->FlatAppearance->BorderColor = System::Drawing::Color::YellowGreen;
-			this->Btn_Load->FlatAppearance->BorderSize = 0;
-			this->Btn_Load->FlatAppearance->MouseDownBackColor = System::Drawing::Color::YellowGreen;
-			this->Btn_Load->FlatAppearance->MouseOverBackColor = System::Drawing::Color::YellowGreen;
 			this->Btn_Load->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_Load->Location = System::Drawing::Point(11, 308);
 			this->Btn_Load->Margin = System::Windows::Forms::Padding(2);
@@ -264,6 +268,7 @@ namespace ProjetPOO {
 			this->Btn_Load->TabIndex = 16;
 			this->Btn_Load->Text = L"Load employee";
 			this->Btn_Load->UseVisualStyleBackColor = false;
+			this->Btn_Load->Click += gcnew System::EventHandler(this, &PersonForm::Btn_Load_Click);
 			// 
 			// View_Database
 			// 
@@ -507,6 +512,8 @@ namespace ProjetPOO {
 		}
 #pragma endregion
 	private: System::Void Person_Management_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		this->oEmployees = gcnew NS_Comp_Employees::CLEmployees();
 	}
 	private: System::Void hScrollBar1_Scroll(System::Object^ sender, System::Windows::Forms::ScrollEventArgs^ e) {
 	}
@@ -537,6 +544,25 @@ private: System::Void textBox5_TextChanged(System::Object^ sender, System::Event
 private: System::Void Lab_ref_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->View_Database->Refresh();
+	this->oDs = this->oEmployees->loadEmployees("Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
+}
+private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->View_Database->Refresh();
+	this->oEmployees->selectEmployee(this->TxtBox_ref->Text, "Rsl");
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl";
+
+}
+private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oEmployees->deleteEmployee(this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text);
+}
+private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oEmployees->insertEmployee(this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text, this->listBox2->Text, this->checkBox1->Text, this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text, this->listBox2->Text, this->checkBox1->Text);
 }
 };
 }
