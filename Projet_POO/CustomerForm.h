@@ -196,7 +196,7 @@ private: System::Windows::Forms::Label^ label14;
 			// 
 			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Title_order->AutoSize = true;
-			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F));
+			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
 			this->Title_order->Location = System::Drawing::Point(141, 20);
 			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Title_order->Name = L"Title_order";
@@ -477,6 +477,7 @@ private: System::Windows::Forms::Label^ label14;
 			// 
 			// View_Database
 			// 
+			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->View_Database->Location = System::Drawing::Point(12, 107);

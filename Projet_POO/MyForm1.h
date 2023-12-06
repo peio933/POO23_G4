@@ -71,7 +71,7 @@ namespace ProjetPOO {
 			// 
 			// progressBar1
 			// 
-			this->progressBar1->Location = System::Drawing::Point(29, 343);
+			this->progressBar1->Location = System::Drawing::Point(37, 343);
 			this->progressBar1->Name = L"progressBar1";
 			this->progressBar1->Size = System::Drawing::Size(346, 37);
 			this->progressBar1->TabIndex = 1;
@@ -108,6 +108,7 @@ namespace ProjetPOO {
 
 		MyForm^ form = gcnew MyForm();
 		form->ShowDialog();
+		this->Close();
 
 	}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {

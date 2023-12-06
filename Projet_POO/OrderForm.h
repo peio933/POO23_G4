@@ -173,7 +173,7 @@ namespace ProjetPOO {
 			// TxtBox_ref
 			// 
 			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
-			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
 			this->TxtBox_ref->Name = L"TxtBox_ref";
 			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
 			this->TxtBox_ref->TabIndex = 6;
@@ -218,9 +218,9 @@ namespace ProjetPOO {
 			this->Group_prix->Controls->Add(this->label7);
 			this->Group_prix->Controls->Add(this->label6);
 			this->Group_prix->Location = System::Drawing::Point(8, 201);
-			this->Group_prix->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Group_prix->Margin = System::Windows::Forms::Padding(2);
 			this->Group_prix->Name = L"Group_prix";
-			this->Group_prix->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Group_prix->Padding = System::Windows::Forms::Padding(2);
 			this->Group_prix->Size = System::Drawing::Size(412, 154);
 			this->Group_prix->TabIndex = 5;
 			this->Group_prix->TabStop = false;
@@ -229,7 +229,7 @@ namespace ProjetPOO {
 			// TxtBox_HTprice
 			// 
 			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
-			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
 			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
 			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
 			this->TxtBox_HTprice->TabIndex = 20;
@@ -237,7 +237,7 @@ namespace ProjetPOO {
 			// TxtBox_TVA
 			// 
 			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
-			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
 			this->TxtBox_TVA->Name = L"TxtBox_TVA";
 			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
 			this->TxtBox_TVA->TabIndex = 19;
@@ -245,7 +245,7 @@ namespace ProjetPOO {
 			// TxtBox_TTC
 			// 
 			this->TxtBox_TTC->Location = System::Drawing::Point(106, 99);
-			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
 			this->TxtBox_TTC->Name = L"TxtBox_TTC";
 			this->TxtBox_TTC->Size = System::Drawing::Size(302, 20);
 			this->TxtBox_TTC->TabIndex = 18;
@@ -304,9 +304,9 @@ namespace ProjetPOO {
 			this->Group_Infos->Controls->Add(this->Lab_delivery);
 			this->Group_Infos->Controls->Add(this->Lab_ref);
 			this->Group_Infos->Location = System::Drawing::Point(553, 107);
-			this->Group_Infos->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Group_Infos->Margin = System::Windows::Forms::Padding(2);
 			this->Group_Infos->Name = L"Group_Infos";
-			this->Group_Infos->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Group_Infos->Padding = System::Windows::Forms::Padding(2);
 			this->Group_Infos->Size = System::Drawing::Size(424, 362);
 			this->Group_Infos->TabIndex = 13;
 			this->Group_Infos->TabStop = false;
@@ -319,7 +319,7 @@ namespace ProjetPOO {
 			this->List_mensPayment->FormattingEnabled = true;
 			this->List_mensPayment->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Carte bancaire", L"Chèque", L"Virement" });
 			this->List_mensPayment->Location = System::Drawing::Point(112, 137);
-			this->List_mensPayment->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->List_mensPayment->Margin = System::Windows::Forms::Padding(2);
 			this->List_mensPayment->Name = L"List_mensPayment";
 			this->List_mensPayment->Size = System::Drawing::Size(304, 43);
 			this->List_mensPayment->TabIndex = 15;
@@ -328,7 +328,7 @@ namespace ProjetPOO {
 			// 
 			this->Date_payment->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Date_payment->Location = System::Drawing::Point(112, 110);
-			this->Date_payment->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Date_payment->Margin = System::Windows::Forms::Padding(2);
 			this->Date_payment->Name = L"Date_payment";
 			this->Date_payment->Size = System::Drawing::Size(304, 20);
 			this->Date_payment->TabIndex = 17;
@@ -337,7 +337,7 @@ namespace ProjetPOO {
 			// 
 			this->Date_Sending->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Date_Sending->Location = System::Drawing::Point(112, 83);
-			this->Date_Sending->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Date_Sending->Margin = System::Windows::Forms::Padding(2);
 			this->Date_Sending->Name = L"Date_Sending";
 			this->Date_Sending->Size = System::Drawing::Size(304, 20);
 			this->Date_Sending->TabIndex = 16;
@@ -346,7 +346,7 @@ namespace ProjetPOO {
 			// 
 			this->Date_Delivery->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Date_Delivery->Location = System::Drawing::Point(112, 54);
-			this->Date_Delivery->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Date_Delivery->Margin = System::Windows::Forms::Padding(2);
 			this->Date_Delivery->Name = L"Date_Delivery";
 			this->Date_Delivery->Size = System::Drawing::Size(304, 20);
 			this->Date_Delivery->TabIndex = 15;
@@ -368,7 +368,7 @@ namespace ProjetPOO {
 			this->Btn_Delete->FlatAppearance->BorderSize = 0;
 			this->Btn_Delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_Delete->Location = System::Drawing::Point(277, 418);
-			this->Btn_Delete->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Delete->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Delete->Name = L"Btn_Delete";
 			this->Btn_Delete->Size = System::Drawing::Size(256, 50);
 			this->Btn_Delete->TabIndex = 12;
@@ -380,7 +380,7 @@ namespace ProjetPOO {
 			// 
 			this->Btn_Update->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Btn_Update->Location = System::Drawing::Point(12, 418);
-			this->Btn_Update->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Update->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Update->Name = L"Btn_Update";
 			this->Btn_Update->Size = System::Drawing::Size(256, 50);
 			this->Btn_Update->TabIndex = 11;
@@ -392,7 +392,7 @@ namespace ProjetPOO {
 			// 
 			this->Btn_Show->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Btn_Show->Location = System::Drawing::Point(277, 363);
-			this->Btn_Show->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Show->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Show->Name = L"Btn_Show";
 			this->Btn_Show->Size = System::Drawing::Size(256, 50);
 			this->Btn_Show->TabIndex = 10;
@@ -404,7 +404,7 @@ namespace ProjetPOO {
 			// 
 			this->Btn_create->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->Btn_create->Location = System::Drawing::Point(12, 363);
-			this->Btn_create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_create->Name = L"Btn_create";
 			this->Btn_create->Size = System::Drawing::Size(256, 50);
 			this->Btn_create->TabIndex = 9;
@@ -419,7 +419,7 @@ namespace ProjetPOO {
 			this->Btn_Load->FlatAppearance->BorderSize = 0;
 			this->Btn_Load->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Btn_Load->Location = System::Drawing::Point(12, 308);
-			this->Btn_Load->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Load->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Load->Name = L"Btn_Load";
 			this->Btn_Load->Size = System::Drawing::Size(521, 50);
 			this->Btn_Load->TabIndex = 8;
@@ -429,10 +429,11 @@ namespace ProjetPOO {
 			// 
 			// View_Database
 			// 
+			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->View_Database->Location = System::Drawing::Point(12, 107);
-			this->View_Database->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->View_Database->Margin = System::Windows::Forms::Padding(2);
 			this->View_Database->Name = L"View_Database";
 			this->View_Database->RowHeadersWidth = 51;
 			this->View_Database->RowTemplate->Height = 24;
@@ -444,7 +445,7 @@ namespace ProjetPOO {
 			// 
 			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Title_order->AutoSize = true;
-			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F));
+			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
 			this->Title_order->Location = System::Drawing::Point(205, 20);
 			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Title_order->Name = L"Title_order";

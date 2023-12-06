@@ -81,6 +81,7 @@ namespace ProjetPOO {
 			// button1
 			// 
 			resources->ApplyResources(this->button1, L"button1");
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->Name = L"button1";
@@ -91,6 +92,7 @@ namespace ProjetPOO {
 			// button2
 			// 
 			resources->ApplyResources(this->button2, L"button2");
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button2->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button2->FlatAppearance->BorderSize = 0;
 			this->button2->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -103,6 +105,7 @@ namespace ProjetPOO {
 			// button3
 			// 
 			resources->ApplyResources(this->button3, L"button3");
+			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button3->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -115,6 +118,7 @@ namespace ProjetPOO {
 			// button4
 			// 
 			resources->ApplyResources(this->button4, L"button4");
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button4->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;
@@ -127,6 +131,7 @@ namespace ProjetPOO {
 			// button5
 			// 
 			resources->ApplyResources(this->button5, L"button5");
+			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button5->FlatAppearance->BorderColor = System::Drawing::SystemColors::ActiveCaption;
 			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::ActiveCaption;

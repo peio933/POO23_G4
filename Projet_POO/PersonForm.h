@@ -154,24 +154,24 @@ namespace ProjetPOO {
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
 			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
 			this->Group_prix = (gcnew System::Windows::Forms::GroupBox());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->TxtBox_TTC = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_TVA = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_HTprice = (gcnew System::Windows::Forms::TextBox());
-			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
-			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
-			this->Date_Sending = (gcnew System::Windows::Forms::DateTimePicker());
-			this->Lab_sending = (gcnew System::Windows::Forms::Label());
-			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
-			this->TxtBox_ref = (gcnew System::Windows::Forms::TextBox());
-			this->Lab_ref = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
 			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->TxtBox_HTprice = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_TVA = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_TTC = (gcnew System::Windows::Forms::TextBox());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->Date_Sending = (gcnew System::Windows::Forms::DateTimePicker());
+			this->TxtBox_ref = (gcnew System::Windows::Forms::TextBox());
+			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
+			this->Lab_sending = (gcnew System::Windows::Forms::Label());
+			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
+			this->Lab_ref = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->Group_prix->SuspendLayout();
 			this->Group_Infos->SuspendLayout();
@@ -191,7 +191,7 @@ namespace ProjetPOO {
 			// 
 			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Title_order->AutoSize = true;
-			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F));
+			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
 			this->Title_order->Location = System::Drawing::Point(138, 20);
 			this->Title_order->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Title_order->Name = L"Title_order";
@@ -267,6 +267,7 @@ namespace ProjetPOO {
 			// 
 			// View_Database
 			// 
+			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->View_Database->Location = System::Drawing::Point(12, 107);
@@ -296,25 +297,47 @@ namespace ProjetPOO {
 			this->Group_prix->TabStop = false;
 			this->Group_prix->Text = L"Adress";
 			// 
-			// label10
+			// textBox8
 			// 
-			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(4, 32);
-			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(82, 13);
-			this->label10->TabIndex = 6;
-			this->label10->Text = L"Street number : ";
+			this->textBox8->Location = System::Drawing::Point(104, 132);
+			this->textBox8->Margin = System::Windows::Forms::Padding(2);
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(304, 20);
+			this->textBox8->TabIndex = 22;
 			// 
-			// label9
+			// label11
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(4, 67);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(75, 13);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"Street Name : ";
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(4, 132);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(72, 13);
+			this->label11->TabIndex = 21;
+			this->label11->Text = L"Postal code : ";
+			// 
+			// TxtBox_HTprice
+			// 
+			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
+			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
+			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_HTprice->TabIndex = 20;
+			// 
+			// TxtBox_TVA
+			// 
+			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
+			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_TVA->Name = L"TxtBox_TVA";
+			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_TVA->TabIndex = 19;
+			// 
+			// TxtBox_TTC
+			// 
+			this->TxtBox_TTC->Location = System::Drawing::Point(104, 99);
+			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_TTC->Name = L"TxtBox_TTC";
+			this->TxtBox_TTC->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_TTC->TabIndex = 18;
 			// 
 			// label8
 			// 
@@ -326,29 +349,25 @@ namespace ProjetPOO {
 			this->label8->TabIndex = 8;
 			this->label8->Text = L"City : ";
 			// 
-			// TxtBox_TTC
+			// label9
 			// 
-			this->TxtBox_TTC->Location = System::Drawing::Point(104, 99);
-			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TTC->Name = L"TxtBox_TTC";
-			this->TxtBox_TTC->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_TTC->TabIndex = 18;
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(4, 67);
+			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(75, 13);
+			this->label9->TabIndex = 7;
+			this->label9->Text = L"Street Name : ";
 			// 
-			// TxtBox_TVA
+			// label10
 			// 
-			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
-			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TVA->Name = L"TxtBox_TVA";
-			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_TVA->TabIndex = 19;
-			// 
-			// TxtBox_HTprice
-			// 
-			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
-			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
-			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_HTprice->TabIndex = 20;
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(4, 32);
+			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(82, 13);
+			this->label10->TabIndex = 6;
+			this->label10->Text = L"Street number : ";
 			// 
 			// Group_Infos
 			// 
@@ -371,15 +390,34 @@ namespace ProjetPOO {
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
 			// 
-			// Lab_mensPayment
+			// checkBox1
 			// 
-			this->Lab_mensPayment->AutoSize = true;
-			this->Lab_mensPayment->Location = System::Drawing::Point(5, 113);
-			this->Lab_mensPayment->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->Lab_mensPayment->Name = L"Lab_mensPayment";
-			this->Lab_mensPayment->Size = System::Drawing::Size(58, 13);
-			this->Lab_mensPayment->TabIndex = 4;
-			this->Lab_mensPayment->Text = L"Manager : ";
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->checkBox1->Location = System::Drawing::Point(308, 147);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(77, 17);
+			this->checkBox1->TabIndex = 19;
+			this->checkBox1->Text = L"Manager \?";
+			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBox1_CheckedChanged);
+			// 
+			// listBox2
+			// 
+			this->listBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBox2->FormattingEnabled = true;
+			this->listBox2->Location = System::Drawing::Point(114, 113);
+			this->listBox2->Name = L"listBox2";
+			this->listBox2->Size = System::Drawing::Size(302, 17);
+			this->listBox2->TabIndex = 16;
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(112, 54);
+			this->textBox7->Margin = System::Windows::Forms::Padding(2);
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(304, 20);
+			this->textBox7->TabIndex = 18;
 			// 
 			// Date_Sending
 			// 
@@ -389,6 +427,24 @@ namespace ProjetPOO {
 			this->Date_Sending->Name = L"Date_Sending";
 			this->Date_Sending->Size = System::Drawing::Size(304, 20);
 			this->Date_Sending->TabIndex = 16;
+			// 
+			// TxtBox_ref
+			// 
+			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
+			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_ref->Name = L"TxtBox_ref";
+			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_ref->TabIndex = 6;
+			// 
+			// Lab_mensPayment
+			// 
+			this->Lab_mensPayment->AutoSize = true;
+			this->Lab_mensPayment->Location = System::Drawing::Point(5, 113);
+			this->Lab_mensPayment->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->Lab_mensPayment->Name = L"Lab_mensPayment";
+			this->Lab_mensPayment->Size = System::Drawing::Size(58, 13);
+			this->Lab_mensPayment->TabIndex = 4;
+			this->Lab_mensPayment->Text = L"Manager : ";
 			// 
 			// Lab_sending
 			// 
@@ -410,14 +466,6 @@ namespace ProjetPOO {
 			this->Lab_delivery->TabIndex = 1;
 			this->Lab_delivery->Text = L"Surname : ";
 			// 
-			// TxtBox_ref
-			// 
-			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
-			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_ref->Name = L"TxtBox_ref";
-			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_ref->TabIndex = 6;
-			// 
 			// Lab_ref
 			// 
 			this->Lab_ref->AutoSize = true;
@@ -428,52 +476,6 @@ namespace ProjetPOO {
 			this->Lab_ref->TabIndex = 0;
 			this->Lab_ref->Text = L"Name : ";
 			this->Lab_ref->Click += gcnew System::EventHandler(this, &PersonForm::Lab_ref_Click);
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(112, 54);
-			this->textBox7->Margin = System::Windows::Forms::Padding(2);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(304, 20);
-			this->textBox7->TabIndex = 18;
-			// 
-			// listBox2
-			// 
-			this->listBox2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->Location = System::Drawing::Point(114, 113);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(302, 17);
-			this->listBox2->TabIndex = 16;
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(104, 132);
-			this->textBox8->Margin = System::Windows::Forms::Padding(2);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(304, 20);
-			this->textBox8->TabIndex = 22;
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(4, 132);
-			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(72, 13);
-			this->label11->TabIndex = 21;
-			this->label11->Text = L"Postal code : ";
-			// 
-			// checkBox1
-			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(308, 147);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(77, 17);
-			this->checkBox1->TabIndex = 19;
-			this->checkBox1->Text = L"Manager \?";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBox1_CheckedChanged);
 			// 
 			// PersonForm
 			// 
