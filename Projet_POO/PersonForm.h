@@ -69,9 +69,12 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_Load;
 	private: System::Windows::Forms::DataGridView^ View_Database;
 	private: System::Windows::Forms::GroupBox^ Group_prix;
-	private: System::Windows::Forms::TextBox^ TxtBox_HTprice;
-	private: System::Windows::Forms::TextBox^ TxtBox_TVA;
-	private: System::Windows::Forms::TextBox^ TxtBox_TTC;
+	private: System::Windows::Forms::TextBox^ TxtBox_Streetnumber;
+	private: System::Windows::Forms::TextBox^ TxtBox_StreetName;
+	private: System::Windows::Forms::TextBox^ TxtBox_City;
+
+
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label10;
@@ -79,18 +82,24 @@ namespace ProjetPOO {
 
 
 	private: System::Windows::Forms::DateTimePicker^ Date_Sending;
+	private: System::Windows::Forms::TextBox^ TxtName;
 
-	private: System::Windows::Forms::TextBox^ TxtBox_ref;
+
 	private: System::Windows::Forms::Label^ Lab_mensPayment;
 
 	private: System::Windows::Forms::Label^ Lab_sending;
 	private: System::Windows::Forms::Label^ Lab_delivery;
 	private: System::Windows::Forms::Label^ Lab_ref;
-	private: System::Windows::Forms::TextBox^ textBox7;
-	private: System::Windows::Forms::ListBox^ listBox2;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ textSurname;
+	private: System::Windows::Forms::ListBox^ listBoxmanager;
+	private: System::Windows::Forms::TextBox^ textBoxPostal_code;
+
+
+
 	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::CheckBox^ checkBoxManager;
+
+
 
 	private: NS_Comp_Employees::CLEmployees^ oEmployees;
 	private: System::Data::DataSet^ oDs;
@@ -158,20 +167,20 @@ namespace ProjetPOO {
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
 			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
 			this->Group_prix = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPostal_code = (gcnew System::Windows::Forms::TextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->TxtBox_HTprice = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_TVA = (gcnew System::Windows::Forms::TextBox());
-			this->TxtBox_TTC = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_Streetnumber = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_StreetName = (gcnew System::Windows::Forms::TextBox());
+			this->TxtBox_City = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
-			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->checkBoxManager = (gcnew System::Windows::Forms::CheckBox());
+			this->listBoxmanager = (gcnew System::Windows::Forms::ListBox());
+			this->textSurname = (gcnew System::Windows::Forms::TextBox());
 			this->Date_Sending = (gcnew System::Windows::Forms::DateTimePicker());
-			this->TxtBox_ref = (gcnew System::Windows::Forms::TextBox());
+			this->TxtName = (gcnew System::Windows::Forms::TextBox());
 			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
 			this->Lab_sending = (gcnew System::Windows::Forms::Label());
 			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
@@ -285,11 +294,11 @@ namespace ProjetPOO {
 			// 
 			// Group_prix
 			// 
-			this->Group_prix->Controls->Add(this->textBox8);
+			this->Group_prix->Controls->Add(this->textBoxPostal_code);
 			this->Group_prix->Controls->Add(this->label11);
-			this->Group_prix->Controls->Add(this->TxtBox_HTprice);
-			this->Group_prix->Controls->Add(this->TxtBox_TVA);
-			this->Group_prix->Controls->Add(this->TxtBox_TTC);
+			this->Group_prix->Controls->Add(this->TxtBox_Streetnumber);
+			this->Group_prix->Controls->Add(this->TxtBox_StreetName);
+			this->Group_prix->Controls->Add(this->TxtBox_City);
 			this->Group_prix->Controls->Add(this->label8);
 			this->Group_prix->Controls->Add(this->label9);
 			this->Group_prix->Controls->Add(this->label10);
@@ -302,13 +311,13 @@ namespace ProjetPOO {
 			this->Group_prix->TabStop = false;
 			this->Group_prix->Text = L"Adress";
 			// 
-			// textBox8
+			// textBoxPostal_code
 			// 
-			this->textBox8->Location = System::Drawing::Point(104, 132);
-			this->textBox8->Margin = System::Windows::Forms::Padding(2);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(304, 20);
-			this->textBox8->TabIndex = 22;
+			this->textBoxPostal_code->Location = System::Drawing::Point(104, 132);
+			this->textBoxPostal_code->Margin = System::Windows::Forms::Padding(2);
+			this->textBoxPostal_code->Name = L"textBoxPostal_code";
+			this->textBoxPostal_code->Size = System::Drawing::Size(304, 20);
+			this->textBoxPostal_code->TabIndex = 22;
 			// 
 			// label11
 			// 
@@ -320,29 +329,29 @@ namespace ProjetPOO {
 			this->label11->TabIndex = 21;
 			this->label11->Text = L"Postal code : ";
 			// 
-			// TxtBox_HTprice
+			// TxtBox_Streetnumber
 			// 
-			this->TxtBox_HTprice->Location = System::Drawing::Point(104, 30);
-			this->TxtBox_HTprice->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_HTprice->Name = L"TxtBox_HTprice";
-			this->TxtBox_HTprice->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_HTprice->TabIndex = 20;
+			this->TxtBox_Streetnumber->Location = System::Drawing::Point(104, 30);
+			this->TxtBox_Streetnumber->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_Streetnumber->Name = L"TxtBox_Streetnumber";
+			this->TxtBox_Streetnumber->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_Streetnumber->TabIndex = 20;
 			// 
-			// TxtBox_TVA
+			// TxtBox_StreetName
 			// 
-			this->TxtBox_TVA->Location = System::Drawing::Point(104, 65);
-			this->TxtBox_TVA->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TVA->Name = L"TxtBox_TVA";
-			this->TxtBox_TVA->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_TVA->TabIndex = 19;
+			this->TxtBox_StreetName->Location = System::Drawing::Point(104, 65);
+			this->TxtBox_StreetName->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_StreetName->Name = L"TxtBox_StreetName";
+			this->TxtBox_StreetName->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_StreetName->TabIndex = 19;
 			// 
-			// TxtBox_TTC
+			// TxtBox_City
 			// 
-			this->TxtBox_TTC->Location = System::Drawing::Point(104, 99);
-			this->TxtBox_TTC->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_TTC->Name = L"TxtBox_TTC";
-			this->TxtBox_TTC->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_TTC->TabIndex = 18;
+			this->TxtBox_City->Location = System::Drawing::Point(104, 99);
+			this->TxtBox_City->Margin = System::Windows::Forms::Padding(2);
+			this->TxtBox_City->Name = L"TxtBox_City";
+			this->TxtBox_City->Size = System::Drawing::Size(304, 20);
+			this->TxtBox_City->TabIndex = 18;
 			// 
 			// label8
 			// 
@@ -376,11 +385,11 @@ namespace ProjetPOO {
 			// 
 			// Group_Infos
 			// 
-			this->Group_Infos->Controls->Add(this->checkBox1);
-			this->Group_Infos->Controls->Add(this->listBox2);
-			this->Group_Infos->Controls->Add(this->textBox7);
+			this->Group_Infos->Controls->Add(this->checkBoxManager);
+			this->Group_Infos->Controls->Add(this->listBoxmanager);
+			this->Group_Infos->Controls->Add(this->textSurname);
 			this->Group_Infos->Controls->Add(this->Date_Sending);
-			this->Group_Infos->Controls->Add(this->TxtBox_ref);
+			this->Group_Infos->Controls->Add(this->TxtName);
 			this->Group_Infos->Controls->Add(this->Group_prix);
 			this->Group_Infos->Controls->Add(this->Lab_mensPayment);
 			this->Group_Infos->Controls->Add(this->Lab_sending);
@@ -395,51 +404,52 @@ namespace ProjetPOO {
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
 			// 
-			// checkBox1
+			// checkBoxManager
 			// 
-			this->checkBox1->AutoSize = true;
-			this->checkBox1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->checkBox1->Location = System::Drawing::Point(308, 147);
-			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(77, 17);
-			this->checkBox1->TabIndex = 19;
-			this->checkBox1->Text = L"Manager \?";
-			this->checkBox1->UseVisualStyleBackColor = true;
-			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBox1_CheckedChanged);
+			this->checkBoxManager->AutoSize = true;
+			this->checkBoxManager->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->checkBoxManager->Location = System::Drawing::Point(308, 147);
+			this->checkBoxManager->Name = L"checkBoxManager";
+			this->checkBoxManager->Size = System::Drawing::Size(77, 17);
+			this->checkBoxManager->TabIndex = 19;
+			this->checkBoxManager->Text = L"Manager \?";
+			this->checkBoxManager->UseVisualStyleBackColor = true;
+			this->checkBoxManager->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBox1_CheckedChanged);
 			// 
-			// listBox2
+			// listBoxmanager
 			// 
-			this->listBox2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->Location = System::Drawing::Point(114, 113);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(302, 17);
-			this->listBox2->TabIndex = 16;
+			this->listBoxmanager->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->listBoxmanager->FormattingEnabled = true;
+			this->listBoxmanager->Location = System::Drawing::Point(114, 113);
+			this->listBoxmanager->Name = L"listBoxmanager";
+			this->listBoxmanager->Size = System::Drawing::Size(302, 17);
+			this->listBoxmanager->TabIndex = 16;
 			// 
-			// textBox7
+			// textSurname
 			// 
-			this->textBox7->Location = System::Drawing::Point(112, 54);
-			this->textBox7->Margin = System::Windows::Forms::Padding(2);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(304, 20);
-			this->textBox7->TabIndex = 18;
+			this->textSurname->Location = System::Drawing::Point(112, 54);
+			this->textSurname->Margin = System::Windows::Forms::Padding(2);
+			this->textSurname->Name = L"textSurname";
+			this->textSurname->Size = System::Drawing::Size(304, 20);
+			this->textSurname->TabIndex = 18;
 			// 
 			// Date_Sending
 			// 
 			this->Date_Sending->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->Date_Sending->CustomFormat = L"AAAA/MM/DD";
 			this->Date_Sending->Location = System::Drawing::Point(112, 83);
 			this->Date_Sending->Margin = System::Windows::Forms::Padding(2);
 			this->Date_Sending->Name = L"Date_Sending";
 			this->Date_Sending->Size = System::Drawing::Size(304, 20);
 			this->Date_Sending->TabIndex = 16;
 			// 
-			// TxtBox_ref
+			// TxtName
 			// 
-			this->TxtBox_ref->Location = System::Drawing::Point(112, 25);
-			this->TxtBox_ref->Margin = System::Windows::Forms::Padding(2);
-			this->TxtBox_ref->Name = L"TxtBox_ref";
-			this->TxtBox_ref->Size = System::Drawing::Size(304, 20);
-			this->TxtBox_ref->TabIndex = 6;
+			this->TxtName->Location = System::Drawing::Point(112, 25);
+			this->TxtName->Margin = System::Windows::Forms::Padding(2);
+			this->TxtName->Name = L"TxtName";
+			this->TxtName->Size = System::Drawing::Size(304, 20);
+			this->TxtName->TabIndex = 6;
 			// 
 			// Lab_mensPayment
 			// 
@@ -553,16 +563,16 @@ private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->View_Database->Refresh();
-	this->oEmployees->selectEmployee(this->TxtBox_ref->Text, "Rsl");
+	this->oEmployees->selectEmployee(this->TxtName->Text, "Rsl");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl";
 
 }
 private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oEmployees->deleteEmployee(this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text);
+	this->oEmployees->deleteEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text);
 }
 private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oEmployees->insertEmployee(this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text, this->listBox2->Text, this->checkBox1->Text, this->TxtBox_ref->Text, this->textBox7->Text, this->Date_Sending->Text, this->listBox2->Text, this->checkBox1->Text);
+	this->oEmployees->insertEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text, this->listBoxmanager->Text, this->checkBoxManager->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
 }
 };
 }

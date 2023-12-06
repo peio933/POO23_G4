@@ -63,6 +63,7 @@ namespace ProjetPOO {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::RoyalBlue;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
 			this->pictureBox1->InitialImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.InitialImage")));
 			this->pictureBox1->Location = System::Drawing::Point(92, 43);
@@ -82,7 +83,7 @@ namespace ProjetPOO {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(131, 406);
+			this->label1->Location = System::Drawing::Point(138, 406);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(145, 13);
 			this->label1->TabIndex = 2;
@@ -94,7 +95,7 @@ namespace ProjetPOO {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->BackColor = System::Drawing::Color::RoyalBlue;
 			this->ClientSize = System::Drawing::Size(438, 428);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->progressBar1);

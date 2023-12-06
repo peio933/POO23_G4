@@ -21,7 +21,7 @@ System::Data::DataSet^ NS_Comp_Employees::CLEmployees::selectEmployee(System::St
 	return this->oCAD->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Employees::CLEmployees::insertEmployee(System::String^ N_E, System::String^ S_E, System::String^ HD_E, System::String^ N1_E, System::String^ ST_E, System::String^ SNB, System::String^ SN, System::String^ N_V, System::String^ PC, System::String^ ID_E)
+void NS_Comp_Employees::CLEmployees::insertEmployee(System::String^ N_E, System::String^ S_E, System::String^ HD_E, System::String^ N1_E, System::String^ ST_E, System::String^ SNB, System::String^ SN, System::String^ N_V, System::String^ PC)
 {
 	System::String^ sql;
 	this->oMappEmployees->setN_E(N_E);
@@ -33,7 +33,6 @@ void NS_Comp_Employees::CLEmployees::insertEmployee(System::String^ N_E, System:
 	this->oMappEmployees->oAdress->setSN(SN);
 	this->oMappEmployees->oAdress->setN_V(N_V);
 	this->oMappEmployees->oAdress->setPC(PC);
-	this->oMappEmployees->setID_E(ID_E);
 	sql = this->oMappEmployees->Insert();
 	this->oCAD->actionRows(sql);
 }
