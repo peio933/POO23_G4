@@ -153,7 +153,6 @@ namespace ProjetPOO {
 			this->Controls->Add(this->button1);
 			this->HelpButton = true;
 			this->Name = L"MyForm";
-			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -190,7 +189,5 @@ namespace ProjetPOO {
 		form->ShowDialog();
 
 	}
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
 };
 }
