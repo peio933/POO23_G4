@@ -502,7 +502,6 @@ private: System::Windows::Forms::Label^ label14;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->Title_order);
@@ -518,7 +517,6 @@ private: System::Windows::Forms::Label^ label14;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"CustomerForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"EngineX";
 			this->Load += gcnew System::EventHandler(this, &CustomerForm::Customer_Management_Load);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
