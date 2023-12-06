@@ -177,6 +177,7 @@ namespace ProjetPOO {
 			this->txtBox_HTPrice->Name = L"txtBox_HTPrice";
 			this->txtBox_HTPrice->Size = System::Drawing::Size(304, 20);
 			this->txtBox_HTPrice->TabIndex = 9;
+			this->txtBox_HTPrice->MaxLength = 14;
 			// 
 			// Label_HTPrice
 			// 
@@ -193,12 +194,11 @@ namespace ProjetPOO {
 			// 
 			// txtBox_Threshold
 			// 
-
-
 			this->txtBox_Threshold->Location = System::Drawing::Point(112, 113);
 			this->txtBox_Threshold->Name = L"txtBox_Threshold";
 			this->txtBox_Threshold->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Threshold->TabIndex = 7;
+			this->txtBox_Threshold->MaxLength = 9;
 			// 
 			// Label_Threshold
 			// 
@@ -255,6 +255,7 @@ namespace ProjetPOO {
 			this->txtBox_TVA->Name = L"txtBox_TVA";
 			this->txtBox_TVA->Size = System::Drawing::Size(304, 20);
 			this->txtBox_TVA->TabIndex = 15;
+			this->txtBox_TVA->MaxLength = 4;
 			// 
 			// Label_TVA
 			// 
@@ -273,6 +274,7 @@ namespace ProjetPOO {
 			this->txtBox_StockQuantity->Name = L"txtBox_StockQuantity";
 			this->txtBox_StockQuantity->Size = System::Drawing::Size(304, 20);
 			this->txtBox_StockQuantity->TabIndex = 20;
+			this->txtBox_StockQuantity->MaxLength = 9;
 			// 
 			// txtBox_Name
 			// 
@@ -280,6 +282,7 @@ namespace ProjetPOO {
 			this->txtBox_Name->Name = L"txtBox_Name";
 			this->txtBox_Name->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Name->TabIndex = 18;
+			this->txtBox_Name->MaxLength = 50;
 			// 
 			// txtBox_Ref
 			// 
@@ -287,6 +290,7 @@ namespace ProjetPOO {
 			this->txtBox_Ref->Name = L"txtBox_Ref";
 			this->txtBox_Ref->Size = System::Drawing::Size(304, 20);
 			this->txtBox_Ref->TabIndex = 6;
+			this->txtBox_Ref->MaxLength = 60;
 			// 
 			// Group_Description
 			// 
@@ -305,6 +309,7 @@ namespace ProjetPOO {
 			this->txtBox_Description->Size = System::Drawing::Size(378, 108);
 			this->txtBox_Description->TabIndex = 14;
 			this->txtBox_Description->Text = L"";
+			this->txtBox_Description->MaxLength = 100;
 			// 
 			// Lab_mensPayment
 			// 
@@ -468,19 +473,90 @@ namespace ProjetPOO {
 		this->View_Database->DataMember = "Rsl";
 	}
 	private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->View_Database->Refresh();
-		this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
-		this->View_Database->DataSource = this->oDs;
-		this->View_Database->DataMember = "Rsl";
+		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text)) {
+			this->View_Database->Refresh();
+			this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+			this->View_Database->DataSource = this->oDs;
+			this->View_Database->DataMember = "Rsl";
+		}
+		else {
+			MessageBox::Show("Please enter the reference of the article you want to display!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+	private: System::Boolean UpdateTextBoxAreFilled() {
+		return !String::IsNullOrWhiteSpace(txtBox_Ref->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_StockQuantity->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Threshold->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_HTPrice->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_TVA->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Description->Text);
+	}
+    private: System::Boolean CreateTextBoxAreFilled() {
+		return !String::IsNullOrWhiteSpace(txtBox_Ref->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Name->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_StockQuantity->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Threshold->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_HTPrice->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_TVA->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Description->Text);
+	}
+	private: System::Boolean TextBoxAreCorrectNumbers(){
+		int intStockQuantity, intThreshold;
+		float floatHTPrice, floatTVA;
+		return Int32::TryParse(this->txtBox_StockQuantity->Text, intStockQuantity) &&
+			intStockQuantity>0 &&
+			Int32::TryParse(this->txtBox_Threshold->Text, intThreshold) &&
+			intThreshold>0 &&
+			Single::TryParse(this->txtBox_HTPrice->Text->Replace(".", ","), floatHTPrice) &&
+			floatHTPrice>0 &&
+			Single::TryParse(this->txtBox_TVA->Text->Replace(".", ","), floatTVA) &&
+			10>floatTVA>0;
 	}
 	private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oStock->updateArticle(this->txtBox_Ref->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
+		if (UpdateTextBoxAreFilled()) {
+			if (TextBoxAreCorrectNumbers()) {
+				this->oStock->updateArticle(this->txtBox_Ref->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text->Replace(",", "."), this->txtBox_TVA->Text->Replace(",", "."), this->txtBox_Description->Text);
+				this->View_Database->Refresh();
+				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+				this->View_Database->DataSource = this->oDs;
+				this->View_Database->DataMember = "Rsl";
+			}
+			else {
+				MessageBox::Show("Please enter correct numbers in these fields: \n \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+		}
+		else {
+			MessageBox::Show("Please enter all the informations of the article you want to update! \n \n - Article Reference \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA \n - Description", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
+		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Ref->Name)) {
+			this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
+			this->View_Database->Refresh();
+			this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+			this->View_Database->DataSource = this->oDs;
+			this->View_Database->DataMember = "Rsl";
+		}
+		else {
+			MessageBox::Show("Please enter all the informations of the article you want to delete! \n \n - Article Reference \n - Name", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
+		if (CreateTextBoxAreFilled()) {
+			if (TextBoxAreCorrectNumbers()) {
+				this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text->Replace(",", "."), this->txtBox_TVA->Text->Replace(",", "."), this->txtBox_Description->Text);
+				this->View_Database->Refresh();
+				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+				this->View_Database->DataSource = this->oDs;
+				this->View_Database->DataMember = "Rsl";
+			}
+			else {
+				MessageBox::Show("Please enter correct numbers in these fields: \n \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+		}
+		else {
+			MessageBox::Show("Please enter all the informations of the article you want to create! \n \n - Article Reference \n - Name \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA \n - Description", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	};
 }
