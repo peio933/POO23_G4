@@ -342,7 +342,6 @@ namespace ProjetPOO {
 			this->Lab_ref->Size = System::Drawing::Size(98, 13);
 			this->Lab_ref->TabIndex = 0;
 			this->Lab_ref->Text = L"Article Reference : ";
-			this->Lab_ref->Click += gcnew System::EventHandler(this, &InventoryForm::Lab_ref_Click);
 			// 
 			// Btn_Delete
 			// 
@@ -483,4 +482,5 @@ namespace ProjetPOO {
 	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text, this->txtBox_TVA->Text, this->txtBox_Description->Text);
 	}
+	};
 }
