@@ -38,6 +38,7 @@ namespace ProjetPOO {
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
+	private: System::Windows::Forms::Label^ label1;
 	protected:
 
 	private:
@@ -56,6 +57,7 @@ namespace ProjetPOO {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm1::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -77,16 +79,27 @@ namespace ProjetPOO {
 			this->progressBar1->TabIndex = 1;
 			this->progressBar1->Click += gcnew System::EventHandler(this, &MyForm1::progressBar1_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(131, 406);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(147, 13);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"© Tous droits réservés - 2023";
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(438, 472);
+			this->ClientSize = System::Drawing::Size(438, 428);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->progressBar1);
 			this->Controls->Add(this->pictureBox1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
@@ -94,6 +107,7 @@ namespace ProjetPOO {
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion

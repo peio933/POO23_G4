@@ -397,6 +397,7 @@ namespace ProjetPOO {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(998, 516);
 			this->Controls->Add(this->Title_order);
@@ -411,6 +412,7 @@ namespace ProjetPOO {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"StatisticsForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"EngineX";
 			this->Load += gcnew System::EventHandler(this, &StatisticsForm::Statistics_Management_Load);
 			this->Group_Infos->ResumeLayout(false);
 			this->Group_Infos->PerformLayout();
