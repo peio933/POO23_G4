@@ -8,9 +8,9 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::SelectAll(void)
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Select(void)
 {
     return "SELECT Customers.N_C AS Nom "
-        "Customers.S_C AS Prénom, "
+        "Customers.S_C AS PrÃ©nom, "
         "Customers.BD_C AS [Date de Naissance], "
-        "Adress.SNB AS [Numéro de rue], "
+        "Adress.SNB AS [NumÃ©ro de rue], "
         "Adress.SN AS [Nom de rue], "
         "Adress.N_V AS Ville, "
         "Adress.PC AS [Code postal] "
@@ -25,7 +25,7 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::Insert(void)
         "VALUES('" + getN_C() + "', '" + getS_C() + "', '" + getBD_C() + "'); "
         "DECLARE @CustomerID INT; SET @CustomerID = SCOPE_IDENTITY(); "
         "INSERT INTO Adress(SNB, SN, N_V, PC, ID_C) "
-        "VALUES(" + this->oAdress->getSNB() + ", '" + this->oAdress->getSN() + "', '" + this->oAdress->getN_V() + "', '" + this->oAdress->getPC() + "', @CustomerID)";
+        "VALUES(" + oAdress->getSNB() + ", '" + oAdress->getSN() + "', '" + oAdress->getN_V() + "', '" + oAdress->getPC() + "', @CustomerID)";
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Delete(void)

@@ -161,7 +161,6 @@ namespace ProjetPOO {
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-
 			this->button1->Location = System::Drawing::Point(12, 481);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 23);
@@ -172,7 +171,6 @@ namespace ProjetPOO {
 			// 
 			// txtBox_HTPrice
 			// 
-
 			this->txtBox_HTPrice->Location = System::Drawing::Point(112, 143);
 			this->txtBox_HTPrice->Name = L"txtBox_HTPrice";
 			this->txtBox_HTPrice->Size = System::Drawing::Size(304, 20);
@@ -184,11 +182,9 @@ namespace ProjetPOO {
 			this->Label_HTPrice->AutoSize = true;
 			this->Label_HTPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-
 			this->Label_HTPrice->Location = System::Drawing::Point(5, 146);
 			this->Label_HTPrice->Name = L"Label_HTPrice";
 			this->Label_HTPrice->Size = System::Drawing::Size(55, 13);
-
 			this->Label_HTPrice->TabIndex = 8;
 			this->Label_HTPrice->Text = L"HT Price :";
 			// 
@@ -239,7 +235,6 @@ namespace ProjetPOO {
 			this->Group_Infos->Controls->Add(this->Label_Threshold);
 			this->Group_Infos->Controls->Add(this->Lab_Name);
 			this->Group_Infos->Controls->Add(this->Lab_ref);
-
 			this->Group_Infos->Location = System::Drawing::Point(553, 107);
 			this->Group_Infos->Margin = System::Windows::Forms::Padding(2);
 			this->Group_Infos->Name = L"Group_Infos";
@@ -558,5 +553,7 @@ namespace ProjetPOO {
 			MessageBox::Show("Please enter all the informations of the article you want to create! \n \n - Article Reference \n - Name \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA \n - Description", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
-	};
+	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
