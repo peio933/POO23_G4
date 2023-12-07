@@ -714,17 +714,19 @@ private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::
 }
 private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
 	this->oDs = this->oStats->stockPurchaseValue("Rsl");
 	this->View_Database->Refresh();
+	this->View_Database->Refresh();
+	this->oDs = this->oStats->stockPurchaseValue("Rsl");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl";
 }
 private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
 	this->oDs = this->oStats->stockCommercialValue("Rsl");
 	this->View_Database->Refresh();
+	this->View_Database->Refresh();
+	this->oDs = this->oStats->stockCommercialValue("Rsl");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl";
 }
@@ -732,6 +734,8 @@ private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^
 {
 	this->oDs = this->oStats->belowThreshold("Rsl");
 	this->View_Database->Refresh();
+	this->View_Database->Refresh();
+	this->oDs = this->oStats->belowThreshold("Rsl");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl";
 }
