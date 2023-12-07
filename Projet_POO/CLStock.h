@@ -13,7 +13,7 @@ namespace NS_Comp_Stock {
 		System::Data::DataSet^ selectArticle(System::String^, System::String^);
 		void insertArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void updateArticle(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void deleteArticle(System::String^, System::String^);
+		System::Data::DataSet^ deleteArticle(System::String^, System::String^, System::String^);
 	};
 }
 

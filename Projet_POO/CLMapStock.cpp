@@ -17,7 +17,18 @@ System::String^ NS_Comp_Map_Stock::CLMapStock::Insert(void)
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Delete(void)
 {
-    return "DELETE FROM Article WHERE R_A = '" + getR_A() + "' AND N_A = '" + getN_A() + "'; ";
+    return "IF NOT EXISTS ( "
+        "SELECT 1 "
+        "FROM composed "
+        "WHERE ID_A = (SELECT ID_A FROM Article WHERE R_A = '" + getR_A() + "')) "
+        "BEGIN "
+        "DELETE FROM Article WHERE R_A = '" + getR_A() + "' AND N_A = '" + getN_A() + "'; "
+        "SELECT 'Article supprimé ou inexistant' AS Message; "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'Article présent dans une commande, ne peut pas être supprimé' AS Message; "
+        "END; ";
 }
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Update(void)

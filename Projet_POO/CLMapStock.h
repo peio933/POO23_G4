@@ -2,7 +2,7 @@
 #include "CLMap.h"
 namespace NS_Comp_Map_Stock
 {
-	ref class CLMapStock : public CLMap
+	public ref class CLMapStock : public CLMap
 	{
 	private:
 		System::String^ ID_A;
@@ -15,10 +15,10 @@ namespace NS_Comp_Map_Stock
 		System::String^ D_A;
 	public:
 		System::String^ SelectAll(void);
-		System::String^ Select(void) override;
-		System::String^ Insert(void) override;
-		System::String^ Delete(void) override;
-		System::String^ Update(void) override;
+		virtual System::String^ Select(void) override;
+		virtual System::String^ Insert(void) override;
+		virtual System::String^ Delete(void) override;
+		virtual System::String^ Update(void) override;
 
 		void setID_A(System::String^);
 		void setR_A(System::String^);
