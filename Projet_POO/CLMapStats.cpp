@@ -49,7 +49,7 @@ System::String^ NS_Comp_Map_Stats::CLMapStats::QueryStockCommercialValue(void)
 {
 	return"SELECT CAST(SUM(QC_A * HT_A) "
 		"AS DECIMAL(18, 2)) "
-		"AS ValeurCommercialeStock, "
+		"AS ValeurCommercialeStock "
 		"FROM Article;";
 }
 
