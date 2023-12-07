@@ -714,7 +714,6 @@ private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::
 }
 private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
 	this->oDs = this->oStats->stockPurchaseValue("Rsl5");
 	this->View_Database->Refresh();
 	this->View_Database->DataSource = this->oDs;
@@ -722,7 +721,6 @@ private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::
 }
 private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	
 	this->oDs = this->oStats->stockCommercialValue("Rsl6");
 	this->View_Database->Refresh();
 	this->View_Database->DataSource = this->oDs;
