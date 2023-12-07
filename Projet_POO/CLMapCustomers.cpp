@@ -25,7 +25,7 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::Insert(void)
         "VALUES('" + getN_C() + "', '" + getS_C() + "', '" + getBD_C() + "'); "
         "DECLARE @CustomerID INT; SET @CustomerID = SCOPE_IDENTITY(); "
         "INSERT INTO Adress(SNB, SN, N_V, PC, ID_C) "
-        "VALUES(" + this->oAdress->getSNB() + ", '" + this->oAdress->getSN() + "', '" + this->oAdress->getN_V() + "', '" + this->oAdress->getPC() + "', @CustomerID)";
+        "VALUES(" + oAdress->getSNB() + ", '" + oAdress->getSN() + "', '" + oAdress->getN_V() + "', '" + oAdress->getPC() + "', @CustomerID)";
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Delete(void)
