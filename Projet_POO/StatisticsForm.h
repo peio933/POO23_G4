@@ -687,23 +687,23 @@ private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::Even
 private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->customerTotalAmount("Rsl");
+	this->oDs = this->oStats->customerTotalAmount("Rsl1");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl1";
 }
 private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->bestSellers("Rsl");
+	this->oDs = this->oStats->bestSellers("Rsl2");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl2";
 }
 private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->lessSold("Rsl");
+	this->oDs = this->oStats->lessSold("Rsl3");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl3";
 }
 private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -715,25 +715,25 @@ private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::
 private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	
-	this->oDs = this->oStats->stockPurchaseValue("Rsl");
+	this->oDs = this->oStats->stockPurchaseValue("Rsl4");
 	this->View_Database->Refresh();
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl4";
 }
 private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	
-	this->oDs = this->oStats->stockCommercialValue("Rsl");
+	this->oDs = this->oStats->stockCommercialValue("Rsl5");
 	this->View_Database->Refresh();
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl5";
 }
 private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->oDs = this->oStats->belowThreshold("Rsl");
+	this->oDs = this->oStats->belowThreshold("Rsl6");
 	this->View_Database->Refresh();
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl6";
 }
 
 };
