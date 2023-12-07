@@ -283,8 +283,8 @@ namespace ProjetPOO {
 			this->ListBox_Mounth->FormattingEnabled = true;
 			this->ListBox_Mounth->ItemHeight = 16;
 			this->ListBox_Mounth->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
-				L"01", L"02", L"03", L"04", L"05", L"06",
-					L"07", L"08", L"09", L"10", L"11", L"12"
+				L"1", L"2", L"3", L"4", L"5", L"6", L"7",
+					L"8", L"9", L"10", L"11", L"12"
 			});
 			this->ListBox_Mounth->Location = System::Drawing::Point(6, 127);
 			this->ListBox_Mounth->Name = L"ListBox_Mounth";
@@ -687,57 +687,51 @@ private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::Even
 private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->customerTotalAmount("Rsl");
+	this->oDs = this->oStats->customerTotalAmount("Rsl1");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl1";
 }
 private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->bestSellers("Rsl");
+	this->oDs = this->oStats->bestSellers("Rsl2");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl2";
 }
 private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	this->View_Database->Refresh();
-	this->oDs = this->oStats->lessSold("Rsl");
+	this->oDs = this->oStats->lessSold("Rsl3");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl3";
 }
 private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//this->View_Database->Refresh();
-	//this->oDs = this->oStats->monthSalesRevenue(this->TxtBox_Years->Year, this->ListBox_Mounth->Mounth);
-	//this->View_Database->DataSource = this->oDs;
-	//this->View_Database->DataMember = "Rsl";
+	this->View_Database->Refresh();
+	this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl4";
 }
 private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->oDs = this->oStats->stockPurchaseValue("Rsl");
+	this->oDs = this->oStats->stockPurchaseValue("Rsl5");
 	this->View_Database->Refresh();
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->stockPurchaseValue("Rsl");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl5";
 }
 private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->oDs = this->oStats->stockCommercialValue("Rsl");
+	this->oDs = this->oStats->stockCommercialValue("Rsl6");
 	this->View_Database->Refresh();
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->stockCommercialValue("Rsl");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl6";
 }
 private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->oDs = this->oStats->belowThreshold("Rsl");
+	this->oDs = this->oStats->belowThreshold("Rsl7");
 	this->View_Database->Refresh();
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->belowThreshold("Rsl");
 	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
+	this->View_Database->DataMember = "Rsl7";
 }
 
 };
