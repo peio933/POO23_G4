@@ -1,23 +1,45 @@
 #include "CLMapOrders.h"
 
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectAll(void)
+{
+    return "SELECT * FROM Customer_Order";
+}
+
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 {
-    return  "SELECT R_O AS ReferenceCommande,"
+    //return  "SELECT * FROM Customer_Order WHERE R_O = 'EMWI2022-TOULON-001';"; // Requête fonctionnelle
+    //return  "SELECT * FROM Customer_Order WHERE R_O = '" + getR_O() + "'; ";   // Requête fonctionnelle
+
+    return "SELECT R_O AS ReferenceCommande,"
+        "DD_O AS DateCommande, SD_O AS DateLivraison,"
+        "PD_O AS DatePaiement, MOP_O AS MoyenPaiement,"
+        "HT_O AS PrixHT, TVA_O AS TVA,"
+        "TTC_O AS PrixTTC, R_A AS ReferenceArticle,"
+        "QC_A AS QuantiteCommandee "
+        "FROM Customer_Order "
+        "JOIN composed ON Customer_Order.ID_O = composed.ID_O "
+        "JOIN Article ON composed.ID_A = Article.ID_A "
+        "WHERE Customer_Order.R_O = '" + getR_O() + "';";
+        
+        /*
+            "SELECT R_O AS ReferenceCommande,"
             "DD_O AS DateCommande, SD_O AS DateLivraison,"
             "PD_O AS DatePaiement, MOP_O AS MoyenPaiement,"
-            "HT_O AS PrixHT,TVA_O AS TVA,"
+            "HT_O AS PrixHT, TVA_O AS TVA,"
             "TTC_O AS PrixTTC, R_A AS ReferenceArticle,"
-            "QC_A AS QuantiteCommandee"
-            "FROM Customer_Order"
-            "JOIN composed ON ID_O = ID_O"
-            "JOIN Article ON ID_A = ID_A"
-            "WHERE R_O = @ReferenceCommande;";
+            "QC_A AS QuantiteCommandee "
+            "FROM Customer_Order "
+            "JOIN composed ON Customer_Order.ID_O = composed.ID_O "
+            "JOIN Article ON composed.ID_A = Article.ID_A "
+            "WHERE Customer_Order.R_O = 'EMWI2022-TOULON-001';";
+            //"WHERE Customer_Order.R_O = '" + getR_O() + "';";*/
+
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
 {
     return  "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C)"
-            "VALUES(getR_O(), getDD_O(), getSD_O(), getPD_O(), getMOP_O(), getHT_O(), TVA_O(), getTTC_O(),getID_C());"
+            "VALUES(R_O, DD_O, SD_O, PD_O, MOP_O, TVA_O);"
             "UPDATE Article"
             "SET QC_A = getQC_A()"
             "WHERE R_A = getR_A();"

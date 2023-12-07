@@ -8,9 +8,9 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::SelectAll(void)
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Select(void)
 {
     return "SELECT Customers.N_C AS Nom "
-        "Customers.S_C AS Prénom, "
+        "Customers.S_C AS PrÃ©nom, "
         "Customers.BD_C AS [Date de Naissance], "
-        "Adress.SNB AS [Numéro de rue], "
+        "Adress.SNB AS [NumÃ©ro de rue], "
         "Adress.SN AS [Nom de rue], "
         "Adress.N_V AS Ville, "
         "Adress.PC AS [Code postal] "

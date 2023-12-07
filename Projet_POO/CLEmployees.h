@@ -1,9 +1,7 @@
 #pragma once
 #include "CLCAD.h"
 #include "CLmapEmployees.h"
-
-namespace NS_Comp_Employees
-{
+namespace NS_Comp_Employees{
 	ref class CLEmployees
 	{
 	private:
@@ -12,10 +10,11 @@ namespace NS_Comp_Employees
 
 	public:
 		CLEmployees(void);
-		System::Data::DataSet^ selectEmployee(System::String^);
-		void insertEmployee(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void updateEmployee(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void deleteEmployee(System::String^);
+		System::Data::DataSet^ loadEmployees(System::String^);
+		System::Data::DataSet^ selectEmployee(System::String^, System::String^);
+		void insertEmployee(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void updateEmployee(System::String^, System::String^, System::String^);
+		void deleteEmployee(System::String^, System::String^, System::String^);
 	};
 }
 

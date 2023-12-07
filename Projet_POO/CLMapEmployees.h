@@ -13,8 +13,7 @@ namespace NS_Comp_Map_Employees
 		System::String^ N1_E;
 		System::String^ ST_E;
 	public:
-		NS_Comp_Adr::CLAdress^ oAdress;
-
+		System::String^ SelectAll(void);
 		System::String^ Select(void) override;
 		System::String^ Insert(void) override;
 		System::String^ Delete(void) override;
@@ -33,5 +32,6 @@ namespace NS_Comp_Map_Employees
 		System::String^ getHD_E(void);
 		System::String^ getN1_E(void);
 		System::String^ getST_E(void);
+		NS_Comp_Adr::CLAdress^ oAdress;
 	};
 }
