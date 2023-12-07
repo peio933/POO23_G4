@@ -2,8 +2,8 @@
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::AverageTTC_O(void)
 {
-	return "SELECT AVG(TTC_O)"
-		"AS PanierMoyen"
+	return "SELECT AVG(TTC_O) "
+		"AS PanierMoyen "
 		"FROM Customer_Order;";
 }
 
@@ -21,63 +21,63 @@ System::String^ NS_Comp_Map_Stats::CLMapStats::SumTTC_O(void)
 System::String^ NS_Comp_Map_Stats::CLMapStats::SelectBestSellers(void)
 {
 	return"SELECT TOP 10 R_A, N_A,"
-		"SUM(QC_A) AS QuantiteVendue"
-		"FROM composed"
-		"JOIN Article"
-		"ON composed.ID_A = Article.ID_A"
-		"GROUP BY R_A, N_A"
+		"SUM(QC_A) AS QuantiteVendue "
+		"FROM composed "
+		"JOIN Article "
+		"ON composed.ID_A = Article.ID_A "
+		"GROUP BY R_A, N_A "
 		"ORDER BY QuantiteVendue DESC;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::SelectbelowThreshold(void)
 {
-	return"SELECT ID_A,	R_A AS ReferenceProduit, N_A AS NomProduit, QC_A AS QuantiteEnStock"
+	return"SELECT ID_A,	R_A AS ReferenceProduit, N_A AS NomProduit, QC_A AS QuantiteEnStock "
 		"FROM Article WHERE QC_A < RT_A;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::SelectLessSold(void)
 {
-	return"SELECT TOP 10 R_A, N_A, SUM(QC_A)"
-		"AS QuantiteVendue"
-		"FROM composed"
-		"JOIN Article ON composed.ID_A = Article.ID_A"
-		"GROUP BY R_A, N_A"
+	return"SELECT TOP 10 R_A, N_A, SUM(QC_A) "
+		"AS QuantiteVendue "
+		"FROM composed "
+		"JOIN Article ON composed.ID_A = Article.ID_A "
+		"GROUP BY R_A, N_A "
 		"ORDER BY QuantiteVendue ASC;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::QueryStockCommercialValue(void)
 {
-	return"SELECT CAST(SUM(QC_A * HT_A)"
-		"AS DECIMAL(18, 2))"
-		"AS ValeurCommercialeStock,"
+	return"SELECT CAST(SUM(QC_A * HT_A) "
+		"AS DECIMAL(18, 2)) "
+		"AS ValeurCommercialeStock, "
 		"FROM Article;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::QueryStockPurchaseValue(void)
 {
-	return"SELECT CAST(SUM(QC_A * (HT_A * TVA_A))"
-		"AS DECIMAL(18, 2))"
-		"AS ValeurAchatStock"
+	return"SELECT CAST(SUM(QC_A * (HT_A * TVA_A)) "
+		"AS DECIMAL(18, 2)) "
+		"AS ValeurAchatStock "
 		"FROM Article;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::SumTTC_O_C(void)
 {
-	return"SELECT Customers.N_C"
-		"AS NomClient, Customers.S_C"
-		"AS PrenomClient, SUM(Customer_Order.TTC_O)"
-		"AS MontantTotalAchats"
-		"FROM Customers"
-		"JOIN Customer_Order ON Customers.ID_C = Customer_Order.ID_C"
-		"GROUP BY Customers.N_C,"
+	return"SELECT Customers.N_C "
+		"AS NomClient, Customers.S_C "
+		"AS PrenomClient, SUM(Customer_Order.TTC_O) "
+		"AS MontantTotalAchats "
+		"FROM Customers "
+		"JOIN Customer_Order ON Customers.ID_C = Customer_Order.ID_C "
+		"GROUP BY Customers.N_C, "
 		"Customers.S_C;";
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::simulateStockValue(void)
 {
-	return "SELECT CAST(SUM(QC_A * HT_A)"
-		"AS DECIMAL(18, 2))"
-		"AS ValeurCommercialeStock,"
+	return "SELECT CAST(SUM(QC_A * HT_A) "
+		"AS DECIMAL(18, 2)) "
+		"AS ValeurCommercialeStock, "
 		"FROM Article;";
 }
 
