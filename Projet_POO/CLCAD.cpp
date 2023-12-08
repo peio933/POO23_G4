@@ -4,7 +4,8 @@ NS_Comp_Data::CLCAD::CLCAD(void)
 {
 
 
-	this->sCnx = "Data Source=ROBIN\\MYSQL_A2_ROBIN;Initial Catalog=POO_Groupe4;Integrated Security=True";
+
+	this->sCnx = "Data Source=TERMINATOR\\MSSQL_PEIO;Initial Catalog=POO_Groupe4;Integrated Security=True;Encrypt=False";
 
 
 	this->sSql = "Rien";
@@ -42,8 +43,8 @@ System::Data::DataSet^ NS_Comp_Data::CLCAD::getRows(System::String^ sSql, System
 	}
 	catch (System::Exception^ ex)
 	{
-		// Imprimez les détails de l'exception
-		System::Console::WriteLine("Erreur lors de l'exécution de la requête : " + ex->Message);
+		// Imprimez les dÃ©tails de l'exception
+		System::Console::WriteLine("Erreur lors de l'exÃ©cution de la requÃªte : " + ex->Message);
 	}
 
 	return this->oDs;

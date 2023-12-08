@@ -33,27 +33,32 @@ System::String^ NS_Comp_Map_Employees::CLMapEmployees::Select(void)
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Insert(void)
 {
-    return  "INSERT INTO Employee (N_E, S_E, HD_E, N1_E, ST_E)"
+    return  "INSERT INTO Employee (S_E, N_E, HD_E, N1_E, ST_E)"
             "VALUES('" + getN_E() + "', '" + getS_E() + "', '" + getHD_E() + "', '" + getN1_E() + "', '" + getST_E() + "');"
             "DECLARE  @EmployeeID INT;"
             "SET @EmployeeID = SCOPE_IDENTITY();"
-            "INSERT INTO Adress(SNB, SN, N_V, PC)"
-            "VALUES('" + getSNB() + "', '" + getSN() + "', '" + getN_V() + "', '" + getPC() + "'); ";
+            "INSERT INTO Adress(SNB, SN, N_V, PC, ID_E)"
+            "VALUES('" + getSNB() + "', '" + getSN() + "', '" + getN_V() + "', '" + getPC() + "', @EmployeeID); ";
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Delete(void)
 {
-    return  "DELETE FROM Employee "
-            "WHERE S_E = '" + getS_E() + "' AND N_E = '" + getN_E() + "' AND HD_E = '" + getHD_E() + "'; ";
-
+    return  "DELETE FROM Adress "
+            "WHERE ID_E = (SELECT ID_E FROM Employee WHERE S_E = '" + getN_E() + "' AND N_E = '" + getS_E() + "' AND HD_E = '" + getHD_E() + "'); "
+            "DELETE FROM Employee "
+            "WHERE S_E = '" + getS_E() + "' AND N_E = '" + getN_E() + "' AND HD_E = '" + getHD_E() + "';";
 }
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Update(void)
 {
     return  "UPDATE Employee "
-            "SET N_E = 'NouveauPrénom', S_E = 'NouveauNom' "
-            "WHERE S_E = '" + getS_E() + "' AND N_E = '" + getN_E() + "' AND HD_E = '" + getHD_E() + "';";
-
+        "SET N_E = '" + getN_E() + "', S_E = '" + getS_E() + "' "
+        "WHERE S_E = '" + getN_E() + "' AND N_E = '" + getS_E() + "' AND HD_E = '" + getHD_E() + "'; "
+        "UPDATE Adress "
+        "SET SNB = '" + getSNB() + "', SN = '" + getSN() + "', N_V = '" + getN_V() + "', PC = '" + getPC() + "' "
+        "FROM Adress "
+        "INNER JOIN Employee ON Adress.ID_E = Employee.ID_E "
+        "WHERE Employee.S_E = '" + getN_E() + "' AND Employee.N_E = '" + getS_E() + "' AND Employee.HD_E = '" + getHD_E() + "'; ";
 }
 
 void NS_Comp_Map_Employees::CLMapEmployees::setID_E(System::String^ ID_E)

@@ -1,5 +1,6 @@
 #pragma once
 #include "CLMap.h"
+
 namespace NS_Comp_Map_Employees
 {
 	ref class CLMapEmployees : public CLMap
@@ -11,9 +12,9 @@ namespace NS_Comp_Map_Employees
 		System::String^ S_E;
 		System::String^ HD_E;
 		System::String^ N1_E;
-		System::String^ ST_E;
+		System::String^  ST_E;
 
-		//adresse de l'employé
+		//adresse de l'employÃ©
 		System::String^ ID_CY;
 		System::String^ N_V;
 		System::String^ ID_SN;
@@ -37,7 +38,7 @@ namespace NS_Comp_Map_Employees
 		void setN1_E(System::String^);
 		void setST_E(System::String^);
 
-		//adresse de l'employé
+		//adresse de l'employÃ©
 		void setID_CY(System::String^);
 		void setN_V(System::String^);
 		void setID_SN(System::String^);
@@ -54,7 +55,7 @@ namespace NS_Comp_Map_Employees
 		System::String^ getN1_E(void);
 		System::String^ getST_E(void);
 
-		//adresse de l'employé
+		//adresse de l'employÃ©
 		System::String^ getID_CY(void);
 		System::String^ getN_V(void);
 		System::String^ getID_SN(void);
