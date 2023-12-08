@@ -2,73 +2,105 @@
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectAll(void)
 {
-    return "SELECT * FROM Customer_Order";
+    return "SELECT R_O AS Reference, PD_O AS [Payment Date], SD_O AS [Send Date], DD_O AS [Delivery Date], MOP_O AS [Mean of Payment], HT_O AS [HT Price], TVA_O AS TVA, TTC_O AS [TTC Price] FROM Customer_Order";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectName(void)
+{
+    return "SELECT C.N_C AS PrénomClient "
+        "FROM Customers AS C "
+        "JOIN Customer_Order AS CO ON C.ID_C = CO.ID_C "
+        "WHERE CO.R_O = '"+ getR_O() + "'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectSurname(void)
+{
+    return "SELECT C.S_C AS NomClient "
+        "FROM Customers AS C "
+        "JOIN Customer_Order AS CO ON C.ID_C = CO.ID_C "
+        "WHERE CO.R_O = '"+ getR_O() +"'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectAdress(void)
+{
+    return "SELECT CONCAT(A.SNB, ' ', A.SN) AS AdresseClient "
+        "FROM Customers AS C "
+        "JOIN Customer_Order AS CO ON C.ID_C = CO.ID_C "
+        "JOIN Adress AS A ON C.ID_C = A.ID_C "
+        "WHERE CO.R_O = '" + getR_O() + "'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectCity(void)
+{
+    return "SELECT CONCAT(A.PC, ' ', A.N_V) AS VilleClient "
+        "FROM Customers AS C "
+        "JOIN Customer_Order AS CO ON C.ID_C = CO.ID_C "
+        "JOIN Adress AS A ON C.ID_C = A.ID_C "
+        "WHERE CO.R_O = '"+ getR_O() +"'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectHT(void)
+{
+    return "SELECT HT_O AS HTPrice FROM Customer_Order "
+        "WHERE R_O = '" + getR_O() + "'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectTVA(void)
+{
+    return "SELECT TVA_O AS TVA FROM Customer_Order "
+        "WHERE R_O = '" + getR_O() + "'; ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectTTC(void)
+{
+    return "SELECT TTC_O AS TTCPrice FROM Customer_Order "
+        "WHERE R_O = '" + getR_O() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 {
-    //return  "SELECT * FROM Customer_Order WHERE R_O = 'EMWI2022-TOULON-001';"; // Requête fonctionnelle
-    //return  "SELECT * FROM Customer_Order WHERE R_O = '" + getR_O() + "'; ";   // Requête fonctionnelle
-
-    return "SELECT R_O AS ReferenceCommande,"
-        "DD_O AS DateCommande, SD_O AS DateLivraison,"
-        "PD_O AS DatePaiement, MOP_O AS MoyenPaiement,"
-        "HT_O AS PrixHT, TVA_O AS TVA,"
-        "TTC_O AS PrixTTC, R_A AS ReferenceArticle,"
-        "QC_A AS QuantiteCommandee "
-        "FROM Customer_Order "
-        "JOIN composed ON Customer_Order.ID_O = composed.ID_O "
-        "JOIN Article ON composed.ID_A = Article.ID_A "
-        "WHERE Customer_Order.R_O = '" + getR_O() + "';";
-        
-        /*
-            "SELECT R_O AS ReferenceCommande,"
-            "DD_O AS DateCommande, SD_O AS DateLivraison,"
-            "PD_O AS DatePaiement, MOP_O AS MoyenPaiement,"
-            "HT_O AS PrixHT, TVA_O AS TVA,"
-            "TTC_O AS PrixTTC, R_A AS ReferenceArticle,"
-            "QC_A AS QuantiteCommandee "
-            "FROM Customer_Order "
-            "JOIN composed ON Customer_Order.ID_O = composed.ID_O "
-            "JOIN Article ON composed.ID_A = Article.ID_A "
-            "WHERE Customer_Order.R_O = 'EMWI2022-TOULON-001';";
-            //"WHERE Customer_Order.R_O = '" + getR_O() + "';";*/
-
+    return "SELECT A.R_A, A.N_A, A.HT_A, A.TVA_A "
+        "FROM Customer_Order AS CO "
+        "JOIN composed AS CMP ON CO.ID_O = CMP.ID_O "
+        "JOIN Article AS A ON CMP.ID_A = A.ID_A "
+        "WHERE CO.R_O = '" + getR_O() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Insert(void)
 {
-    return  "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C)"
-            "VALUES(R_O, DD_O, SD_O, PD_O, MOP_O, TVA_O);"
-            "UPDATE Article"
-            "SET QC_A = getQC_A()"
-            "WHERE R_A = getR_A();"
-            "INSERT INTO composed(ID_O, ID_A)"
-            "VALUES(ID_O = getID_O(), (SELECT ID_A FROM Article WHERE R_A = getR_O()));"
-            "UPDATE Article"
-            "SET QS_A = QS_A - getQS_A()"
-            "WHERE R_A = getR_O();";
+    return "DECLARE @NomClient VARCHAR(30) "
+        "DECLARE @PrenomClient VARCHAR(30) "
+        "DECLARE @MoyenPaiement VARCHAR(30) "
+        "SET @PrenomClient = '" + getN_C() + "'; "
+        "SET @NomClient = '" + getS_C() + "'; "
+        "SET @MoyenPaiement = '" + getMOP_O() + "'; "
+        "IF EXISTS(SELECT 1 FROM Customers WHERE N_C = @PrenomClient AND S_C = @NomClient) "
+        "BEGIN "
+        "DECLARE @NumeroCommande INT; "
+        "SET @NumeroCommande = ISNULL((SELECT MAX(CAST(RIGHT(R_O, 3) AS INT)) FROM Customer_Order WHERE ID_C = (SELECT ID_C FROM Customers WHERE N_C = @PrenomClient AND S_C = @NomClient)), 0) + 1; "
+        "DECLARE @ReferenceCommande VARCHAR(50); "
+        "SET @ReferenceCommande = LEFT(@PrenomClient, 2) + LEFT(@NomClient, 2) + CONVERT(VARCHAR(4), YEAR(GETDATE())) + (SELECT N_V FROM Adress WHERE ID_C = (SELECT ID_C FROM Customers WHERE N_C = @PrenomClient AND S_C = @NomClient)) + RIGHT('000' + CAST(@NumeroCommande AS VARCHAR(3)), 3); "
+        "INSERT INTO Customer_Order(R_O, DD_O, SD_O, PD_O, MOP_O, HT_O, TVA_O, TTC_O, ID_C) "
+        "VALUES(@ReferenceCommande, DATEADD(day, 7, GETDATE()), DATEADD(day, 1, GETDATE()), GETDATE(), @MoyenPaiement, 0, 0, 0, (SELECT ID_C FROM Customers WHERE N_C = @PrenomClient AND S_C = @NomClient)); "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "PRINT 'Customer invalid'; "
+        "END ";
 
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Delete(void)
 {
-    return  "DELETE FROM composed WHERE ID_O = getID_O();"
-            "DELETE FROM Customer_Order WHERE ID_O = getID_O();";
+    return  "DELETE FROM composed WHERE ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = '" + getR_O() + "'); "
+        "DELETE FROM Customer_Order WHERE R_O = '" + getR_O() + "'; ";
 }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Update(void)
 {
-    return  "UPDATE"
-            "SET QC_A = getQC_A()"
-            "FROM Article"
-            "INNER JOIN composed ON ID_A = ID_A"
-            "INNER JOIN Customer_Order ON ID_O = ID_O"
-            "WHERE R_O = getR_O();";
-}
-
-void NS_Comp_Map_Orders::CLMapOrders::setID_O(System::String^ ID_O)
-{
-    this->ID_O = ID_O;
+    return  "UPDATE Customer_Order "
+        "SET SD_O = '" + getSD_O() + "', "
+        "DD_O = '" + getDD_O() + "' "
+        "WHERE R_O = '" + getR_O() + "'; ";
 }
 
 void NS_Comp_Map_Orders::CLMapOrders::setR_O(System::String^ R_O)
@@ -86,38 +118,26 @@ void NS_Comp_Map_Orders::CLMapOrders::setSD_O(System::String^ SD_O)
     this->SD_O = SD_O;
 }
 
-void NS_Comp_Map_Orders::CLMapOrders::setPD_O(System::String^ PD_O)
-{
-    this->PD_O = PD_O;
-}
 
 void NS_Comp_Map_Orders::CLMapOrders::setMOP_O(System::String^ MOP_O)
 {
     this->MOP_O = MOP_O;
 }
 
-void NS_Comp_Map_Orders::CLMapOrders::setHT_O(System::String^ HT_O)
+void NS_Comp_Map_Orders::CLMapOrders::setN_C(System::String^ N_C)
 {
-    this->HT_O = HT_O;
+    this->N_C = N_C;
 }
 
-void NS_Comp_Map_Orders::CLMapOrders::setTVA_O(System::String^ TVA_O)
+void NS_Comp_Map_Orders::CLMapOrders::setS_C(System::String^S_C)
 {
-    this->TVA_O = TVA_O;
+    this->S_C = S_C;
 }
 
-void NS_Comp_Map_Orders::CLMapOrders::setTTC_O(System::String^ TTC_O)
-{
-    this->TTC_O = TTC_O;
-}
-
-System::String^ NS_Comp_Map_Orders::CLMapOrders::getID_O(void) { return this->ID_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getR_O(void) { return this->R_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getDD_O(void) { return this->DD_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getSD_O(void) { return this->SD_O; }
-System::String^ NS_Comp_Map_Orders::CLMapOrders::getPD_O(void) { return this->PD_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getMOP_O(void) { return this->MOP_O; }
-System::String^ NS_Comp_Map_Orders::CLMapOrders::getHT_O(void) { return this->HT_O; }
-System::String^ NS_Comp_Map_Orders::CLMapOrders::getTVA_O(void) { return this->TVA_O; }
-System::String^ NS_Comp_Map_Orders::CLMapOrders::getTTC_O(void) { return this->TTC_O; }
+System::String^ NS_Comp_Map_Orders::CLMapOrders::getN_C(void) { return this->N_C; }
+System::String^ NS_Comp_Map_Orders::CLMapOrders::getS_C(void) { return this->S_C; }
 

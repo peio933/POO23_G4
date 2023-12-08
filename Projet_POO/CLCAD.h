@@ -17,6 +17,9 @@ namespace NS_Comp_Data
 		CLCAD(void);
 		System::Data::DataSet^ getRows(System::String^, System::String^);
 		void actionRows(System::String^);
+		System::String^ executeQuery(System::String^);
+		System::Int32 NS_Comp_Data::CLCAD::executeQueryForInt(System::String^);
+		System::Decimal executeQueryForDecimal(System::String^);
 	};
 }
 
