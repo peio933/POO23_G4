@@ -115,28 +115,28 @@ namespace ProjetPOO {
 
 	private: System::Windows::Forms::ListBox^ ListBox_Mounth;
 	private: System::Windows::Forms::TextBox^ TxtBox_Years;
-private: System::Windows::Forms::GroupBox^ Group_Reminder;
+	private: System::Windows::Forms::GroupBox^ Group_Reminder;
 
-private: System::Windows::Forms::Label^ Lab1_reminder;
+	private: System::Windows::Forms::Label^ Lab1_reminder;
 
-private: System::Windows::Forms::ListBox^ List_UDiscount;
+	private: System::Windows::Forms::ListBox^ List_UDiscount;
 
-private: System::Windows::Forms::ListBox^ List_Discount;
+	private: System::Windows::Forms::ListBox^ List_Discount;
 
-private: System::Windows::Forms::Label^ UnknownDiscount;
+	private: System::Windows::Forms::Label^ UnknownDiscount;
 
-private: System::Windows::Forms::Label^ Lab_Discount;
-private: System::Windows::Forms::ListBox^ List_Margin;
+	private: System::Windows::Forms::Label^ Lab_Discount;
+	private: System::Windows::Forms::ListBox^ List_Margin;
 
 
-private: System::Windows::Forms::ListBox^ List_TVA;
+	private: System::Windows::Forms::ListBox^ List_TVA;
 
-private: System::Windows::Forms::Label^ Lab_CMargin;
+	private: System::Windows::Forms::Label^ Lab_CMargin;
 
-private: System::Windows::Forms::Label^ Lab_TVA;
-private: System::Windows::Forms::Label^ Lab2_Reminder;
+	private: System::Windows::Forms::Label^ Lab_TVA;
+	private: System::Windows::Forms::Label^ Lab2_Reminder;
 
-private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -178,7 +178,7 @@ private: System::Windows::Forms::Label^ label1;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -639,79 +639,77 @@ private: System::Windows::Forms::Label^ label1;
 	{
 		this->oStats = gcnew NS_Comp_Stats::CLStats();
 	}
+	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e) {}
+	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {}
 
-	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e){}
-	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e){}
-
-private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->averageCart("Rsl");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
-}
-private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->customerTotalAmount("Rsl1");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl1";
-}
-private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->bestSellers("Rsl2");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl2";
-}
-private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->lessSold("Rsl3");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl3";
-}
-private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl4";
-}
-private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->stockPurchaseValue("Rsl5");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl5";
-}
-private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->stockCommercialValue("Rsl6");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl6";
-}
-private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->belowThreshold("Rsl7");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl7";
-}
-
-
-private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
-{
-
-	this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_UDiscount->Text, "Rsl26");
-	//this->oDs = this->oStats->simulateStockValue("Rsl26");
-	this->Dataview_simulate->Refresh();
-	this->Dataview_simulate->DataSource = this->oDs;
-	this->Dataview_simulate->DataMember = "Rsl26";
-
-}
+	private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->averageCart("Rsl");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl";
+	}
+	private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->customerTotalAmount("Rsl1");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl1";
+	}
+	private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->bestSellers("Rsl2");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl2";
+	}
+	private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->lessSold("Rsl3");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl3";
+	}
+	private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl4";
+	}
+	private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->stockPurchaseValue("Rsl5");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl5";
+	}
+	private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->stockCommercialValue("Rsl6");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl6";
+	}
+	private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->belowThreshold("Rsl7");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl7";
+	}
 
 
-};
+	private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
+		//this->oDs = this->oStats->simulateStockValue("Rsl26");
+		this->Dataview_simulate->Refresh();
+		this->Dataview_simulate->DataSource = this->oDs;
+		this->Dataview_simulate->DataMember = "Rsl26";
+	}
+
+
+	};
+
 }
