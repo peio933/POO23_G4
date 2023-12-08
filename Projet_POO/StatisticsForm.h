@@ -78,7 +78,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_Seuil;
 
 	private: System::Windows::Forms::DataGridView^ View_Database;
-	private: System::Windows::Forms::DataGridView^ Dataview;
+	private: System::Windows::Forms::DataGridView^ Dataview_simulate;
+
 
 
 
@@ -134,6 +135,8 @@ private: System::Windows::Forms::Label^ Lab_CMargin;
 
 private: System::Windows::Forms::Label^ Lab_TVA;
 private: System::Windows::Forms::Label^ Lab2_Reminder;
+
+private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -205,6 +208,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Title_order = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->Group_Reminder = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Lab2_Reminder = (gcnew System::Windows::Forms::Label());
 			this->Lab1_reminder = (gcnew System::Windows::Forms::Label());
 			this->List_UDiscount = (gcnew System::Windows::Forms::ListBox());
@@ -215,7 +219,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->List_TVA = (gcnew System::Windows::Forms::ListBox());
 			this->Lab_CMargin = (gcnew System::Windows::Forms::Label());
 			this->Lab_TVA = (gcnew System::Windows::Forms::Label());
-			this->Dataview = (gcnew System::Windows::Forms::DataGridView());
+			this->Dataview_simulate = (gcnew System::Windows::Forms::DataGridView());
 			this->Btn_simulate = (gcnew System::Windows::Forms::Button());
 			this->Titre_Simulate = (gcnew System::Windows::Forms::Label());
 			this->Tab->SuspendLayout();
@@ -224,7 +228,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->tabPage2->SuspendLayout();
 			this->Group_Reminder->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview_simulate))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -439,7 +443,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->tabPage2->Controls->Add(this->List_TVA);
 			this->tabPage2->Controls->Add(this->Lab_CMargin);
 			this->tabPage2->Controls->Add(this->Lab_TVA);
-			this->tabPage2->Controls->Add(this->Dataview);
+			this->tabPage2->Controls->Add(this->Dataview_simulate);
 			this->tabPage2->Controls->Add(this->Btn_simulate);
 			this->tabPage2->Controls->Add(this->Titre_Simulate);
 			this->tabPage2->Location = System::Drawing::Point(4, 25);
@@ -452,19 +456,29 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// 
 			// Group_Reminder
 			// 
+			this->Group_Reminder->Controls->Add(this->label1);
 			this->Group_Reminder->Controls->Add(this->Lab2_Reminder);
 			this->Group_Reminder->Controls->Add(this->Lab1_reminder);
-			this->Group_Reminder->Location = System::Drawing::Point(811, 313);
+			this->Group_Reminder->Location = System::Drawing::Point(821, 337);
 			this->Group_Reminder->Name = L"Group_Reminder";
 			this->Group_Reminder->Size = System::Drawing::Size(457, 100);
 			this->Group_Reminder->TabIndex = 29;
 			this->Group_Reminder->TabStop = false;
 			this->Group_Reminder->Text = L"Reminder";
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(15, 57);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(415, 17);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"dress-up, but it\'s all in good fun. Keep calm, math is on our side! ";
+			// 
 			// Lab2_Reminder
 			// 
 			this->Lab2_Reminder->AutoSize = true;
-			this->Lab2_Reminder->Location = System::Drawing::Point(16, 57);
+			this->Lab2_Reminder->Location = System::Drawing::Point(16, 101);
 			this->Lab2_Reminder->Name = L"Lab2_Reminder";
 			this->Lab2_Reminder->Size = System::Drawing::Size(415, 17);
 			this->Lab2_Reminder->TabIndex = 1;
@@ -473,7 +487,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// Lab1_reminder
 			// 
 			this->Lab1_reminder->AutoSize = true;
-			this->Lab1_reminder->Location = System::Drawing::Point(16, 35);
+			this->Lab1_reminder->Location = System::Drawing::Point(15, 38);
 			this->Lab1_reminder->Name = L"Lab1_reminder";
 			this->Lab1_reminder->Size = System::Drawing::Size(416, 17);
 			this->Lab1_reminder->TabIndex = 0;
@@ -484,7 +498,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->List_UDiscount->FormattingEnabled = true;
 			this->List_UDiscount->ItemHeight = 16;
 			this->List_UDiscount->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.05", L"0.03", L"0.02" });
-			this->List_UDiscount->Location = System::Drawing::Point(409, 390);
+			this->List_UDiscount->Location = System::Drawing::Point(419, 414);
 			this->List_UDiscount->Name = L"List_UDiscount";
 			this->List_UDiscount->Size = System::Drawing::Size(374, 20);
 			this->List_UDiscount->TabIndex = 28;
@@ -494,7 +508,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->List_Discount->FormattingEnabled = true;
 			this->List_Discount->ItemHeight = 16;
 			this->List_Discount->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"0.06", L"0.05" });
-			this->List_Discount->Location = System::Drawing::Point(407, 334);
+			this->List_Discount->Location = System::Drawing::Point(417, 358);
 			this->List_Discount->Name = L"List_Discount";
 			this->List_Discount->Size = System::Drawing::Size(374, 20);
 			this->List_Discount->TabIndex = 27;
@@ -502,7 +516,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// UnknownDiscount
 			// 
 			this->UnknownDiscount->AutoSize = true;
-			this->UnknownDiscount->Location = System::Drawing::Point(406, 370);
+			this->UnknownDiscount->Location = System::Drawing::Point(416, 394);
 			this->UnknownDiscount->Name = L"UnknownDiscount";
 			this->UnknownDiscount->Size = System::Drawing::Size(169, 17);
 			this->UnknownDiscount->TabIndex = 26;
@@ -511,7 +525,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// Lab_Discount
 			// 
 			this->Lab_Discount->AutoSize = true;
-			this->Lab_Discount->Location = System::Drawing::Point(406, 313);
+			this->Lab_Discount->Location = System::Drawing::Point(416, 337);
 			this->Lab_Discount->Name = L"Lab_Discount";
 			this->Lab_Discount->Size = System::Drawing::Size(109, 17);
 			this->Lab_Discount->TabIndex = 25;
@@ -522,7 +536,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->List_Margin->FormattingEnabled = true;
 			this->List_Margin->ItemHeight = 16;
 			this->List_Margin->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.15", L"0.10", L"0.05" });
-			this->List_Margin->Location = System::Drawing::Point(9, 390);
+			this->List_Margin->Location = System::Drawing::Point(19, 414);
 			this->List_Margin->Name = L"List_Margin";
 			this->List_Margin->Size = System::Drawing::Size(374, 20);
 			this->List_Margin->TabIndex = 24;
@@ -532,7 +546,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->List_TVA->FormattingEnabled = true;
 			this->List_TVA->ItemHeight = 16;
 			this->List_TVA->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.20", L"0.08", L"0.07" });
-			this->List_TVA->Location = System::Drawing::Point(7, 334);
+			this->List_TVA->Location = System::Drawing::Point(17, 358);
 			this->List_TVA->Name = L"List_TVA";
 			this->List_TVA->Size = System::Drawing::Size(374, 20);
 			this->List_TVA->TabIndex = 23;
@@ -540,7 +554,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// Lab_CMargin
 			// 
 			this->Lab_CMargin->AutoSize = true;
-			this->Lab_CMargin->Location = System::Drawing::Point(6, 370);
+			this->Lab_CMargin->Location = System::Drawing::Point(16, 394);
 			this->Lab_CMargin->Name = L"Lab_CMargin";
 			this->Lab_CMargin->Size = System::Drawing::Size(174, 17);
 			this->Lab_CMargin->TabIndex = 22;
@@ -549,28 +563,28 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			// Lab_TVA
 			// 
 			this->Lab_TVA->AutoSize = true;
-			this->Lab_TVA->Location = System::Drawing::Point(6, 313);
+			this->Lab_TVA->Location = System::Drawing::Point(16, 337);
 			this->Lab_TVA->Name = L"Lab_TVA";
 			this->Lab_TVA->Size = System::Drawing::Size(81, 17);
 			this->Lab_TVA->TabIndex = 21;
 			this->Lab_TVA->Text = L"VAT value :";
 			// 
-			// Dataview
+			// Dataview_simulate
 			// 
-			this->Dataview->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->Dataview->Location = System::Drawing::Point(7, 122);
-			this->Dataview->Name = L"Dataview";
-			this->Dataview->RowHeadersWidth = 51;
-			this->Dataview->RowTemplate->Height = 24;
-			this->Dataview->Size = System::Drawing::Size(1286, 175);
-			this->Dataview->TabIndex = 20;
+			this->Dataview_simulate->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->Dataview_simulate->Location = System::Drawing::Point(7, 122);
+			this->Dataview_simulate->Name = L"Dataview_simulate";
+			this->Dataview_simulate->RowHeadersWidth = 51;
+			this->Dataview_simulate->RowTemplate->Height = 24;
+			this->Dataview_simulate->Size = System::Drawing::Size(1286, 175);
+			this->Dataview_simulate->TabIndex = 20;
 			// 
 			// Btn_simulate
 			// 
 			this->Btn_simulate->BackColor = System::Drawing::Color::NavajoWhite;
-			this->Btn_simulate->Location = System::Drawing::Point(7, 427);
+			this->Btn_simulate->Location = System::Drawing::Point(7, 472);
 			this->Btn_simulate->Name = L"Btn_simulate";
-			this->Btn_simulate->Size = System::Drawing::Size(1286, 111);
+			this->Btn_simulate->Size = System::Drawing::Size(1286, 66);
 			this->Btn_simulate->TabIndex = 17;
 			this->Btn_simulate->Text = L"Simulate";
 			this->Btn_simulate->UseVisualStyleBackColor = false;
@@ -611,7 +625,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->tabPage2->PerformLayout();
 			this->Group_Reminder->ResumeLayout(false);
 			this->Group_Reminder->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview_simulate))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -689,11 +703,13 @@ private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^
 
 private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl8");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl8";
+	//this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl8");
+	this->oDs = this->oStats->simulateStockValue("Rsl8");
+	this->Dataview_simulate->Refresh();
+	this->Dataview_simulate->DataSource = this->oDs;
+	this->Dataview_simulate->DataMember = "Rsl8";
 }
+
 
 };
 }
