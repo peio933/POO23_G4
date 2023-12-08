@@ -57,9 +57,6 @@
     <ClCompile Include="CLOrders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLAdress.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CLCustomers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -117,9 +114,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLOrders.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CLAdress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CLCustomers.h">

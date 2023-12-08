@@ -121,6 +121,25 @@ After running the data population script, it's crucial to perform a thorough tes
 </p>
 <br>
 
+## Available features
+#### 1. Gestion des Stocks
+   - Créer un article
+   - Modifier un article
+   - Afficher un article
+   - Supprimer un article
+
+#### 2. Statistiques
+   - Calculer le panier moyen (après remise)
+   - Calculer le chiffre d’affaire sur un mois en particulier
+   - Identifier les produits sous le seuil de réapprovisionnement
+   - Calculer le montant total des achats pour un client
+   - Identifier les 10 articles les plus vendus
+   - Identifier les 10 articles les moins vendus
+   - Calculer la valeur commerciale du stock
+   - Calculer la valeur d’achat du stock
+   - Simuler des variations de valeurs commerciales pour en déduire la valeur du stock
+
+
 ## Authors
 * **Robin NOIRET** - [Robin GitHub](https://github.com/RobinNoiret)
 * **Peïo PICABEA** - [Peïo GitHub](lien)

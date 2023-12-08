@@ -47,105 +47,38 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_AverageCart;
 	private: System::Windows::Forms::Label^ Titre_Simulate;
 
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ Btn_CommercialValue;
 	private: System::Windows::Forms::GroupBox^ Group_Turnover;
-
 
 	private: System::Windows::Forms::Label^ Lab_Mounth;
 	private: System::Windows::Forms::Label^ Lab_Years;
 
-
-
-
 	private: System::Windows::Forms::Button^ Btn_MonthlyTurnover;
-
 	private: System::Windows::Forms::Button^ Btn_PurchasingValue;
-
-
 	private: System::Windows::Forms::Button^ Btn_LeastItems;
-
 	private: System::Windows::Forms::Button^ Btn_BestItems;
 	private: System::Windows::Forms::Button^ Btn_TotCustomer;
-
-
 	private: System::Windows::Forms::Button^ Btn_Seuil;
 
 	private: System::Windows::Forms::DataGridView^ View_Database;
-	private: System::Windows::Forms::DataGridView^ Dataview;
-
-	private: System::Windows::Forms::GroupBox^ Group_discount;
-	private: System::Windows::Forms::RadioButton^ RB_TD2;
-
-
-	private: System::Windows::Forms::RadioButton^ RB_TD1;
-
-	private: System::Windows::Forms::GroupBox^ Group_Unknown;
-	private: System::Windows::Forms::RadioButton^ RB_UM3;
-
-
-	private: System::Windows::Forms::RadioButton^ RB_UM2;
-
-	private: System::Windows::Forms::RadioButton^ RB_UM1;
-
-	private: System::Windows::Forms::GroupBox^ Group_VAT;
-	private: System::Windows::Forms::RadioButton^ RB_VAT3;
-
-
-	private: System::Windows::Forms::RadioButton^ RB_VAT2;
-
-	private: System::Windows::Forms::RadioButton^ RB_VAT1;
+	private: System::Windows::Forms::DataGridView^ Dataview_simulate;
 
 	private: System::Windows::Forms::Button^ Btn_simulate;
-	private: System::Windows::Forms::GroupBox^ Group_margin;
-	private: System::Windows::Forms::RadioButton^ RB_CM3;
-
-
-
-	private: System::Windows::Forms::RadioButton^ RB_CM2;
-
-	private: System::Windows::Forms::RadioButton^ RB_CM1;
-
 	private: System::Windows::Forms::ListBox^ ListBox_Mounth;
 	private: System::Windows::Forms::TextBox^ TxtBox_Years;
+	private: System::Windows::Forms::GroupBox^ Group_Reminder;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Label^ Lab1_reminder;
+	private: System::Windows::Forms::ListBox^ List_UDiscount;
+	private: System::Windows::Forms::ListBox^ List_Discount;
+	private: System::Windows::Forms::Label^ UnknownDiscount;
+	private: System::Windows::Forms::Label^ Lab_Discount;
+	private: System::Windows::Forms::ListBox^ List_Margin;
+	private: System::Windows::Forms::ListBox^ List_TVA;
+	private: System::Windows::Forms::Label^ Lab_CMargin;
+	private: System::Windows::Forms::Label^ Lab_TVA;
+	private: System::Windows::Forms::Label^ Lab2_Reminder;
+	private: System::Windows::Forms::Label^ label1;
 
 	protected:
 
@@ -153,7 +86,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -182,34 +115,28 @@ namespace ProjetPOO {
 			this->Btn_AverageCart = (gcnew System::Windows::Forms::Button());
 			this->Title_order = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->Dataview = (gcnew System::Windows::Forms::DataGridView());
-			this->Group_discount = (gcnew System::Windows::Forms::GroupBox());
-			this->RB_TD2 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_TD1 = (gcnew System::Windows::Forms::RadioButton());
-			this->Group_Unknown = (gcnew System::Windows::Forms::GroupBox());
-			this->RB_UM3 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_UM2 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_UM1 = (gcnew System::Windows::Forms::RadioButton());
-			this->Group_VAT = (gcnew System::Windows::Forms::GroupBox());
-			this->RB_VAT3 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_VAT2 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_VAT1 = (gcnew System::Windows::Forms::RadioButton());
+			this->Group_Reminder = (gcnew System::Windows::Forms::GroupBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->Lab2_Reminder = (gcnew System::Windows::Forms::Label());
+			this->Lab1_reminder = (gcnew System::Windows::Forms::Label());
+			this->List_UDiscount = (gcnew System::Windows::Forms::ListBox());
+			this->List_Discount = (gcnew System::Windows::Forms::ListBox());
+			this->UnknownDiscount = (gcnew System::Windows::Forms::Label());
+			this->Lab_Discount = (gcnew System::Windows::Forms::Label());
+			this->List_Margin = (gcnew System::Windows::Forms::ListBox());
+			this->List_TVA = (gcnew System::Windows::Forms::ListBox());
+			this->Lab_CMargin = (gcnew System::Windows::Forms::Label());
+			this->Lab_TVA = (gcnew System::Windows::Forms::Label());
+			this->Dataview_simulate = (gcnew System::Windows::Forms::DataGridView());
 			this->Btn_simulate = (gcnew System::Windows::Forms::Button());
-			this->Group_margin = (gcnew System::Windows::Forms::GroupBox());
-			this->RB_CM3 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_CM2 = (gcnew System::Windows::Forms::RadioButton());
-			this->RB_CM1 = (gcnew System::Windows::Forms::RadioButton());
 			this->Titre_Simulate = (gcnew System::Windows::Forms::Label());
 			this->Tab->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->Group_Turnover->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->tabPage2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview))->BeginInit();
-			this->Group_discount->SuspendLayout();
-			this->Group_Unknown->SuspendLayout();
-			this->Group_VAT->SuspendLayout();
-			this->Group_margin->SuspendLayout();
+			this->Group_Reminder->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview_simulate))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
@@ -406,7 +333,7 @@ namespace ProjetPOO {
 			this->Title_order->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Title_order->AutoSize = true;
 			this->Title_order->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
-			this->Title_order->Location = System::Drawing::Point(468, 14);
+			this->Title_order->Location = System::Drawing::Point(468, 30);
 			this->Title_order->Name = L"Title_order";
 			this->Title_order->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Title_order->Size = System::Drawing::Size(341, 86);
@@ -415,12 +342,17 @@ namespace ProjetPOO {
 			// 
 			// tabPage2
 			// 
-			this->tabPage2->Controls->Add(this->Dataview);
-			this->tabPage2->Controls->Add(this->Group_discount);
-			this->tabPage2->Controls->Add(this->Group_Unknown);
-			this->tabPage2->Controls->Add(this->Group_VAT);
+			this->tabPage2->Controls->Add(this->Group_Reminder);
+			this->tabPage2->Controls->Add(this->List_UDiscount);
+			this->tabPage2->Controls->Add(this->List_Discount);
+			this->tabPage2->Controls->Add(this->UnknownDiscount);
+			this->tabPage2->Controls->Add(this->Lab_Discount);
+			this->tabPage2->Controls->Add(this->List_Margin);
+			this->tabPage2->Controls->Add(this->List_TVA);
+			this->tabPage2->Controls->Add(this->Lab_CMargin);
+			this->tabPage2->Controls->Add(this->Lab_TVA);
+			this->tabPage2->Controls->Add(this->Dataview_simulate);
 			this->tabPage2->Controls->Add(this->Btn_simulate);
-			this->tabPage2->Controls->Add(this->Group_margin);
 			this->tabPage2->Controls->Add(this->Titre_Simulate);
 			this->tabPage2->Location = System::Drawing::Point(4, 25);
 			this->tabPage2->Name = L"tabPage2";
@@ -430,200 +362,148 @@ namespace ProjetPOO {
 			this->tabPage2->Text = L"Simulate";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// Dataview
+			// Group_Reminder
 			// 
-			this->Dataview->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->Dataview->Location = System::Drawing::Point(7, 122);
-			this->Dataview->Name = L"Dataview";
-			this->Dataview->RowHeadersWidth = 51;
-			this->Dataview->RowTemplate->Height = 24;
-			this->Dataview->Size = System::Drawing::Size(1286, 175);
-			this->Dataview->TabIndex = 20;
+			this->Group_Reminder->Controls->Add(this->label1);
+			this->Group_Reminder->Controls->Add(this->Lab2_Reminder);
+			this->Group_Reminder->Controls->Add(this->Lab1_reminder);
+			this->Group_Reminder->Location = System::Drawing::Point(821, 337);
+			this->Group_Reminder->Name = L"Group_Reminder";
+			this->Group_Reminder->Size = System::Drawing::Size(457, 100);
+			this->Group_Reminder->TabIndex = 29;
+			this->Group_Reminder->TabStop = false;
+			this->Group_Reminder->Text = L"Reminder";
 			// 
-			// Group_discount
+			// label1
 			// 
-			this->Group_discount->Controls->Add(this->RB_TD2);
-			this->Group_discount->Controls->Add(this->RB_TD1);
-			this->Group_discount->Location = System::Drawing::Point(663, 313);
-			this->Group_discount->Name = L"Group_discount";
-			this->Group_discount->Size = System::Drawing::Size(630, 82);
-			this->Group_discount->TabIndex = 19;
-			this->Group_discount->TabStop = false;
-			this->Group_discount->Text = L"Trade discount";
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(15, 57);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(415, 17);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"dress-up, but it\'s all in good fun. Keep calm, math is on our side! ";
 			// 
-			// RB_TD2
+			// Lab2_Reminder
 			// 
-			this->RB_TD2->AutoSize = true;
-			this->RB_TD2->Location = System::Drawing::Point(364, 36);
-			this->RB_TD2->Name = L"RB_TD2";
-			this->RB_TD2->Size = System::Drawing::Size(49, 21);
-			this->RB_TD2->TabIndex = 10;
-			this->RB_TD2->TabStop = true;
-			this->RB_TD2->Text = L"6%";
-			this->RB_TD2->UseVisualStyleBackColor = true;
+			this->Lab2_Reminder->AutoSize = true;
+			this->Lab2_Reminder->Location = System::Drawing::Point(16, 101);
+			this->Lab2_Reminder->Name = L"Lab2_Reminder";
+			this->Lab2_Reminder->Size = System::Drawing::Size(415, 17);
+			this->Lab2_Reminder->TabIndex = 1;
+			this->Lab2_Reminder->Text = L"dress-up, but it\'s all in good fun. Keep calm, math is on our side! ";
 			// 
-			// RB_TD1
+			// Lab1_reminder
 			// 
-			this->RB_TD1->AutoSize = true;
-			this->RB_TD1->Location = System::Drawing::Point(150, 36);
-			this->RB_TD1->Name = L"RB_TD1";
-			this->RB_TD1->Size = System::Drawing::Size(49, 21);
-			this->RB_TD1->TabIndex = 9;
-			this->RB_TD1->TabStop = true;
-			this->RB_TD1->Text = L"5%";
-			this->RB_TD1->UseVisualStyleBackColor = true;
+			this->Lab1_reminder->AutoSize = true;
+			this->Lab1_reminder->Location = System::Drawing::Point(15, 38);
+			this->Lab1_reminder->Name = L"Lab1_reminder";
+			this->Lab1_reminder->Size = System::Drawing::Size(416, 17);
+			this->Lab1_reminder->TabIndex = 0;
+			this->Lab1_reminder->Text = L"Don\'t panic: Entering 0.20 is basically saying 20%. Numbers play";
 			// 
-			// Group_Unknown
+			// List_UDiscount
 			// 
-			this->Group_Unknown->Controls->Add(this->RB_UM3);
-			this->Group_Unknown->Controls->Add(this->RB_UM2);
-			this->Group_Unknown->Controls->Add(this->RB_UM1);
-			this->Group_Unknown->Location = System::Drawing::Point(662, 401);
-			this->Group_Unknown->Name = L"Group_Unknown";
-			this->Group_Unknown->Size = System::Drawing::Size(631, 82);
-			this->Group_Unknown->TabIndex = 18;
-			this->Group_Unknown->TabStop = false;
-			this->Group_Unknown->Text = L"Unknown Markdown";
+			this->List_UDiscount->FormattingEnabled = true;
+			this->List_UDiscount->ItemHeight = 16;
+			this->List_UDiscount->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.05", L"0.03", L"0.02" });
+			this->List_UDiscount->Location = System::Drawing::Point(419, 414);
+			this->List_UDiscount->Name = L"List_UDiscount";
+			this->List_UDiscount->Size = System::Drawing::Size(374, 20);
+			this->List_UDiscount->TabIndex = 28;
 			// 
-			// RB_UM3
+			// List_Discount
 			// 
-			this->RB_UM3->AutoSize = true;
-			this->RB_UM3->Location = System::Drawing::Point(475, 39);
-			this->RB_UM3->Name = L"RB_UM3";
-			this->RB_UM3->Size = System::Drawing::Size(49, 21);
-			this->RB_UM3->TabIndex = 8;
-			this->RB_UM3->TabStop = true;
-			this->RB_UM3->Text = L"5%";
-			this->RB_UM3->UseVisualStyleBackColor = true;
+			this->List_Discount->FormattingEnabled = true;
+			this->List_Discount->ItemHeight = 16;
+			this->List_Discount->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"0.06", L"0.05" });
+			this->List_Discount->Location = System::Drawing::Point(417, 358);
+			this->List_Discount->Name = L"List_Discount";
+			this->List_Discount->Size = System::Drawing::Size(374, 20);
+			this->List_Discount->TabIndex = 27;
 			// 
-			// RB_UM2
+			// UnknownDiscount
 			// 
-			this->RB_UM2->AutoSize = true;
-			this->RB_UM2->Location = System::Drawing::Point(265, 39);
-			this->RB_UM2->Name = L"RB_UM2";
-			this->RB_UM2->Size = System::Drawing::Size(49, 21);
-			this->RB_UM2->TabIndex = 7;
-			this->RB_UM2->TabStop = true;
-			this->RB_UM2->Text = L"3%";
-			this->RB_UM2->UseVisualStyleBackColor = true;
+			this->UnknownDiscount->AutoSize = true;
+			this->UnknownDiscount->Location = System::Drawing::Point(416, 394);
+			this->UnknownDiscount->Name = L"UnknownDiscount";
+			this->UnknownDiscount->Size = System::Drawing::Size(169, 17);
+			this->UnknownDiscount->TabIndex = 26;
+			this->UnknownDiscount->Text = L"Unknown discount value :";
 			// 
-			// RB_UM1
+			// Lab_Discount
 			// 
-			this->RB_UM1->AutoSize = true;
-			this->RB_UM1->Location = System::Drawing::Point(51, 39);
-			this->RB_UM1->Name = L"RB_UM1";
-			this->RB_UM1->Size = System::Drawing::Size(49, 21);
-			this->RB_UM1->TabIndex = 6;
-			this->RB_UM1->TabStop = true;
-			this->RB_UM1->Text = L"2%";
-			this->RB_UM1->UseVisualStyleBackColor = true;
+			this->Lab_Discount->AutoSize = true;
+			this->Lab_Discount->Location = System::Drawing::Point(416, 337);
+			this->Lab_Discount->Name = L"Lab_Discount";
+			this->Lab_Discount->Size = System::Drawing::Size(109, 17);
+			this->Lab_Discount->TabIndex = 25;
+			this->Lab_Discount->Text = L"Discount value :";
 			// 
-			// Group_VAT
+			// List_Margin
 			// 
-			this->Group_VAT->Controls->Add(this->RB_VAT3);
-			this->Group_VAT->Controls->Add(this->RB_VAT2);
-			this->Group_VAT->Controls->Add(this->RB_VAT1);
-			this->Group_VAT->Location = System::Drawing::Point(7, 313);
-			this->Group_VAT->Name = L"Group_VAT";
-			this->Group_VAT->Size = System::Drawing::Size(630, 82);
-			this->Group_VAT->TabIndex = 17;
-			this->Group_VAT->TabStop = false;
-			this->Group_VAT->Text = L"VAT";
+			this->List_Margin->FormattingEnabled = true;
+			this->List_Margin->ItemHeight = 16;
+			this->List_Margin->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.15", L"0.10", L"0.05" });
+			this->List_Margin->Location = System::Drawing::Point(19, 414);
+			this->List_Margin->Name = L"List_Margin";
+			this->List_Margin->Size = System::Drawing::Size(374, 20);
+			this->List_Margin->TabIndex = 24;
 			// 
-			// RB_VAT3
+			// List_TVA
 			// 
-			this->RB_VAT3->AutoSize = true;
-			this->RB_VAT3->Location = System::Drawing::Point(466, 36);
-			this->RB_VAT3->Name = L"RB_VAT3";
-			this->RB_VAT3->Size = System::Drawing::Size(68, 21);
-			this->RB_VAT3->TabIndex = 2;
-			this->RB_VAT3->TabStop = true;
-			this->RB_VAT3->Text = L"TVA 3";
-			this->RB_VAT3->UseVisualStyleBackColor = true;
+			this->List_TVA->FormattingEnabled = true;
+			this->List_TVA->ItemHeight = 16;
+			this->List_TVA->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"0.20", L"0.08", L"0.07" });
+			this->List_TVA->Location = System::Drawing::Point(17, 358);
+			this->List_TVA->Name = L"List_TVA";
+			this->List_TVA->Size = System::Drawing::Size(374, 20);
+			this->List_TVA->TabIndex = 23;
 			// 
-			// RB_VAT2
+			// Lab_CMargin
 			// 
-			this->RB_VAT2->AutoSize = true;
-			this->RB_VAT2->Location = System::Drawing::Point(256, 36);
-			this->RB_VAT2->Name = L"RB_VAT2";
-			this->RB_VAT2->Size = System::Drawing::Size(68, 21);
-			this->RB_VAT2->TabIndex = 1;
-			this->RB_VAT2->TabStop = true;
-			this->RB_VAT2->Text = L"TVA 2";
-			this->RB_VAT2->UseVisualStyleBackColor = true;
+			this->Lab_CMargin->AutoSize = true;
+			this->Lab_CMargin->Location = System::Drawing::Point(16, 394);
+			this->Lab_CMargin->Name = L"Lab_CMargin";
+			this->Lab_CMargin->Size = System::Drawing::Size(174, 17);
+			this->Lab_CMargin->TabIndex = 22;
+			this->Lab_CMargin->Text = L"Commercial margin value :";
 			// 
-			// RB_VAT1
+			// Lab_TVA
 			// 
-			this->RB_VAT1->AutoSize = true;
-			this->RB_VAT1->Location = System::Drawing::Point(42, 36);
-			this->RB_VAT1->Name = L"RB_VAT1";
-			this->RB_VAT1->Size = System::Drawing::Size(68, 21);
-			this->RB_VAT1->TabIndex = 0;
-			this->RB_VAT1->TabStop = true;
-			this->RB_VAT1->Text = L"TVA 1";
-			this->RB_VAT1->UseVisualStyleBackColor = true;
+			this->Lab_TVA->AutoSize = true;
+			this->Lab_TVA->Location = System::Drawing::Point(16, 337);
+			this->Lab_TVA->Name = L"Lab_TVA";
+			this->Lab_TVA->Size = System::Drawing::Size(81, 17);
+			this->Lab_TVA->TabIndex = 21;
+			this->Lab_TVA->Text = L"VAT value :";
+			// 
+			// Dataview_simulate
+			// 
+			this->Dataview_simulate->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->Dataview_simulate->Location = System::Drawing::Point(7, 122);
+			this->Dataview_simulate->Name = L"Dataview_simulate";
+			this->Dataview_simulate->RowHeadersWidth = 51;
+			this->Dataview_simulate->RowTemplate->Height = 24;
+			this->Dataview_simulate->Size = System::Drawing::Size(1286, 175);
+			this->Dataview_simulate->TabIndex = 20;
 			// 
 			// Btn_simulate
 			// 
 			this->Btn_simulate->BackColor = System::Drawing::Color::NavajoWhite;
-			this->Btn_simulate->Location = System::Drawing::Point(7, 489);
+			this->Btn_simulate->Location = System::Drawing::Point(7, 472);
 			this->Btn_simulate->Name = L"Btn_simulate";
-			this->Btn_simulate->Size = System::Drawing::Size(1286, 49);
+			this->Btn_simulate->Size = System::Drawing::Size(1286, 66);
 			this->Btn_simulate->TabIndex = 17;
 			this->Btn_simulate->Text = L"Simulate";
 			this->Btn_simulate->UseVisualStyleBackColor = false;
-			// 
-			// Group_margin
-			// 
-			this->Group_margin->Controls->Add(this->RB_CM3);
-			this->Group_margin->Controls->Add(this->RB_CM2);
-			this->Group_margin->Controls->Add(this->RB_CM1);
-			this->Group_margin->Location = System::Drawing::Point(6, 401);
-			this->Group_margin->Name = L"Group_margin";
-			this->Group_margin->Size = System::Drawing::Size(631, 82);
-			this->Group_margin->TabIndex = 16;
-			this->Group_margin->TabStop = false;
-			this->Group_margin->Text = L"Commercial margin";
-			// 
-			// RB_CM3
-			// 
-			this->RB_CM3->AutoSize = true;
-			this->RB_CM3->Location = System::Drawing::Point(467, 39);
-			this->RB_CM3->Name = L"RB_CM3";
-			this->RB_CM3->Size = System::Drawing::Size(57, 21);
-			this->RB_CM3->TabIndex = 5;
-			this->RB_CM3->TabStop = true;
-			this->RB_CM3->Text = L"15%";
-			this->RB_CM3->UseVisualStyleBackColor = true;
-			// 
-			// RB_CM2
-			// 
-			this->RB_CM2->AutoSize = true;
-			this->RB_CM2->Location = System::Drawing::Point(257, 39);
-			this->RB_CM2->Name = L"RB_CM2";
-			this->RB_CM2->Size = System::Drawing::Size(57, 21);
-			this->RB_CM2->TabIndex = 4;
-			this->RB_CM2->TabStop = true;
-			this->RB_CM2->Text = L"10%";
-			this->RB_CM2->UseVisualStyleBackColor = true;
-			// 
-			// RB_CM1
-			// 
-			this->RB_CM1->AutoSize = true;
-			this->RB_CM1->Location = System::Drawing::Point(43, 39);
-			this->RB_CM1->Name = L"RB_CM1";
-			this->RB_CM1->Size = System::Drawing::Size(49, 21);
-			this->RB_CM1->TabIndex = 3;
-			this->RB_CM1->TabStop = true;
-			this->RB_CM1->Text = L"5%";
-			this->RB_CM1->UseVisualStyleBackColor = true;
+			this->Btn_simulate->Click += gcnew System::EventHandler(this, &StatisticsForm::Btn_simulate_Click);
 			// 
 			// Titre_Simulate
 			// 
 			this->Titre_Simulate->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->Titre_Simulate->AutoSize = true;
 			this->Titre_Simulate->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 45.6F, System::Drawing::FontStyle::Underline));
-			this->Titre_Simulate->Location = System::Drawing::Point(486, 0);
+			this->Titre_Simulate->Location = System::Drawing::Point(488, 31);
 			this->Titre_Simulate->Name = L"Titre_Simulate";
 			this->Titre_Simulate->RightToLeft = System::Windows::Forms::RightToLeft::No;
 			this->Titre_Simulate->Size = System::Drawing::Size(332, 86);
@@ -651,88 +531,110 @@ namespace ProjetPOO {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->EndInit();
 			this->tabPage2->ResumeLayout(false);
 			this->tabPage2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview))->EndInit();
-			this->Group_discount->ResumeLayout(false);
-			this->Group_discount->PerformLayout();
-			this->Group_Unknown->ResumeLayout(false);
-			this->Group_Unknown->PerformLayout();
-			this->Group_VAT->ResumeLayout(false);
-			this->Group_VAT->PerformLayout();
-			this->Group_margin->ResumeLayout(false);
-			this->Group_margin->PerformLayout();
+			this->Group_Reminder->ResumeLayout(false);
+			this->Group_Reminder->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Dataview_simulate))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		this->Hide();
 		this->Close();
 	}
+
 	private: System::Void Statistics_Management_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oStats = gcnew NS_Comp_Stats::CLStats();
 	}
 
-	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e){}
-	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e){}
+	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e) {}
+	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {}
 
-private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->averageCart("Rsl");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl";
-}
-private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->customerTotalAmount("Rsl1");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl1";
-}
-private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->bestSellers("Rsl2");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl2";
-}
-private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->lessSold("Rsl3");
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl3";
-}
-private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->View_Database->Refresh();
-	this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl4";
-}
-private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->stockPurchaseValue("Rsl5");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl5";
-}
-private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->stockCommercialValue("Rsl6");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl6";
-}
-private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
-{
-	this->oDs = this->oStats->belowThreshold("Rsl7");
-	this->View_Database->Refresh();
-	this->View_Database->DataSource = this->oDs;
-	this->View_Database->DataMember = "Rsl7";
-}
+	private: System::Void Btn_AverageCart_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->averageCart("Rsl");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl";
+	}
+	private: System::Void Btn_TotCustomer_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->customerTotalAmount("Rsl1");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl1";
+	}
+	private: System::Void Btn_BestItems_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->bestSellers("Rsl2");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl2";
+	}
+	private: System::Void Btn_LeastItems_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->View_Database->Refresh();
+		this->oDs = this->oStats->lessSold("Rsl3");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl3";
+	}
+	private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (!String::IsNullOrWhiteSpace(this->TxtBox_Years->Text) && !String::IsNullOrEmpty(this->ListBox_Mounth->Text))
+		{
+			this->View_Database->Refresh();
+			this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
+			this->View_Database->DataSource = this->oDs;
+			this->View_Database->DataMember = "Rsl4";
+		}
 
-};
+		else {
+			MessageBox::Show("Oops ! It seems something is missing. \n Please enter a year and select a month.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+	private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->stockPurchaseValue("Rsl5");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl5";
+	}
+	private: System::Void Btn_CommercialValue_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->stockCommercialValue("Rsl6");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl6";
+	}
+	private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		this->oDs = this->oStats->belowThreshold("Rsl7");
+		this->View_Database->Refresh();
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl7";
+	}
+
+
+	private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
+	{
+		if (!String::IsNullOrEmpty(this->List_TVA->Text) && !String::IsNullOrEmpty(this->List_Margin->Text) && !String::IsNullOrEmpty(this->List_Discount->Text) && !String::IsNullOrEmpty(this->List_UDiscount->Text))
+		{
+			this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
+			//this->oDs = this->oStats->simulateStockValue("Rsl26");
+			this->Dataview_simulate->Refresh();
+			this->Dataview_simulate->DataSource = this->oDs;
+			this->Dataview_simulate->DataMember = "Rsl26";
+		}
+
+		else
+		{
+			MessageBox::Show("Oops ! It seems something is missing. \n Please select all parameters before running the simulation.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+
+
+	};
+
 }

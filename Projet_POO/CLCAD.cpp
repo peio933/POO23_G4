@@ -4,7 +4,9 @@ NS_Comp_Data::CLCAD::CLCAD(void)
 {
 
 
+
 	this->sCnx = "Data Source=NAS\\MSSQL_MALIK;Initial Catalog=POO_Groupe4;Integrated Security=True";
+
 
 
 	this->sSql = "Rien";
@@ -16,7 +18,7 @@ NS_Comp_Data::CLCAD::CLCAD(void)
 
 	this->oCmd->CommandType = System::Data::CommandType::Text;
 }
-
+/*
 System::Data::DataSet^ NS_Comp_Data::CLCAD::getRows(System::String^ sSql, System::String^ sDataTableName)
 {
 	this->oDs->Clear();
@@ -27,6 +29,28 @@ System::Data::DataSet^ NS_Comp_Data::CLCAD::getRows(System::String^ sSql, System
 
 	return this->oDs;
 }
+*/
+
+System::Data::DataSet^ NS_Comp_Data::CLCAD::getRows(System::String^ sSql, System::String^ sDataTableName)
+{
+	this->oDs->Clear();
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+
+	try
+	{
+		this->oDA->SelectCommand = this->oCmd;
+		this->oDA->Fill(this->oDs, sDataTableName);
+	}
+	catch (System::Exception^ ex)
+	{
+		// Imprimez les détails de l'exception
+		System::Console::WriteLine("Erreur lors de l'exécution de la requête : " + ex->Message);
+	}
+
+	return this->oDs;
+}
+
 
 void NS_Comp_Data::CLCAD::actionRows(System::String^ sSql)
 {
