@@ -24,8 +24,6 @@ namespace NS_Comp_Map_Cus {
 		System::String^ getN_C(void);
 		System::String^ getS_C(void);
 		System::String^ getBD_C(void);
-
-		NS_Comp_Adr::CLAdress^ oAdress;
 	};
 }
 

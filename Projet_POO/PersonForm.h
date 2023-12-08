@@ -239,6 +239,7 @@ namespace ProjetPOO {
 			this->Btn_Update->TabIndex = 19;
 			this->Btn_Update->Text = L"Modify an employee";
 			this->Btn_Update->UseVisualStyleBackColor = true;
+			this->Btn_Update->Click += gcnew System::EventHandler(this, &PersonForm::Btn_Update_Click);
 			// 
 			// Btn_Show
 			// 
@@ -436,11 +437,12 @@ namespace ProjetPOO {
 			// Date_Sending
 			// 
 			this->Date_Sending->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->Date_Sending->CustomFormat = L"AAAA/MM/DD";
+			this->Date_Sending->CustomFormat = L"yyyy-MM-dd";
+			this->Date_Sending->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->Date_Sending->Location = System::Drawing::Point(112, 83);
 			this->Date_Sending->Margin = System::Windows::Forms::Padding(2);
 			this->Date_Sending->Name = L"Date_Sending";
-			this->Date_Sending->Size = System::Drawing::Size(304, 20);
+			this->Date_Sending->Size = System::Drawing::Size(102, 20);
 			this->Date_Sending->TabIndex = 16;
 			// 
 			// TxtName
@@ -450,6 +452,7 @@ namespace ProjetPOO {
 			this->TxtName->Name = L"TxtName";
 			this->TxtName->Size = System::Drawing::Size(304, 20);
 			this->TxtName->TabIndex = 6;
+			this->TxtName->TextChanged += gcnew System::EventHandler(this, &PersonForm::TxtName_TextChanged);
 			// 
 			// Lab_mensPayment
 			// 
@@ -477,9 +480,9 @@ namespace ProjetPOO {
 			this->Lab_delivery->Location = System::Drawing::Point(5, 54);
 			this->Lab_delivery->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_delivery->Name = L"Lab_delivery";
-			this->Lab_delivery->Size = System::Drawing::Size(58, 13);
+			this->Lab_delivery->Size = System::Drawing::Size(44, 13);
 			this->Lab_delivery->TabIndex = 1;
-			this->Lab_delivery->Text = L"Surname : ";
+			this->Lab_delivery->Text = L"Name : ";
 			// 
 			// Lab_ref
 			// 
@@ -487,9 +490,9 @@ namespace ProjetPOO {
 			this->Lab_ref->Location = System::Drawing::Point(5, 29);
 			this->Lab_ref->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lab_ref->Name = L"Lab_ref";
-			this->Lab_ref->Size = System::Drawing::Size(44, 13);
+			this->Lab_ref->Size = System::Drawing::Size(58, 13);
 			this->Lab_ref->TabIndex = 0;
-			this->Lab_ref->Text = L"Name : ";
+			this->Lab_ref->Text = L"Surname : ";
 			this->Lab_ref->Click += gcnew System::EventHandler(this, &PersonForm::Lab_ref_Click);
 			// 
 			// PersonForm
@@ -573,6 +576,12 @@ private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs
 }
 private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->oEmployees->insertEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text, this->listBoxmanager->Text, this->checkBoxManager->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
+}
+
+private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->oEmployees->updateEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text);
+}
+private: System::Void TxtName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
