@@ -9,7 +9,6 @@ namespace ProjetPOO {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
 	/// <summary>
 	/// Summary for Person_Management
 	/// </summary>
@@ -82,7 +81,8 @@ namespace ProjetPOO {
 
 
 	private: System::Windows::Forms::DateTimePicker^ Date_Sending;
-	private: System::Windows::Forms::TextBox^ TxtName;
+	private: System::Windows::Forms::TextBox^ TxtSurname;
+
 
 
 	private: System::Windows::Forms::Label^ Lab_mensPayment;
@@ -90,19 +90,29 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ Lab_sending;
 	private: System::Windows::Forms::Label^ Lab_delivery;
 	private: System::Windows::Forms::Label^ Lab_ref;
-	private: System::Windows::Forms::TextBox^ textSurname;
-	private: System::Windows::Forms::ListBox^ listBoxmanager;
+	private: System::Windows::Forms::TextBox^ textName;
+
+
+
 	private: System::Windows::Forms::TextBox^ textBoxPostal_code;
 
 
 
 	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::CheckBox^ checkBoxManager;
+
 
 
 
 	private: NS_Comp_Employees::CLEmployees^ oEmployees;
 	private: System::Data::DataSet^ oDs;
+
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::CheckBox^ checkBoxManager;
+	private: System::Windows::Forms::ListBox^ listBoxmanager;
+
+
+
+
 
 
 
@@ -176,11 +186,12 @@ namespace ProjetPOO {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->Group_Infos = (gcnew System::Windows::Forms::GroupBox());
-			this->checkBoxManager = (gcnew System::Windows::Forms::CheckBox());
 			this->listBoxmanager = (gcnew System::Windows::Forms::ListBox());
-			this->textSurname = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->checkBoxManager = (gcnew System::Windows::Forms::CheckBox());
+			this->textName = (gcnew System::Windows::Forms::TextBox());
 			this->Date_Sending = (gcnew System::Windows::Forms::DateTimePicker());
-			this->TxtName = (gcnew System::Windows::Forms::TextBox());
+			this->TxtSurname = (gcnew System::Windows::Forms::TextBox());
 			this->Lab_mensPayment = (gcnew System::Windows::Forms::Label());
 			this->Lab_sending = (gcnew System::Windows::Forms::Label());
 			this->Lab_delivery = (gcnew System::Windows::Forms::Label());
@@ -386,11 +397,12 @@ namespace ProjetPOO {
 			// 
 			// Group_Infos
 			// 
-			this->Group_Infos->Controls->Add(this->checkBoxManager);
 			this->Group_Infos->Controls->Add(this->listBoxmanager);
-			this->Group_Infos->Controls->Add(this->textSurname);
+			this->Group_Infos->Controls->Add(this->label1);
+			this->Group_Infos->Controls->Add(this->checkBoxManager);
+			this->Group_Infos->Controls->Add(this->textName);
 			this->Group_Infos->Controls->Add(this->Date_Sending);
-			this->Group_Infos->Controls->Add(this->TxtName);
+			this->Group_Infos->Controls->Add(this->TxtSurname);
 			this->Group_Infos->Controls->Add(this->Group_prix);
 			this->Group_Infos->Controls->Add(this->Lab_mensPayment);
 			this->Group_Infos->Controls->Add(this->Lab_sending);
@@ -405,34 +417,48 @@ namespace ProjetPOO {
 			this->Group_Infos->TabStop = false;
 			this->Group_Infos->Text = L"Informations";
 			// 
-			// checkBoxManager
-			// 
-			this->checkBoxManager->AutoSize = true;
-			this->checkBoxManager->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->checkBoxManager->Location = System::Drawing::Point(308, 147);
-			this->checkBoxManager->Name = L"checkBoxManager";
-			this->checkBoxManager->Size = System::Drawing::Size(77, 17);
-			this->checkBoxManager->TabIndex = 19;
-			this->checkBoxManager->Text = L"Manager \?";
-			this->checkBoxManager->UseVisualStyleBackColor = true;
-			this->checkBoxManager->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBox1_CheckedChanged);
-			// 
 			// listBoxmanager
 			// 
 			this->listBoxmanager->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->listBoxmanager->FormattingEnabled = true;
-			this->listBoxmanager->Location = System::Drawing::Point(114, 113);
+			this->listBoxmanager->Items->AddRange(gcnew cli::array< System::Object^  >(7) {
+				L"Doe", L"Smith", L"Johnson", L"Williams",
+					L"Brown", L"Miller", L"Rigaud"
+			});
+			this->listBoxmanager->Location = System::Drawing::Point(112, 108);
 			this->listBoxmanager->Name = L"listBoxmanager";
-			this->listBoxmanager->Size = System::Drawing::Size(302, 17);
-			this->listBoxmanager->TabIndex = 16;
+			this->listBoxmanager->Size = System::Drawing::Size(304, 30);
+			this->listBoxmanager->TabIndex = 22;
 			// 
-			// textSurname
+			// label1
 			// 
-			this->textSurname->Location = System::Drawing::Point(112, 54);
-			this->textSurname->Margin = System::Windows::Forms::Padding(2);
-			this->textSurname->Name = L"textSurname";
-			this->textSurname->Size = System::Drawing::Size(304, 20);
-			this->textSurname->TabIndex = 18;
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(329, 147);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(58, 13);
+			this->label1->TabIndex = 20;
+			this->label1->Text = L"Manager \?";
+			// 
+			// checkBoxManager
+			// 
+			this->checkBoxManager->AutoSize = true;
+			this->checkBoxManager->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->checkBoxManager->ForeColor = System::Drawing::SystemColors::ActiveCaption;
+			this->checkBoxManager->Location = System::Drawing::Point(308, 147);
+			this->checkBoxManager->Name = L"checkBoxManager";
+			this->checkBoxManager->Size = System::Drawing::Size(15, 14);
+			this->checkBoxManager->TabIndex = 21;
+			this->checkBoxManager->TextAlign = System::Drawing::ContentAlignment::TopCenter;
+			this->checkBoxManager->UseVisualStyleBackColor = true;
+			this->checkBoxManager->CheckedChanged += gcnew System::EventHandler(this, &PersonForm::checkBoxManager_CheckedChanged);
+			// 
+			// textName
+			// 
+			this->textName->Location = System::Drawing::Point(112, 54);
+			this->textName->Margin = System::Windows::Forms::Padding(2);
+			this->textName->Name = L"textName";
+			this->textName->Size = System::Drawing::Size(304, 20);
+			this->textName->TabIndex = 18;
 			// 
 			// Date_Sending
 			// 
@@ -445,14 +471,14 @@ namespace ProjetPOO {
 			this->Date_Sending->Size = System::Drawing::Size(102, 20);
 			this->Date_Sending->TabIndex = 16;
 			// 
-			// TxtName
+			// TxtSurname
 			// 
-			this->TxtName->Location = System::Drawing::Point(112, 25);
-			this->TxtName->Margin = System::Windows::Forms::Padding(2);
-			this->TxtName->Name = L"TxtName";
-			this->TxtName->Size = System::Drawing::Size(304, 20);
-			this->TxtName->TabIndex = 6;
-			this->TxtName->TextChanged += gcnew System::EventHandler(this, &PersonForm::TxtName_TextChanged);
+			this->TxtSurname->Location = System::Drawing::Point(112, 25);
+			this->TxtSurname->Margin = System::Windows::Forms::Padding(2);
+			this->TxtSurname->Name = L"TxtSurname";
+			this->TxtSurname->Size = System::Drawing::Size(304, 20);
+			this->TxtSurname->TabIndex = 6;
+			this->TxtSurname->TextChanged += gcnew System::EventHandler(this, &PersonForm::TxtName_TextChanged);
 			// 
 			// Lab_mensPayment
 			// 
@@ -556,8 +582,7 @@ private: System::Void textBox5_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void Lab_ref_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {}
 private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->View_Database->Refresh();
 	this->oDs = this->oEmployees->loadEmployees("Rsl");
@@ -566,22 +591,40 @@ private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->View_Database->Refresh();
-	this->oEmployees->selectEmployee(this->TxtName->Text, "Rsl");
+	this->oEmployees->selectEmployee(this->TxtSurname->Text, "Rsl");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl";
 
 }
 private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oEmployees->deleteEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text);
+	this->oEmployees->deleteEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text);
 }
 private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oEmployees->insertEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text, this->listBoxmanager->Text, this->checkBoxManager->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
+
+	this->oEmployees->insertEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text, this->listBoxmanager->Text, this->checkBoxManager->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
 }
 
 private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->oEmployees->updateEmployee(this->TxtName->Text, this->textSurname->Text, this->Date_Sending->Text);
+	this->oEmployees->updateEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text);
 }
 private: System::Void TxtName_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void checkBoxManager_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+
+	if (checkBoxManager->Checked == true) {
+		checkBoxManager->Text = "1";
+
+	}
+	else {
+		checkBoxManager->Text = "0";
+	}
+
+	if (checkBoxManager->Checked == true) {
+		listBoxmanager->Enabled = false;
+	}
+	else {
+		listBoxmanager->Enabled = true;
+	}
 }
 };
 }

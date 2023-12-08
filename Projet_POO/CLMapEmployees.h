@@ -1,6 +1,6 @@
 #pragma once
 #include "CLMap.h"
-#include "CLAdress.h"
+
 namespace NS_Comp_Map_Employees
 {
 	ref class CLMapEmployees : public CLMap
@@ -12,7 +12,7 @@ namespace NS_Comp_Map_Employees
 		System::String^ S_E;
 		System::String^ HD_E;
 		System::String^ N1_E;
-		System::String^ ST_E;
+		System::String^  ST_E;
 
 		//adresse de l'employé
 		System::String^ ID_CY;
