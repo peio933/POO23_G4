@@ -582,7 +582,7 @@ namespace ProjetPOO {
 	}
 	private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		if (!String::IsNullOrWhiteSpace(this->TxtBox_Years->Text), (!String::IsNullOrEmpty(this->ListBox_Mounth->Text)))
+		if (!String::IsNullOrWhiteSpace(this->TxtBox_Years->Text) && !String::IsNullOrEmpty(this->ListBox_Mounth->Text))
 		{
 			this->View_Database->Refresh();
 			this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
@@ -591,7 +591,7 @@ namespace ProjetPOO {
 		}
 
 		else {
-			MessageBox::Show("Please enter a year and select a month", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show("Oops ! It seems something is missing. \n Please enter a year and select a month.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
 	private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
@@ -619,11 +619,19 @@ namespace ProjetPOO {
 
 	private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
-		//this->oDs = this->oStats->simulateStockValue("Rsl26");
-		this->Dataview_simulate->Refresh();
-		this->Dataview_simulate->DataSource = this->oDs;
-		this->Dataview_simulate->DataMember = "Rsl26";
+		if (!String::IsNullOrEmpty(this->List_TVA->Text) && !String::IsNullOrEmpty(this->List_Margin->Text) && !String::IsNullOrEmpty(this->List_Discount->Text) && !String::IsNullOrEmpty(this->List_UDiscount->Text))
+		{
+			this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
+			//this->oDs = this->oStats->simulateStockValue("Rsl26");
+			this->Dataview_simulate->Refresh();
+			this->Dataview_simulate->DataSource = this->oDs;
+			this->Dataview_simulate->DataMember = "Rsl26";
+		}
+
+		else
+		{
+			MessageBox::Show("Oops ! It seems something is missing. \n Please select all parameters before running the simulation.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 
