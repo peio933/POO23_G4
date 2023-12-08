@@ -21,11 +21,11 @@ System::Data::DataSet^ NS_Comp_Cus::CLCustomers::selectCustomer(System::String^ 
 	return this->oCAD->getRows(sql, dataTableName);
 }
 
-void NS_Comp_Cus::CLCustomers::recordCustomer(System::String^ N_C, System::String^ S_C, System::String^ BD_C, System::String^ SNB, System::String^ SN, System::String^ N_V, System::String^ PC)
+void NS_Comp_Cus::CLCustomers::recordCustomer(System::String^ S_C, System::String^ N_C, System::String^ BD_C, System::String^ SNB, System::String^ SN, System::String^ N_V, System::String^ PC)
 {
 	System::String^ sql;
-	this->oMapCustomers->setN_C(N_C);
 	this->oMapCustomers->setS_C(S_C);
+	this->oMapCustomers->setN_C(N_C);
 	this->oMapCustomers->setBD_C(BD_C);
 	this->oMapCustomers->setSNB(SNB);
 	this->oMapCustomers->setSN(SN);
