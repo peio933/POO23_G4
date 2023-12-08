@@ -26,7 +26,7 @@ System::String^ NS_Comp_Map_Stats::CLMapStats::SumTTC_O(void)
 		"FROM Customer_Order "
 		"WHERE MONTH(SD_O) = @Month AND YEAR(SD_O) = @Year;"; */
 
-		//Test en dynamique 
+	//Test en dynamique 
 	return "SELECT SUM(TTC_O) AS ChiffreAffairesMensuel "
 		"FROM Customer_Order "
 		"WHERE MONTH(SD_O) = " + getMonthSalesRevenue() + " AND YEAR(SD_O) = " + getYearSalesRevenue() + " ; ";
@@ -92,7 +92,7 @@ System::String^ NS_Comp_Map_Stats::CLMapStats::simulateStockValue(void)
 	// Test statique
 	//return " SELECT CAST(SUM(QC_A * HT_A * (1 + 0.80) * (1 + 0.15) * (1 - 0.03)) AS DECIMAL(18, 2))  AS Stock_commercial_value FROM Article; ";
 
-	return "SELECT CAST(SUM(QC_A * HT_A * (1 + " + getTVA() + ") * (1 + " + getMargeCommerciale() + ") * (1 + " + getReductionCommerciale() + ") * (1 - " + getDemarqueInconnue() + ")) AS DECIMAL(18, 2)) AS Stock_commercial_value FROM Article;";
+	return "SELECT CAST(SUM(QC_A * HT_A * (1 + " + getTVA() + ") * (1 + " + getMargeCommerciale() + ") * (1 - " + getDemarqueInconnue() + ")) AS DECIMAL(18, 2)) AS Stock_commercial_value FROM Article;";
 
 	//" SELECT CAST(SUM(QC_A * HT_A * (1 + " + getTVA() + ") * (1 + " + getMargeCommerciale() + ") * (1 - " + getReduction() + ") * (1 - " + getDemarqueInconnue() + ")) AS DECIMAL(18, 2)) AS Stock_commercial_value FROM Article;";
 
@@ -108,10 +108,10 @@ void NS_Comp_Map_Stats::CLMapStats::setMargeCommerciale(System::String^ MargeCom
 	this->MargeCommerciale = MargeCommerciale;
 }
 
-void NS_Comp_Map_Stats::CLMapStats::setReductionCommerciale(System::String^ ReductionCommerciale)
-{
-	this->ReductionCommerciale = ReductionCommerciale;
-}
+//void NS_Comp_Map_Stats::CLMapStats::setReduction(System::String^ Reduction)
+//{
+	//this->Reduction = Reduction;
+//}
 
 void NS_Comp_Map_Stats::CLMapStats::setDemarqueInconnue(System::String^ DemarqueInconnue)
 {
@@ -136,11 +136,6 @@ System::String^ NS_Comp_Map_Stats::CLMapStats::getTVA(void)
 System::String^ NS_Comp_Map_Stats::CLMapStats::getMargeCommerciale(void)
 {
 	return this->MargeCommerciale;
-}
-
-System::String^ NS_Comp_Map_Stats::CLMapStats::getReductionCommerciale(void)
-{
-	return this->ReductionCommerciale;
 }
 
 System::String^ NS_Comp_Map_Stats::CLMapStats::getDemarqueInconnue(void)

@@ -21,7 +21,7 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::monthSalesRevenue(System::String^
 
 System::Data::DataSet^ NS_Comp_Stats::CLStats::belowThreshold(System::String^ dataTableName)
 {
-    return this->oCAD->getRows(this->oMapStats->SelectbelowThreshold(), dataTableName);
+   return this->oCAD->getRows(this->oMapStats->SelectbelowThreshold(), dataTableName);
 }
 
 System::Data::DataSet^ NS_Comp_Stats::CLStats::bestSellers(System::String^ dataTableName)
@@ -31,7 +31,7 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::bestSellers(System::String^ dataT
 
 System::Data::DataSet^ NS_Comp_Stats::CLStats::lessSold(System::String^ dataTableName)
 {
-    return this->oCAD->getRows(this->oMapStats->SelectLessSold(), dataTableName);
+   return this->oCAD->getRows(this->oMapStats->SelectLessSold(), dataTableName);
 }
 
 System::Data::DataSet^ NS_Comp_Stats::CLStats::stockCommercialValue(System::String^ dataTableName)
@@ -56,12 +56,20 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String
 */
 
 
-System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^ TVA, System::String^ MargeCommerciale, System::String^ ReductionCommerciale, System::String^ DemarqueInconnue, System::String^ dataTableName)
+
+System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^ TVA , System::String^ MargeCommerciale, System::String^ DemarqueInconnue, System::String^ dataTableName)
+
 {
     this->oMapStats->setTVA(TVA);
     this->oMapStats->setMargeCommerciale(MargeCommerciale);
-    this->oMapStats->setReductionCommerciale(ReductionCommerciale);
     this->oMapStats->setDemarqueInconnue(DemarqueInconnue);
 
     return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
 }
+
+/*
+System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^, System::String^, System::String^, System::String^ dataTableName)
+{
+    return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
+}
+*/
