@@ -47,130 +47,38 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ Btn_AverageCart;
 	private: System::Windows::Forms::Label^ Titre_Simulate;
 
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ Btn_CommercialValue;
 	private: System::Windows::Forms::GroupBox^ Group_Turnover;
-
 
 	private: System::Windows::Forms::Label^ Lab_Mounth;
 	private: System::Windows::Forms::Label^ Lab_Years;
 
-
-
-
 	private: System::Windows::Forms::Button^ Btn_MonthlyTurnover;
-
 	private: System::Windows::Forms::Button^ Btn_PurchasingValue;
-
-
 	private: System::Windows::Forms::Button^ Btn_LeastItems;
-
 	private: System::Windows::Forms::Button^ Btn_BestItems;
 	private: System::Windows::Forms::Button^ Btn_TotCustomer;
-
-
 	private: System::Windows::Forms::Button^ Btn_Seuil;
 
 	private: System::Windows::Forms::DataGridView^ View_Database;
 	private: System::Windows::Forms::DataGridView^ Dataview_simulate;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ Btn_simulate;
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::ListBox^ ListBox_Mounth;
 	private: System::Windows::Forms::TextBox^ TxtBox_Years;
 	private: System::Windows::Forms::GroupBox^ Group_Reminder;
 
 	private: System::Windows::Forms::Label^ Lab1_reminder;
-
 	private: System::Windows::Forms::ListBox^ List_UDiscount;
-
 	private: System::Windows::Forms::ListBox^ List_Discount;
-
 	private: System::Windows::Forms::Label^ UnknownDiscount;
-
 	private: System::Windows::Forms::Label^ Lab_Discount;
 	private: System::Windows::Forms::ListBox^ List_Margin;
-
-
 	private: System::Windows::Forms::ListBox^ List_TVA;
-
 	private: System::Windows::Forms::Label^ Lab_CMargin;
-
 	private: System::Windows::Forms::Label^ Lab_TVA;
 	private: System::Windows::Forms::Label^ Lab2_Reminder;
-
 	private: System::Windows::Forms::Label^ label1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	protected:
 
@@ -630,15 +538,17 @@ namespace ProjetPOO {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e)
+	{
 		this->Hide();
 		this->Close();
 	}
+
 	private: System::Void Statistics_Management_Load(System::Object^ sender, System::EventArgs^ e)
 	{
 		this->oStats = gcnew NS_Comp_Stats::CLStats();
 	}
+
 	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e) {}
 	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {}
 
@@ -672,10 +582,17 @@ namespace ProjetPOO {
 	}
 	private: System::Void Btn_MonthlyTurnover_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->View_Database->Refresh();
-		this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
-		this->View_Database->DataSource = this->oDs;
-		this->View_Database->DataMember = "Rsl4";
+		if (!String::IsNullOrWhiteSpace(this->TxtBox_Years->Text) && !String::IsNullOrEmpty(this->ListBox_Mounth->Text))
+		{
+			this->View_Database->Refresh();
+			this->oDs = this->oStats->monthSalesRevenue("Rsl4", this->ListBox_Mounth->Text, this->TxtBox_Years->Text);
+			this->View_Database->DataSource = this->oDs;
+			this->View_Database->DataMember = "Rsl4";
+		}
+
+		else {
+			MessageBox::Show("Oops ! It seems something is missing. \n Please enter a year and select a month.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 	private: System::Void Btn_PurchasingValue_Click(System::Object^ sender, System::EventArgs^ e)
 	{
@@ -702,11 +619,19 @@ namespace ProjetPOO {
 
 	private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
 	{
-		this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
-		//this->oDs = this->oStats->simulateStockValue("Rsl26");
-		this->Dataview_simulate->Refresh();
-		this->Dataview_simulate->DataSource = this->oDs;
-		this->Dataview_simulate->DataMember = "Rsl26";
+		if (!String::IsNullOrEmpty(this->List_TVA->Text) && !String::IsNullOrEmpty(this->List_Margin->Text) && !String::IsNullOrEmpty(this->List_Discount->Text) && !String::IsNullOrEmpty(this->List_UDiscount->Text))
+		{
+			this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl26");
+			//this->oDs = this->oStats->simulateStockValue("Rsl26");
+			this->Dataview_simulate->Refresh();
+			this->Dataview_simulate->DataSource = this->oDs;
+			this->Dataview_simulate->DataMember = "Rsl26";
+		}
+
+		else
+		{
+			MessageBox::Show("Oops ! It seems something is missing. \n Please select all parameters before running the simulation.", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
 
 
