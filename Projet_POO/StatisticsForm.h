@@ -639,7 +639,6 @@ namespace ProjetPOO {
 	{
 		this->oStats = gcnew NS_Comp_Stats::CLStats();
 	}
-
 	private: System::Void splitContainer1_SplitterMoved(System::Object^ sender, System::Windows::Forms::SplitterEventArgs^ e) {}
 	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {}
 
@@ -712,4 +711,5 @@ namespace ProjetPOO {
 
 
 	};
+
 }
