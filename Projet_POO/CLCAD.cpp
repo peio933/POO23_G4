@@ -4,7 +4,7 @@ NS_Comp_Data::CLCAD::CLCAD(void)
 {
 
 
-	this->sCnx = "Data Source=TERMINATOR\\MSSQL_PEIO;Initial Catalog=POO_Groupe4;Integrated Security=True;Encrypt=False";
+	this->sCnx = "Data Source=NAS\\MSSQL_MALIK;Initial Catalog=POO_Groupe4;Integrated Security=True";
 
 
 	this->sSql = "Rien";

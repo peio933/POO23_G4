@@ -526,11 +526,10 @@ namespace ProjetPOO {
 	}
 	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Ref->Name)) {
-			this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text);
 			this->View_Database->Refresh();
-			this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+			this->oDs = this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, "Rsl1");
 			this->View_Database->DataSource = this->oDs;
-			this->View_Database->DataMember = "Rsl";
+			this->View_Database->DataMember = "Rsl1";
 		}
 		else {
 			MessageBox::Show("Please enter all the informations of the article you want to delete! \n \n - Article Reference \n - Name", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -553,6 +552,5 @@ namespace ProjetPOO {
 			MessageBox::Show("Please enter all the informations of the article you want to create! \n \n - Article Reference \n - Name \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA \n - Description", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
-	
 };
 }

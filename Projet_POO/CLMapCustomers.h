@@ -44,7 +44,6 @@ namespace NS_Comp_Map_Cus {
 		System::String^ getN_C(void);
 		System::String^ getBD_C(void);
 
-
 		//adresse
 		System::String^ getID_CY(void);
 		System::String^ getN_V(void);
