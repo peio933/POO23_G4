@@ -553,7 +553,6 @@ namespace ProjetPOO {
 			MessageBox::Show("Please enter all the informations of the article you want to create! \n \n - Article Reference \n - Name \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA \n - Description", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
-	private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
+	
 };
 }
