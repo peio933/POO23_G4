@@ -19,7 +19,6 @@ namespace NS_Comp_Stats {
 		System::Data::DataSet^ stockPurchaseValue(System::String^);
 		System::Data::DataSet^ customerTotalAmount(System::String^);
 		//System::Data::DataSet^ simulateStockValue(System::String^);
-		System::Data::DataSet^ simulateStockValue(System::String^, System::String^, System::String^, System::String^);
-
+		System::Data::DataSet^ simulateStockValue(System::String^, System::String^, System::String^, System::String^, System::String^);
 	};
 }

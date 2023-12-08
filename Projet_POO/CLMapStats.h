@@ -5,6 +5,7 @@ namespace NS_Comp_Map_Stats {
 	private:
 		System::String^ TVA;
 		System::String^ MargeCommerciale;
+		System::String^ ReductionCommerciale;
 		System::String^ DemarqueInconnue;
 		System::String^ MonthSalesRevenue;
 		System::String^ YearSalesRevenue;
@@ -22,12 +23,14 @@ namespace NS_Comp_Map_Stats {
 
 		void setTVA(System::String^);
 		void setMargeCommerciale(System::String^);
+		void setReductionCommerciale(System::String^);
 		void setDemarqueInconnue(System::String^);
 		void setMonthSalesRevenue(System::String^);
 		void setYearSalesRevenue(System::String^);
 
 		System::String^ getTVA(void);
 		System::String^ getMargeCommerciale(void);
+		System::String^ getReductionCommerciale(void);
 		System::String^ getDemarqueInconnue(void);
 		System::String^ getMonthSalesRevenue(void);
 		System::String^ getYearSalesRevenue(void);
