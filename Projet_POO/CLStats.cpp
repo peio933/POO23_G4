@@ -48,9 +48,22 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::customerTotalAmount(System::Strin
 {
     return this->oCAD->getRows(this->oMapStats->SumTTC_O_C(), dataTableName);
 }
-
+/*
 System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^ dataTableName)
 {
+    return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
+}
+*/
+
+
+
+System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^ TVA , System::String^ MargeCommerciale, System::String^ DemarqueInconnue, System::String^ dataTableName)
+
+{
+    this->oMapStats->setTVA(TVA);
+    this->oMapStats->setMargeCommerciale(MargeCommerciale);
+    this->oMapStats->setDemarqueInconnue(DemarqueInconnue);
+
     return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
 }
 
