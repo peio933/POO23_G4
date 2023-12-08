@@ -44,9 +44,9 @@ void NS_Comp_Stock::CLStock::updateArticle(System::String^ R_A, System::String^ 
     this->oCAD->actionRows(this->oMapStock->Update());
 }
 
-void NS_Comp_Stock::CLStock::deleteArticle(System::String^ R_A, System::String^ N_A)
+System::Data::DataSet^ NS_Comp_Stock::CLStock::deleteArticle(System::String^ R_A, System::String^ N_A, System::String^ dataTableName)
 {
     this->oMapStock->setR_A(R_A);
     this->oMapStock->setN_A(N_A);
-    this->oCAD->actionRows(this->oMapStock->Delete());
+    return this->oCAD->getRows(this->oMapStock->Delete(), dataTableName);
 }
