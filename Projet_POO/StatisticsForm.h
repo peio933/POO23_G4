@@ -703,11 +703,11 @@ private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^
 
 private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl8");
-	this->oDs = this->oStats->simulateStockValue("Rsl8");
+	this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_UDiscount->Text, "Rsl26");
+	//this->oDs = this->oStats->simulateStockValue("Rsl26");
 	this->Dataview_simulate->Refresh();
 	this->Dataview_simulate->DataSource = this->oDs;
-	this->Dataview_simulate->DataMember = "Rsl8";
+	this->Dataview_simulate->DataMember = "Rsl26";
 }
 
 
