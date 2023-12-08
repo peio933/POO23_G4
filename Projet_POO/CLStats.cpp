@@ -56,7 +56,9 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String
 */
 
 
+
 System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^ TVA , System::String^ MargeCommerciale, System::String^ DemarqueInconnue, System::String^ dataTableName)
+
 {
     this->oMapStats->setTVA(TVA);
     this->oMapStats->setMargeCommerciale(MargeCommerciale);
@@ -64,3 +66,10 @@ System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String
 
     return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
 }
+
+/*
+System::Data::DataSet^ NS_Comp_Stats::CLStats::simulateStockValue(System::String^, System::String^, System::String^, System::String^ dataTableName)
+{
+    return this->oCAD->getRows(this->oMapStats->simulateStockValue(), dataTableName);
+}
+*/
