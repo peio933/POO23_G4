@@ -3,7 +3,7 @@
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::SelectAll(void)
 {
     return "SELECT Customers.S_C AS Nom, "
-        "Customers.N_C AS Prénom, "
+        "Customers.N_C AS Prenom, "
         "Customers.BD_C AS [Date de Naissance], "
         "Adress.SNB AS [Numero de rue], "
         "Adress.SN AS [Nom de rue], "
@@ -16,7 +16,7 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::SelectAll(void)
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Select(void)
 {
     return "SELECT Customers.S_C AS Nom, "
-        "Customers.N_C AS Prénom, "
+        "Customers.N_C AS Prenom, "
         "Customers.BD_C AS [Date de Naissance], "
         "Adress.SNB AS [Numero de rue], "
         "Adress.SN AS [Nom de rue], "
@@ -24,35 +24,36 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::Select(void)
         "Adress.PC AS [Code postal] "
         "FROM Customers "
         "INNER JOIN Adress ON Customers.ID_C = Adress.ID_C "
-        "WHERE Customers.S_C = '" + getS_C() + "';";
+        "WHERE Customers.S_C = '" + getS_C() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Insert(void)
 {
     return "INSERT INTO Customers(N_C, S_C, BD_C) "
         "VALUES('" + getN_C() + "', '" + getS_C() + "', '" + getBD_C() + "'); "
-        "DECLARE @CustomerID INT; SET @CustomerID = SCOPE_IDENTITY(); "
+        "DECLARE @CustomerID INT; "
+        "SET @CustomerID = SCOPE_IDENTITY(); "
         "INSERT INTO Adress(SNB, SN, N_V, PC, ID_C) "
-        "VALUES(" + getSNB() + ", '" + getSN() + "', '" + getN_V() + "', '" + getPC() + "', @CustomerID)";
+        "VALUES('" + getSNB() + "', '" + getSN() + "', '" + getN_V() + "', '" + getPC() + "', @CustomerID); ";
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Delete(void)
 {
-    return "DELETE FROM Customers"
-        "WHERE S_C = '" + getS_C() + "'"
-        "AND N_C = '" + getN_C() + "'"
-        "AND BD_C = '" + getBD_C() + "'";
+    return "DELETE FROM Customers "
+        "WHERE S_C = '" + getS_C() + "' "
+        "AND N_C = '" + getN_C() + "' "
+        "AND BD_C = '" + getBD_C() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Update(void)
 {
-    return "UPDATE Customers"
-        "SET N_C = 'NouveauPreomClient',"
-        "S_C = 'NouveauNomClient',"
-        "BD_C = 'NouvelleDateNaissanceClient'"
-        "WHERE S_C = '" + getS_C() + "'"
-        "AND N_C = '" + getN_C() + "'"
-        "AND BD_C = '" + getBD_C() + "'";
+    return "UPDATE Customers "
+        "SET N_C = 'NouveauPrenomClient', "
+        "S_C = 'NouveauNomClient', "
+        "BD_C = 'NouvelleDateNaissanceClient' "
+        "WHERE S_C = '" + getS_C() + "' "
+        "AND N_C = '" + getN_C() + "' "
+        "AND BD_C = '" + getBD_C() + "'; ";
 }
 
 void NS_Comp_Map_Cus::CLMapCustomers::setS_C(System::String^ S_C)
@@ -109,9 +110,6 @@ void NS_Comp_Map_Cus::CLMapCustomers::setPC(System::String^ PC)
 {
     this->PC = PC;
 }
-
-
-
 
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::getS_C(void)
