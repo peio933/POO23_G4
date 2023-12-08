@@ -37,3 +37,48 @@ void NS_Comp_Data::CLCAD::actionRows(System::String^ sSql)
 	this->oCmd->ExecuteNonQuery();
 	this->oCnx->Close();
 }
+System::String^ NS_Comp_Data::CLCAD::executeQuery(System::String^ sSql)
+{
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+	this->oDA->SelectCommand = this->oCmd;
+	this->oCnx->Open();
+	System::Data::SqlClient::SqlDataReader^ reader = this->oCmd->ExecuteReader();
+	System::String^ result = "";
+	if (reader->Read()) {
+		result = reader->GetString(0); 
+	}
+	reader->Close();
+	this->oCnx->Close();
+	return result;
+}
+System::Int32 NS_Comp_Data::CLCAD::executeQueryForInt(System::String^ sSql)
+{
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+	this->oDA->SelectCommand = this->oCmd;
+	this->oCnx->Open();
+	System::Data::SqlClient::SqlDataReader^ reader = this->oCmd->ExecuteReader();
+	System::Int32 result = 0; 
+	if (reader->Read()) {
+		result = reader->GetInt32(0);
+	}
+	reader->Close();
+	this->oCnx->Close();
+	return result;
+}
+System::Decimal NS_Comp_Data::CLCAD::executeQueryForDecimal(System::String^ sSql)
+{
+	this->sSql = sSql;
+	this->oCmd->CommandText = this->sSql;
+	this->oDA->SelectCommand = this->oCmd;
+	this->oCnx->Open();
+	System::Data::SqlClient::SqlDataReader^ reader = this->oCmd->ExecuteReader();
+	System::Decimal result = 0; 
+	if (reader->Read()) {
+		result = reader->GetDecimal(0);
+	}
+	reader->Close();
+	this->oCnx->Close();
+	return result;
+}
