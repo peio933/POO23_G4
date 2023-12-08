@@ -205,6 +205,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Title_order = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->Group_Reminder = (gcnew System::Windows::Forms::GroupBox());
+			this->Lab2_Reminder = (gcnew System::Windows::Forms::Label());
 			this->Lab1_reminder = (gcnew System::Windows::Forms::Label());
 			this->List_UDiscount = (gcnew System::Windows::Forms::ListBox());
 			this->List_Discount = (gcnew System::Windows::Forms::ListBox());
@@ -217,7 +218,6 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Dataview = (gcnew System::Windows::Forms::DataGridView());
 			this->Btn_simulate = (gcnew System::Windows::Forms::Button());
 			this->Titre_Simulate = (gcnew System::Windows::Forms::Label());
-			this->Lab2_Reminder = (gcnew System::Windows::Forms::Label());
 			this->Tab->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->Group_Turnover->SuspendLayout();
@@ -461,6 +461,15 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Group_Reminder->TabStop = false;
 			this->Group_Reminder->Text = L"Reminder";
 			// 
+			// Lab2_Reminder
+			// 
+			this->Lab2_Reminder->AutoSize = true;
+			this->Lab2_Reminder->Location = System::Drawing::Point(16, 57);
+			this->Lab2_Reminder->Name = L"Lab2_Reminder";
+			this->Lab2_Reminder->Size = System::Drawing::Size(415, 17);
+			this->Lab2_Reminder->TabIndex = 1;
+			this->Lab2_Reminder->Text = L"dress-up, but it\'s all in good fun. Keep calm, math is on our side! ";
+			// 
 			// Lab1_reminder
 			// 
 			this->Lab1_reminder->AutoSize = true;
@@ -469,7 +478,6 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Lab1_reminder->Size = System::Drawing::Size(416, 17);
 			this->Lab1_reminder->TabIndex = 0;
 			this->Lab1_reminder->Text = L"Don\'t panic: Entering 0.20 is basically saying 20%. Numbers play";
-			this->Lab1_reminder->Click += gcnew System::EventHandler(this, &StatisticsForm::label5_Click);
 			// 
 			// List_UDiscount
 			// 
@@ -566,6 +574,7 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Btn_simulate->TabIndex = 17;
 			this->Btn_simulate->Text = L"Simulate";
 			this->Btn_simulate->UseVisualStyleBackColor = false;
+			this->Btn_simulate->Click += gcnew System::EventHandler(this, &StatisticsForm::Btn_simulate_Click);
 			// 
 			// Titre_Simulate
 			// 
@@ -578,15 +587,6 @@ private: System::Windows::Forms::Label^ Lab2_Reminder;
 			this->Titre_Simulate->Size = System::Drawing::Size(332, 86);
 			this->Titre_Simulate->TabIndex = 15;
 			this->Titre_Simulate->Text = L"Simulate";
-			// 
-			// Lab2_Reminder
-			// 
-			this->Lab2_Reminder->AutoSize = true;
-			this->Lab2_Reminder->Location = System::Drawing::Point(16, 57);
-			this->Lab2_Reminder->Name = L"Lab2_Reminder";
-			this->Lab2_Reminder->Size = System::Drawing::Size(415, 17);
-			this->Lab2_Reminder->TabIndex = 1;
-			this->Lab2_Reminder->Text = L"dress-up, but it\'s all in good fun. Keep calm, math is on our side! ";
 			// 
 			// StatisticsForm
 			// 
@@ -687,7 +687,13 @@ private: System::Void Btn_Seuil_Click(System::Object^ sender, System::EventArgs^
 }
 
 
-private: System::Void label5_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void Btn_simulate_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	this->oDs = this->oStats->simulateStockValue(this->List_TVA->Text, this->List_Margin->Text, this->List_Discount->Text, this->List_UDiscount->Text, "Rsl8");
+	this->View_Database->Refresh();
+	this->View_Database->DataSource = this->oDs;
+	this->View_Database->DataMember = "Rsl8";
 }
+
 };
 }
