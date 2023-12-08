@@ -1,12 +1,13 @@
 #pragma once
 #include "CLCAD.h"
-#include "CLmapEmployees.h"
+#include "CLMapEmployees.h"
 namespace NS_Comp_Employees{
 	ref class CLEmployees
 	{
 	private:
 		NS_Comp_Data::CLCAD^ oCAD;
 		NS_Comp_Map_Employees::CLMapEmployees^ oMappEmployees;
+
 
 	public:
 		CLEmployees(void);

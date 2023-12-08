@@ -2,7 +2,7 @@
 
 NS_Comp_Cus::CLCustomers::CLCustomers(void)
 {
-	this->oCAD = gcnew NS_Comp_Data::CLCAD();
+	this->oCAD = gcnew NS_Comp_Data::CLCAD(); 
 	this->oMapCustomers = gcnew NS_Comp_Map_Cus::CLMapCustomers();
 }
 
