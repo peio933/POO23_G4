@@ -2,7 +2,7 @@
 
 NS_Comp_Cus::CLCustomers::CLCustomers(void)
 {
-	this->oCAD = gcnew NS_Comp_Data::CLCAD(); 
+	this->oCAD = gcnew NS_Comp_Data::CLCAD();
 	this->oMapCustomers = gcnew NS_Comp_Map_Cus::CLMapCustomers();
 }
 
@@ -35,12 +35,14 @@ void NS_Comp_Cus::CLCustomers::recordCustomer(System::String^ S_C, System::Strin
 	this->oCAD->actionRows(sql);
 }
 
-void NS_Comp_Cus::CLCustomers::modifyCustomer(System::String^ S_C, System::String^ N_C, System::String^ BD_C)
+void NS_Comp_Cus::CLCustomers::modifyCustomer(System::String^ S_C, System::String^ N_C, System::String^ BD_C, System::String^ Nw_C, System::String^ BDw_C)
 {
 	System::String^ sql;
 	this->oMapCustomers->setS_C(S_C);
 	this->oMapCustomers->setN_C(N_C);
 	this->oMapCustomers->setBD_C(BD_C);
+	this->oMapCustomers->setNw_C(Nw_C);
+	this->oMapCustomers->setBDw_C(BDw_C);
 	sql = this->oMapCustomers->Update();
 	this->oCAD->actionRows(sql);
 }
