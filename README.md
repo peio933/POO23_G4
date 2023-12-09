@@ -122,22 +122,41 @@ After running the data population script, it's crucial to perform a thorough tes
 <br>
 
 ## Available features
-#### 1. Gestion des Stocks
-   - Créer un article
-   - Modifier un article
-   - Afficher un article
-   - Supprimer un article
 
-#### 2. Statistiques
-   - Calculer le panier moyen (après remise)
-   - Calculer le chiffre d’affaire sur un mois en particulier
-   - Identifier les produits sous le seuil de réapprovisionnement
-   - Calculer le montant total des achats pour un client
-   - Identifier les 10 articles les plus vendus
-   - Identifier les 10 articles les moins vendus
-   - Calculer la valeur commerciale du stock
-   - Calculer la valeur d’achat du stock
-   - Simuler des variations de valeurs commerciales pour en déduire la valeur du stock
+#### Employee Management
+- Create an employee
+- Modify an employee (*in progress*)
+- Display an employee
+- Delete an employee
+  
+#### Client Management
+- Create a client
+- Modify a client
+- Display a client
+- Delete a client
+
+#### Order Management
+- Create an order
+- Modify an order
+- Display an order
+- Delete an order
+
+#### Inventory Management
+- Create an article
+- Modify an article
+- Display an article
+- Delete an article
+
+#### Statistics
+- Calculate the average basket value
+- Calculate the turnover for a specific month
+- Identify products below the restocking threshold
+- Calculate the total amount of purchases for a client
+- Identify the top 10 best-selling items
+- Identify the top 10 least-selling items
+- Calculate the commercial value of the inventory
+- Calculate the purchase value of the inventory
+- Simulate variations in commercial values to deduce the inventory value
 
 
 ## Authors
