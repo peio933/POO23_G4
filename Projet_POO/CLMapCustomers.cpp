@@ -48,9 +48,9 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::Delete(void)
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::Update(void)
 {
     return "UPDATE Customers "
-        "SET N_C = 'NouveauPrenomClient', "
-        "S_C = 'NouveauNomClient', "
-        "BD_C = 'NouvelleDateNaissanceClient' "
+        "SET N_C = '" + getNw_C() + "', "
+        "S_C = '" + getS_C() + "', "
+        "BD_C = '" + getBDw_C() + "' "
         "WHERE S_C = '" + getS_C() + "' "
         "AND N_C = '" + getN_C() + "' "
         "AND BD_C = '" + getBD_C() + "'; ";
@@ -70,6 +70,17 @@ void NS_Comp_Map_Cus::CLMapCustomers::setBD_C(System::String^ BD_C)
 {
     this->BD_C = BD_C;
 }
+
+void NS_Comp_Map_Cus::CLMapCustomers::setNw_C(System::String^ Nw_C)
+{
+    this->Nw_C = Nw_C;
+}
+
+void NS_Comp_Map_Cus::CLMapCustomers::setBDw_C(System::String^ BDw_C)
+{
+    this->BDw_C = BDw_C;
+}
+
 
 void NS_Comp_Map_Cus::CLMapCustomers::setID_CY(System::String^ ID_CY)
 {
@@ -125,6 +136,16 @@ System::String^ NS_Comp_Map_Cus::CLMapCustomers::getN_C(void)
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::getBD_C(void)
 {
     return this->BD_C;
+}
+
+System::String^ NS_Comp_Map_Cus::CLMapCustomers::getNw_C(void)
+{
+    return this->Nw_C;
+}
+
+System::String^ NS_Comp_Map_Cus::CLMapCustomers::getBDw_C(void)
+{
+    return this->BDw_C;
 }
 
 System::String^ NS_Comp_Map_Cus::CLMapCustomers::getID_CY(void)

@@ -143,6 +143,10 @@ namespace ProjetPOO {
 
 	private: NS_Comp_Cus::CLCustomers^ oCustomers;
 	private: System::Data::DataSet^ oDs;
+	private: System::Windows::Forms::Label^ label_New_Date_of_Birth;
+	private: System::Windows::Forms::Label^ label_New_Name;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker_New_Date_of_Birth;
+	private: System::Windows::Forms::TextBox^ textBox_New_Name;
 
 
 
@@ -208,6 +212,10 @@ namespace ProjetPOO {
 			this->Btn_Load = (gcnew System::Windows::Forms::Button());
 			this->View_Database = (gcnew System::Windows::Forms::DataGridView());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->textBox_New_Name = (gcnew System::Windows::Forms::TextBox());
+			this->dateTimePicker_New_Date_of_Birth = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label_New_Name = (gcnew System::Windows::Forms::Label());
+			this->label_New_Date_of_Birth = (gcnew System::Windows::Forms::Label());
 			this->groupBox_Informations->SuspendLayout();
 			this->groupBox_Adress->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
@@ -227,6 +235,10 @@ namespace ProjetPOO {
 			// 
 			// groupBox_Informations
 			// 
+			this->groupBox_Informations->Controls->Add(this->label_New_Date_of_Birth);
+			this->groupBox_Informations->Controls->Add(this->label_New_Name);
+			this->groupBox_Informations->Controls->Add(this->dateTimePicker_New_Date_of_Birth);
+			this->groupBox_Informations->Controls->Add(this->textBox_New_Name);
 			this->groupBox_Informations->Controls->Add(this->txtBox_Surname);
 			this->groupBox_Informations->Controls->Add(this->label_Surname);
 			this->groupBox_Informations->Controls->Add(this->txtBox_Name);
@@ -459,6 +471,41 @@ namespace ProjetPOO {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &CustomerForm::button1_Click);
 			// 
+			// textBox_New_Name
+			// 
+			this->textBox_New_Name->Location = System::Drawing::Point(112, 121);
+			this->textBox_New_Name->Name = L"textBox_New_Name";
+			this->textBox_New_Name->Size = System::Drawing::Size(304, 23);
+			this->textBox_New_Name->TabIndex = 21;
+			// 
+			// dateTimePicker_New_Date_of_Birth
+			// 
+			this->dateTimePicker_New_Date_of_Birth->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->dateTimePicker_New_Date_of_Birth->CustomFormat = L"yyyy-MM-dd";
+			this->dateTimePicker_New_Date_of_Birth->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->dateTimePicker_New_Date_of_Birth->Location = System::Drawing::Point(133, 149);
+			this->dateTimePicker_New_Date_of_Birth->Name = L"dateTimePicker_New_Date_of_Birth";
+			this->dateTimePicker_New_Date_of_Birth->Size = System::Drawing::Size(283, 23);
+			this->dateTimePicker_New_Date_of_Birth->TabIndex = 22;
+			// 
+			// label_New_Name
+			// 
+			this->label_New_Name->AutoSize = true;
+			this->label_New_Name->Location = System::Drawing::Point(12, 127);
+			this->label_New_Name->Name = L"label_New_Name";
+			this->label_New_Name->Size = System::Drawing::Size(88, 17);
+			this->label_New_Name->TabIndex = 23;
+			this->label_New_Name->Text = L"New Name : ";
+			// 
+			// label_New_Date_of_Birth
+			// 
+			this->label_New_Date_of_Birth->AutoSize = true;
+			this->label_New_Date_of_Birth->Location = System::Drawing::Point(5, 149);
+			this->label_New_Date_of_Birth->Name = L"label_New_Date_of_Birth";
+			this->label_New_Date_of_Birth->Size = System::Drawing::Size(130, 17);
+			this->label_New_Date_of_Birth->TabIndex = 24;
+			this->label_New_Date_of_Birth->Text = L"New Date of Birth : ";
+			// 
 			// CustomerForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 17);
@@ -522,7 +569,7 @@ namespace ProjetPOO {
 	}
 	private: System::Void Btn_modify_Click(System::Object^ sender, System::EventArgs^ e) {
 		System::String^ dateString = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_Date_of_Birth->Value);
-		this->oCustomers->modifyCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString);
+		this->oCustomers->modifyCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString, this->textBox_New_Name->Text, dateString);
 		this->View_Database->Refresh();
 		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl4");
 		this->View_Database->DataSource = this->oDs;
@@ -536,5 +583,6 @@ namespace ProjetPOO {
 		this->View_Database->DataSource = this->oDs;
 		this->View_Database->DataMember = "Rsl5";
 	}
+
 	};
 }

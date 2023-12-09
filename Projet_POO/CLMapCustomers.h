@@ -7,6 +7,8 @@ namespace NS_Comp_Map_Cus {
 		System::String^ S_C;
 		System::String^ N_C;
 		System::String^ BD_C;
+		System::String^ Nw_C;
+		System::String^ BDw_C;
 
 
 		//adresse client
@@ -28,7 +30,8 @@ namespace NS_Comp_Map_Cus {
 		void setS_C(System::String^);
 		void setN_C(System::String^);
 		void setBD_C(System::String^);
-
+		void setNw_C(System::String^);
+		void setBDw_C(System::String^);
 
 		//adresse client
 		void setID_CY(System::String^);
@@ -43,7 +46,8 @@ namespace NS_Comp_Map_Cus {
 		System::String^ getS_C(void);
 		System::String^ getN_C(void);
 		System::String^ getBD_C(void);
-
+		System::String^ getNw_C(void);
+		System::String^ getBDw_C(void);
 		//adresse
 		System::String^ getID_CY(void);
 		System::String^ getN_V(void);

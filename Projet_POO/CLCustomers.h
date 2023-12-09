@@ -14,7 +14,7 @@ namespace NS_Comp_Cus {
 		System::Data::DataSet^ loadCustomer(System::String^);
 		System::Data::DataSet^ selectCustomer(System::String^, System::String^);
 		void recordCustomer(System::String^, System::String^, System::String^, System::String^, System::String^, System::String^, System::String^);
-		void modifyCustomer(System::String^, System::String^, System::String^);
+		void modifyCustomer(System::String^, System::String^, System::String^, System::String^, System::String^);
 		void deleteCustomer(System::String^, System::String^, System::String^);
 	};
 }
