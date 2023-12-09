@@ -554,20 +554,45 @@ namespace ProjetPOO {
 	}
 
 	private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->View_Database->Refresh();
-		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl2");
-		this->View_Database->DataSource = this->oDs;
-		this->View_Database->DataMember = "Rsl2";
+		if (!String::IsNullOrWhiteSpace(this->txtBox_Surname->Text)) {
+			this->View_Database->Refresh();
+			this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl2");
+			this->View_Database->DataSource = this->oDs;
+			this->View_Database->DataMember = "Rsl2";
+		}
+		else {
+			MessageBox::Show("Please enter the surname of the client you want to display!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+	}
+	private: System::Boolean UpdateTextBoxAreFilled() {
+		return !String::IsNullOrWhiteSpace(txtBox_Surname->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Name->Text) &&
+			!String::IsNullOrWhiteSpace(textBox_New_Name->Text);
+	}
+	private: System::Boolean CreateTextBoxAreFilled() {
+		return !String::IsNullOrWhiteSpace(txtBox_Surname->Text) &&
+			!String::IsNullOrWhiteSpace(txtBox_Name->Text) &&
+			!String::IsNullOrWhiteSpace(textBox_Str_Numb->Text)&&
+			!String::IsNullOrWhiteSpace(textBox_Str_Name->Text)&&
+			!String::IsNullOrWhiteSpace(textBox_City->Text)&&
+			!String::IsNullOrWhiteSpace(textBox_Post_Code->Text);
 	}
 	private: System::Void Btn_record_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (CreateTextBoxAreFilled()) {
 		System::String^ dateString = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_Date_of_Birth->Value);
 		this->oCustomers->recordCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString, this->textBox_Str_Numb->Text, this->textBox_Str_Name->Text, this->textBox_City->Text, this->textBox_Post_Code->Text);
 		this->View_Database->Refresh();
 		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl3");
 		this->View_Database->DataSource = this->oDs;
 		this->View_Database->DataMember = "Rsl3";
+		}
+	    else {
+			   MessageBox::Show("Please enter all the informations of the client you want to create! \n \n - Surname \n - Name \n - Date of Birth \n - Street Number \n - Street Name \n - City \n - Postal code \n", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			   }
 	}
+
 	private: System::Void Btn_modify_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (UpdateTextBoxAreFilled()) {
 		System::String^ dateString = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_Date_of_Birth->Value);
 		System::String^ dateString1 = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_New_Date_of_Birth->Value);
 		this->oCustomers->modifyCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString, this->textBox_New_Name->Text, dateString1);
@@ -575,15 +600,24 @@ namespace ProjetPOO {
 		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl4");
 		this->View_Database->DataSource = this->oDs;
 		this->View_Database->DataMember = "Rsl4";
+		}
+		else {
+			MessageBox::Show("Please enter all the informations of the client you want to modify! \n \n - New name \n - New Date of Birth \n ", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
+
 	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (!String::IsNullOrWhiteSpace(this->txtBox_Surname->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Name->Text)) {
 		System::String^ dateString = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_Date_of_Birth->Value);
 		this->oCustomers->deleteCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString);
 		this->View_Database->Refresh();
 		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl5");
 		this->View_Database->DataSource = this->oDs;
 		this->View_Database->DataMember = "Rsl5";
+		}
+		else {
+			MessageBox::Show("Please enter all the informations of the client you want to delete! \n \n - Surname \n - Name \n - Date of Birth \n", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
 	}
-
 	};
 }
