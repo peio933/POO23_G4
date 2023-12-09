@@ -19,6 +19,7 @@ namespace NS_Comp_Orders {
 		System::String^ selectHT(System::String^);
 		System::String^ selectTVA(System::String^);
 		System::String^ selectTTC(System::String^);
+		System::Data::DataSet^ addArticle(System::String^, System::String^, System::String^, System::String^);
 		void insertOrders(System::String^, System::String^, System::String^);
 		void updateOrders(System::String^, System::String^, System::String^);
 		void deleteOrders(System::String^);

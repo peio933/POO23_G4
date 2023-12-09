@@ -12,6 +12,8 @@ namespace NS_Comp_Map_Orders {
 		System::String^ MOP_O;
 		System::String^ N_C;
 		System::String^ S_C;
+		System::String^ R_A;
+		System::String^ Quantity;
 	public:
 		System::String^ SelectAll(void);
 		System::String^ SelectName(void);
@@ -21,6 +23,7 @@ namespace NS_Comp_Map_Orders {
 		System::String^ SelectHT(void);
 		System::String^ SelectTVA(void);
 		System::String^ SelectTTC(void);
+		System::String^ AddArticle(void);
 		virtual System::String^ Select(void) override;
 		virtual System::String^ Insert(void) override;
 		virtual System::String^ Delete(void) override;
@@ -32,6 +35,8 @@ namespace NS_Comp_Map_Orders {
 		void setMOP_O(System::String^);
 		void setN_C(System::String^);
 		void setS_C(System::String^);
+		void setR_A(System::String^);
+		void setQuantity(System::String^);
 
 		System::String^ getR_O(void);
 		System::String^ getDD_O(void);
@@ -39,6 +44,8 @@ namespace NS_Comp_Map_Orders {
 		System::String^ getMOP_O(void);
 		System::String^ getN_C(void);
 		System::String^ getS_C(void);
+		System::String^ getR_A(void);
+		System::String^ getQuantity(void);
 	};
 }
 
