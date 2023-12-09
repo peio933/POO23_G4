@@ -569,7 +569,8 @@ namespace ProjetPOO {
 	}
 	private: System::Void Btn_modify_Click(System::Object^ sender, System::EventArgs^ e) {
 		System::String^ dateString = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_Date_of_Birth->Value);
-		this->oCustomers->modifyCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString, this->textBox_New_Name->Text, dateString);
+		System::String^ dateString1 = System::String::Format("{0:yyyy/MM/dd}", dateTimePicker_New_Date_of_Birth->Value);
+		this->oCustomers->modifyCustomer(this->txtBox_Surname->Text, this->txtBox_Name->Text, dateString, this->textBox_New_Name->Text, dateString1);
 		this->View_Database->Refresh();
 		this->oDs = this->oCustomers->selectCustomer(this->txtBox_Surname->Text, "Rsl4");
 		this->View_Database->DataSource = this->oDs;
