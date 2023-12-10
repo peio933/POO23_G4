@@ -53,8 +53,17 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectTVA(void)
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectTTC(void)
 {
-    return "SELECT TTC_O AS TTCPrice FROM Customer_Order "
-        "WHERE R_O = '" + getR_O() + "'; ";
+    return "SELECT "
+        "CASE "
+        "WHEN DATEPART(DAY, CO.PD_O) = DATEPART(DAY, C.BD_C) AND DATEPART(MONTH, CO.PD_O) = DATEPART(MONTH, C.BD_C) THEN CO.TTC_O * 0.9 "
+        "WHEN DATEPART(DAY, CO.PD_O) = DATEPART(DAY,(SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) "
+        "AND DATEPART(MONTH, CO.PD_O) = DATEPART(MONTH, (SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) "
+        "AND DATEPART(YEAR, CO.PD_O) != DATEPART(YEAR, (SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) THEN CO.TTC_O * 0.95 "
+        "ELSE CO.TTC_O "
+        "END "
+        "FROM Customer_Order CO "
+        "INNER JOIN Customers C ON CO.ID_C = C.ID_C "
+        "WHERE CO.R_O = '" + getR_O() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Orders::CLMapOrders::AddArticle(void)
@@ -106,9 +115,73 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::AddArticle(void)
         "END ";
 }
 
+System::String^ NS_Comp_Map_Orders::CLMapOrders::DeleteArticle(void)
+{
+    return " DECLARE @Quantity INT = " + getQuantity() + " "
+        "DECLARE @RefCommande VARCHAR(60) = '" + getR_O() + "' "
+        "DECLARE @RefArticle VARCHAR(60) = '" + getR_A() + "' "
+        "IF EXISTS(SELECT 1 FROM Customer_Order WHERE R_O = @RefCommande) "
+        "BEGIN "
+        "IF EXISTS(SELECT 1 FROM composed WHERE ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle) AND ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande)) "
+        "BEGIN "
+        "IF EXISTS(SELECT 1 FROM composed WHERE ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle) AND ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) AND Quantity >= @Quantity) "
+        "BEGIN "
+        "UPDATE Article "
+        "SET QS_A = QS_A + @Quantity, "
+        "QC_A = QC_A - @Quantity "
+        "WHERE R_A = @RefArticle; "
+        "UPDATE Customer_Order "
+        "SET HT_O = HT_O - (SELECT HT_A * @Quantity FROM Article WHERE R_A = @RefArticle), "
+        "TVA_O = TVA_O - (SELECT HT_A * TVA_A * @Quantity FROM Article WHERE R_A = @RefArticle), "
+        "TTC_O = TTC_O - (SELECT(HT_A + (HT_A * TVA_A)) * @Quantity FROM Article WHERE R_A = @RefArticle) "
+        "WHERE R_O = @RefCommande; "
+        "IF((SELECT Quantity FROM composed WHERE ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) AND ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle)) = @Quantity) "
+        "BEGIN "
+        "DELETE composed "
+        "WHERE ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle) AND ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "UPDATE composed "
+        "SET Quantity = Quantity - @Quantity "
+        "WHERE ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) AND ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle) "
+        "END "
+        "SELECT 'Article supprimé de la commande' AS Message; "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'Quantité rentré supérieur à la quantité dans la commande' AS Message; "
+        "END "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'Aucun article avec cette référence dans la commande' AS Message; "
+        "END "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'La référence commande que vous avez rentré est inexistante' AS Message; "
+        "END ";
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::Discount(void)
+{
+    return "SELECT "
+        "CASE "
+        "WHEN DATEPART(DAY, CO.PD_O) = DATEPART(DAY, C.BD_C) AND DATEPART(MONTH, CO.PD_O) = DATEPART(MONTH, C.BD_C) THEN 'Joyeux Anniversaire (-10%)' "
+        "WHEN DATEPART(DAY, CO.PD_O) = DATEPART(DAY,(SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) "
+        "AND DATEPART(MONTH, CO.PD_O) = DATEPART(MONTH, (SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) "
+        "AND DATEPART(YEAR, CO.PD_O) != DATEPART(YEAR, (SELECT MIN(CO2.PD_O) FROM Customer_Order CO2 WHERE CO2.ID_C = C.ID_C)) THEN 'Anniversaire de votre première commande (-5%)' "
+        "ELSE '' "
+        "END AS Message "
+        "FROM Customer_Order CO "
+        "INNER JOIN Customers C ON CO.ID_C = C.ID_C "
+        "WHERE CO.R_O = '" + getR_O() + "'; ";
+}
+
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 {
-    return "SELECT A.R_A, A.N_A, A.HT_A, A.TVA_A "
+    return "SELECT A.R_A AS [Article Reference], A.N_A AS [Article Name], A.HT_A AS [HT Price], A.TVA_A * 100 AS [TVA (%)], CMP.Quantity "
         "FROM Customer_Order AS CO "
         "JOIN composed AS CMP ON CO.ID_O = CMP.ID_O "
         "JOIN Article AS A ON CMP.ID_A = A.ID_A "

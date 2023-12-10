@@ -63,12 +63,26 @@ System::String^ NS_Comp_Orders::CLOrders::selectTTC(System::String^ R_O)
     return this->oCAD->executeQueryForDecimal(this->oMapOrders->SelectTTC()).ToString();
 }
 
+System::String^ NS_Comp_Orders::CLOrders::discount(System::String^ R_O)
+{
+    this->oMapOrders->setR_O(R_O);
+    return this->oCAD->executeQuery(this->oMapOrders->Discount());
+}
+
 System::Data::DataSet^ NS_Comp_Orders::CLOrders::addArticle(System::String^ R_O, System::String^ R_A, System::String^ Quantity, System::String^ dataTableName)
 {
     this->oMapOrders->setR_O(R_O);
     this->oMapOrders->setR_A(R_A);
     this->oMapOrders->setQuantity(Quantity);
     return this->oCAD->getRows(this->oMapOrders->AddArticle(), dataTableName);
+}
+
+System::Data::DataSet^ NS_Comp_Orders::CLOrders::deleteArticle(System::String^ R_O, System::String^ R_A, System::String^ Quantity, System::String^ dataTableName)
+{
+    this->oMapOrders->setR_O(R_O);
+    this->oMapOrders->setR_A(R_A);
+    this->oMapOrders->setQuantity(Quantity);
+    return this->oCAD->getRows(this->oMapOrders->DeleteArticle(), dataTableName);
 }
 
 void NS_Comp_Orders::CLOrders::insertOrders (System::String^ N_C, System::String^ S_C, System::String^ MOP_O)

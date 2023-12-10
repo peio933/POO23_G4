@@ -2,8 +2,17 @@
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::SelectAll(void)
 {
-    return "SELECT * FROM ARTICLE";
+    return "SELECT R_A AS [Reference], "
+        "N_A AS[Name], "
+        "QC_A AS[Quantity in carts], "
+        "QS_A AS[Quantity in stock], "
+        "RT_A AS[Reorder Threshold], "
+        "HT_A AS[HT Price], "
+        "TVA_A AS TVA, "
+        "D_A AS[Description] "
+        "FROM ARTICLE; ";
 }
+
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Select(void)
 {
