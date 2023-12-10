@@ -90,6 +90,7 @@ private: System::Windows::Forms::GroupBox^ groupBox3;
 private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::TextBox^ textBox12;
 
+
 	protected:
 	private:
 		/// <summary>

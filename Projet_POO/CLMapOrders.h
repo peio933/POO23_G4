@@ -26,6 +26,7 @@ namespace NS_Comp_Map_Orders {
 		System::String^ AddArticle(void);
 		System::String^ DeleteArticle(void);
 		System::String^ Discount(void);
+
 		virtual System::String^ Select(void) override;
 		virtual System::String^ Insert(void) override;
 		virtual System::String^ Delete(void) override;
