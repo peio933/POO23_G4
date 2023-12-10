@@ -73,7 +73,7 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::AddArticle(void)
         "DECLARE @RefArticle VARCHAR(60) = '" + getR_A() + "' "
         "IF EXISTS(SELECT 1 FROM Article WHERE R_A = @RefArticle) "
         "BEGIN "
-        "IF EXISTS(SELECT 1 FROM Article WHERE R_A = @RefArticle AND QS_A > @Quantity) "
+        "IF EXISTS(SELECT 1 FROM Article WHERE R_A = @RefArticle AND QS_A >= @Quantity) "
         "BEGIN "
         "IF EXISTS(SELECT 1 FROM Customer_Order WHERE R_O = @RefCommande) "
         "BEGIN "
