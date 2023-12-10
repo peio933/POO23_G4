@@ -1,39 +1,36 @@
 #include "CLMapEmployees.h"
 
-// Méthode de la classe CLMapEmployees pour sélectionner toutes les données des employés avec leurs adresses
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::SelectAll(void)
 {
-    return  "SELECT Employee.S_E AS Nom, "
+    return  "SELECT Employee.S_E AS Nom, " 
             "Employee.N_E AS Prénom, "
-            "Employee.HD_E AS [Date d'Embauche], "
-            "Employee.N1_E AS Responsable, "
-            "Employee.ST_E AS Statut, "
-            "Adress.SNB AS [Numéro de rue], "
-            "Adress.SN AS [Nom de rue], "
-            "Adress.N_V AS Ville, "
+            "Employee.HD_E AS [Date d'Embauche], " 
+            "Employee.N1_E AS Responsable, " 
+            "Employee.ST_E AS Statut, " 
+            "Adress.SNB AS [Numéro de rue], " 
+            "Adress.SN AS [Nom de rue], " 
+            "Adress.N_V AS Ville, " 
             "Adress.PC AS [Code postal] "
             "FROM Employee "
             "INNER JOIN Adress ON Employee.ID_E = Adress.ID_E ";
 }
 
-// Méthode de la classe CLMapEmployees pour sélectionner un employé spécifique en fonction de son nom
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Select(void)
 {
-    return  "SELECT Employee.S_E AS Nom, "
+    return  "SELECT Employee.S_E AS Nom, " 
             "Employee.N_E AS Prénom, "
-            "Employee.HD_E AS [Date d'Embauche], "
-            "Employee.N1_E AS Responsable, "
-            "Employee.ST_E AS Statut, "
-            "Adress.SNB AS [Numéro de rue], "
-            "Adress.SN AS [Nom de rue], "
-            "Adress.N_V AS Ville, "
+            "Employee.HD_E AS [Date d'Embauche], " 
+            "Employee.N1_E AS Responsable, " 
+            "Employee.ST_E AS Statut, " 
+            "Adress.SNB AS [Numéro de rue], " 
+            "Adress.SN AS [Nom de rue], " 
+            "Adress.N_V AS Ville, " 
             "Adress.PC AS [Code postal] "
             "FROM Employee "
             "INNER JOIN Adress ON Employee.ID_E = Adress.ID_E "
             "WHERE Employee.S_E = '" + getS_E() + "' ;";
 }
 
-// Méthode de la classe CLMapEmployees pour insérer un nouvel employé avec son adresse associée
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Insert(void)
 {
     return  "INSERT INTO Employee (S_E, N_E, HD_E, N1_E, ST_E)"
@@ -44,28 +41,21 @@ System::String^ NS_Comp_Map_Employees::CLMapEmployees::Insert(void)
             "VALUES('" + getSNB() + "', '" + getSN() + "', '" + getN_V() + "', '" + getPC() + "', @EmployeeID); ";
 }
 
-// Méthode de la classe CLMapEmployees pour supprimer un employé et son adresse associée
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Delete(void)
 {
     return  "DELETE FROM Adress "
             "WHERE ID_E = (SELECT ID_E FROM Employee WHERE S_E = '" + getN_E() + "' AND N_E = '" + getS_E() + "' AND HD_E = '" + getHD_E() + "'); "
             "DELETE FROM Employee "
-            "WHERE S_E = '" + getN_E() + "' AND N_E = '" + getS_E() + "' AND HD_E = '" + getHD_E() + "';";
+            "WHERE S_E = '" + getS_E() + "' AND N_E = '" + getN_E() + "' AND HD_E = '" + getHD_E() + "';";
 }
 
-// Méthode de la classe CLMapEmployees pour mettre à jour l'adresse d'un employé
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Update(void)
 {
-    return  "UPDATE Adress "
-            "SET SNB = '" + getSNB() + "', SN = '" + getSN() + "', N_V = '" + getN_V() + "', PC = '" + getPC() + "' "
-            "FROM Employee "
-            "WHERE Adress.ID_E = Employee.ID_E "
-            "AND Employee.N_E = '" + getS_E() + "' "
-            "AND Employee.S_E = '" + getN_E() + "' "
-            "AND Employee.HD_E = '" + getHD_E() + "'; ";
+    return  "UPDATE Adress"
+            "SET Adress.SNB = '" + getSNB() + "', Adress.SN = '" + getSN() + "', Adress.N_V = '" + getN_V() + "', Adress.PC = '" + getPC() + "' "
+            "WHERE ID_E IN(SELECT ID_E FROM Employee WHERE Employee.N_E = '" + getS_E() + "' AND Employee.S_E = '" + getN_E() + "'); ";
 }
 
-// Méthodes de la classe CLMapEmployees pour définir les propriétés
 void NS_Comp_Map_Employees::CLMapEmployees::setID_E(System::String^ ID_E)
 {
     this->ID_E = ID_E;
@@ -141,7 +131,7 @@ void NS_Comp_Map_Employees::CLMapEmployees::setPC(System::String^ PC)
     this->PC = PC;
 }
 
-// Méthodes de la classe CLMapEmployees pour obtenir les propriétés
+
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getID_E(void) { return this->ID_E; }
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getN_E(void) { return this->N_E; }
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getS_E(void) { return this->S_E; }
@@ -149,7 +139,7 @@ System::String^ NS_Comp_Map_Employees::CLMapEmployees::getHD_E(void) { return th
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getN1_E(void) { return this->N1_E; }
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getST_E(void) { return this->ST_E; }
 
-// Méthodes de la classe CLMapEmployees pour obtenir les propriétés de l'adresse de l'employé
+//adresse de l'employé
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getID_CY(void){return this->ID_CY;}
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getN_V(void) { return this->N_V; }
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::getID_SN(void) { return this->ID_SN; }
