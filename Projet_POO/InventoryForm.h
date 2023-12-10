@@ -482,9 +482,9 @@ namespace ProjetPOO {
 	private: System::Void Btn_Show_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text)) {
 			this->View_Database->Refresh();
-			this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+			this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl0");
 			this->View_Database->DataSource = this->oDs;
-			this->View_Database->DataMember = "Rsl";
+			this->View_Database->DataMember = "Rsl0";
 		}
 		else {
 			MessageBox::Show("Please enter the reference of the article you want to display!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -524,9 +524,9 @@ namespace ProjetPOO {
 			if (TextBoxAreCorrectNumbers()) {
 				this->oStock->updateArticle(this->txtBox_Ref->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text->Replace(",", "."), this->txtBox_TVA->Text->Replace(",", "."), this->txtBox_Description->Text);
 				this->View_Database->Refresh();
-				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl1");
 				this->View_Database->DataSource = this->oDs;
-				this->View_Database->DataMember = "Rsl";
+				this->View_Database->DataMember = "Rsl1";
 			}
 			else {
 				MessageBox::Show("Please enter correct numbers in these fields: \n \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -537,11 +537,11 @@ namespace ProjetPOO {
 		}
 	}
 	private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Ref->Name)) {
+		if (!String::IsNullOrWhiteSpace(this->txtBox_Ref->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Name->Text)) {
 			this->View_Database->Refresh();
-			this->oDs = this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, "Rsl1");
+			this->oDs = this->oStock->deleteArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, "Rsl2");
 			this->View_Database->DataSource = this->oDs;
-			this->View_Database->DataMember = "Rsl1";
+			this->View_Database->DataMember = "Rsl2";
 		}
 		else {
 			MessageBox::Show("Please enter all the informations of the article you want to delete! \n \n - Article Reference \n - Name", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -552,9 +552,9 @@ namespace ProjetPOO {
 			if (TextBoxAreCorrectNumbers()) {
 				this->oStock->insertArticle(this->txtBox_Ref->Text, this->txtBox_Name->Text, this->txtBox_StockQuantity->Text, this->txtBox_Threshold->Text, this->txtBox_HTPrice->Text->Replace(",", "."), this->txtBox_TVA->Text->Replace(",", "."), this->txtBox_Description->Text);
 				this->View_Database->Refresh();
-				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl");
+				this->oDs = this->oStock->selectArticle(this->txtBox_Ref->Text, "Rsl3");
 				this->View_Database->DataSource = this->oDs;
-				this->View_Database->DataMember = "Rsl";
+				this->View_Database->DataMember = "Rsl3";
 			}
 			else {
 				MessageBox::Show("Please enter correct numbers in these fields: \n \n - Stock Quantity \n - Reorder Threshold \n - HT Price \n - TVA", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
