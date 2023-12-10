@@ -57,6 +57,55 @@ System::String^ NS_Comp_Map_Orders::CLMapOrders::SelectTTC(void)
         "WHERE R_O = '" + getR_O() + "'; ";
 }
 
+System::String^ NS_Comp_Map_Orders::CLMapOrders::AddArticle(void)
+{
+    return "DECLARE @Quantity INT = " + getQuantity() + " "
+        "DECLARE @RefCommande VARCHAR(60) = '" + getR_O() + "' "
+        "DECLARE @RefArticle VARCHAR(60) = '" + getR_A() + "' "
+        "IF EXISTS(SELECT 1 FROM Article WHERE R_A = @RefArticle) "
+        "BEGIN "
+        "IF EXISTS(SELECT 1 FROM Article WHERE R_A = @RefArticle AND QS_A > @Quantity) "
+        "BEGIN "
+        "IF EXISTS(SELECT 1 FROM Customer_Order WHERE R_O = @RefCommande) "
+        "BEGIN "
+        "UPDATE Article "
+        "SET QS_A = QS_A - @Quantity, "
+        "QC_A = QC_A + @Quantity "
+        "WHERE R_A = @RefArticle; "
+        "UPDATE Customer_Order "
+        "SET HT_O = HT_O + (SELECT HT_A * @Quantity FROM Article WHERE R_A = @RefArticle), "
+        "TVA_O = TVA_O + (SELECT HT_A * TVA_A * @Quantity FROM Article WHERE R_A = @RefArticle), "
+        "TTC_O = TTC_O + (SELECT(HT_A + (HT_A * TVA_A)) * @Quantity FROM Article WHERE R_A = @RefArticle) "
+        "WHERE R_O = @RefCommande; "
+        "IF NOT EXISTS(SELECT 1 FROM composed WHERE ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) AND ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle)) "
+        "BEGIN "
+        "INSERT INTO composed(ID_O, ID_A, Quantity) "
+        "VALUES((SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande), (SELECT ID_A FROM Article WHERE R_A = @RefArticle), @Quantity); "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "UPDATE composed "
+        "SET Quantity = Quantity + @Quantity "
+        "WHERE ID_O = (SELECT ID_O FROM Customer_Order WHERE R_O = @RefCommande) AND ID_A = (SELECT ID_A FROM Article WHERE R_A = @RefArticle) "
+        "END "
+        "SELECT 'Article ajouté à la commande' AS Message; "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'La référence commande que vous avez rentré est inexistante' AS Message; "
+        "END "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'La quantité demandée excède notre stock disponible' AS Message; "
+        "END "
+        "END "
+        "ELSE "
+        "BEGIN "
+        "SELECT 'La référence article que vous avez rentré est inexistante' AS Message; "
+        "END ";
+}
+
 System::String^ NS_Comp_Map_Orders::CLMapOrders::Select(void)
 {
     return "SELECT A.R_A, A.N_A, A.HT_A, A.TVA_A "
@@ -134,10 +183,30 @@ void NS_Comp_Map_Orders::CLMapOrders::setS_C(System::String^S_C)
     this->S_C = S_C;
 }
 
+void NS_Comp_Map_Orders::CLMapOrders::setR_A(System::String^ R_A)
+{
+    this->R_A = R_A;
+}
+
+void NS_Comp_Map_Orders::CLMapOrders::setQuantity(System::String^ Quantity)
+{
+    this->Quantity = Quantity;
+}
+
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getR_O(void) { return this->R_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getDD_O(void) { return this->DD_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getSD_O(void) { return this->SD_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getMOP_O(void) { return this->MOP_O; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getN_C(void) { return this->N_C; }
 System::String^ NS_Comp_Map_Orders::CLMapOrders::getS_C(void) { return this->S_C; }
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::getR_A(void)
+{
+    return this->R_A;
+}
+
+System::String^ NS_Comp_Map_Orders::CLMapOrders::getQuantity(void)
+{
+    return this->Quantity;
+}
 

@@ -88,6 +88,7 @@ private: System::Windows::Forms::TextBox^ textBox11;
 private: System::Windows::Forms::GroupBox^ groupBox2;
 private: System::Windows::Forms::GroupBox^ groupBox3;
 private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ button4;
 	protected:
 	private:
 		/// <summary>
@@ -154,6 +155,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->Group_Infos->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -239,11 +241,11 @@ private: System::Windows::Forms::Panel^ panel1;
 			// 
 			this->listBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->listBox1->FormattingEnabled = true;
+			resources->ApplyResources(this->listBox1, L"listBox1");
 			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
 				resources->GetString(L"listBox1.Items"), resources->GetString(L"listBox1.Items1"),
 					resources->GetString(L"listBox1.Items2"), resources->GetString(L"listBox1.Items3")
 			});
-			resources->ApplyResources(this->listBox1, L"listBox1");
 			this->listBox1->Name = L"listBox1";
 			// 
 			// dateTimePicker1
@@ -364,6 +366,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			resources->ApplyResources(this->button1, L"button1");
 			this->button1->Name = L"button1";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &OrderForm::button1_Click_1);
 			// 
 			// button2
 			// 
@@ -574,11 +577,21 @@ private: System::Windows::Forms::Panel^ panel1;
 			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->Name = L"panel1";
 			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::YellowGreen;
+			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button4->FlatAppearance->BorderSize = 0;
+			resources->ApplyResources(this->button4, L"button4");
+			this->button4->Name = L"button4";
+			this->button4->UseVisualStyleBackColor = false;
+			// 
 			// OrderForm
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->BackColor = System::Drawing::Color::Bisque;
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->Btn_Update);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button3);
@@ -595,6 +608,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->Controls->Add(this->Btn_GoBack);
 			this->MaximizeBox = false;
 			this->Name = L"OrderForm";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &OrderForm::Order_Management_Load);
 			this->Group_Infos->ResumeLayout(false);
 			this->Group_Infos->PerformLayout();
@@ -687,5 +701,16 @@ private: System::Windows::Forms::Panel^ panel1;
 		this->View_Database->DataSource = this->oDs;
 		this->View_Database->DataMember = "Rsl";
 	}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	if (!String::IsNullOrWhiteSpace(this->TxtBox_ref->Text) && !String::IsNullOrWhiteSpace(this->textBox3->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Quantity->Text)) {
+		this->View_Database->Refresh();
+		this->oDs = this->oOrders->addArticle(this->TxtBox_ref->Text, this->textBox3->Text, this->txtBox_Quantity->Text,"Rsl");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl";
+	}
+	else {
+		MessageBox::Show("Please enter the order, the article reference and the quantity!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+}
 };
 }
