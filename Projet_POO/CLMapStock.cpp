@@ -16,12 +16,20 @@ System::String^ NS_Comp_Map_Stock::CLMapStock::SelectAll(void)
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Select(void)
 {
-    return "SELECT * FROM ARTICLE WHERE R_A = '" + getR_A() + "'; ";
+    return "SELECT R_A AS [Reference], "
+        "N_A AS[Name], "
+        "QC_A AS[Quantity in carts], "
+        "QS_A AS[Quantity in stock], "
+        "RT_A AS[Reorder Threshold], "
+        "HT_A AS[HT Price], "
+        "TVA_A AS TVA, "
+        "D_A AS[Description] " 
+        "FROM ARTICLE WHERE R_A = '" + getR_A() + "'; ";
 }
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Insert(void)
 {
-    return "INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES('" + getR_A() + "', '" + getN_A() + "', NULL, " + getQS_A() + ", " + getRT_A() + ", " + getHT_A() + ", " + getTVA_A() + ", '" + getD_A() + "');";
+    return "INSERT INTO Article (R_A, N_A, QC_A, QS_A, RT_A, HT_A, TVA_A, D_A) VALUES('" + getR_A() + "', '" + getN_A() + "', 0, " + getQS_A() + ", " + getRT_A() + ", " + getHT_A() + ", " + getTVA_A() + ", '" + getD_A() + "');";
 }
 
 System::String^ NS_Comp_Map_Stock::CLMapStock::Delete(void)
