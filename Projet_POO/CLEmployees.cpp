@@ -37,12 +37,16 @@ void NS_Comp_Employees::CLEmployees::insertEmployee(System::String^ N_E, System:
 	this->oCAD->actionRows(sql);
 }
 
-void NS_Comp_Employees::CLEmployees::updateEmployee(System::String^ N_E, System::String^ S_E, System::String^ HD_E)
+void NS_Comp_Employees::CLEmployees::updateEmployee(System::String^ N_E, System::String^ S_E, System::String^ HD_E, System::String^ SNB, System::String^ SN, System::String^ N_V, System::String^ PC)
 {
 	System::String^ sql;
 	this->oMappEmployees->setN_E(N_E);
 	this->oMappEmployees->setS_E(S_E);
 	this->oMappEmployees->setHD_E(HD_E);
+	this->oMappEmployees->setSNB(SNB);
+	this->oMappEmployees->setSN(SN);
+	this->oMappEmployees->setN_V(N_V);
+	this->oMappEmployees->setPC(PC);
 	sql = this->oMappEmployees->Update();
 	this->oCAD->actionRows(sql);
 }

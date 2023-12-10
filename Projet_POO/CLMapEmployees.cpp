@@ -51,9 +51,13 @@ System::String^ NS_Comp_Map_Employees::CLMapEmployees::Delete(void)
 
 System::String^ NS_Comp_Map_Employees::CLMapEmployees::Update(void)
 {
-    return  "UPDATE Adress"
-            "SET Adress.SNB = '" + getSNB() + "', Adress.SN = '" + getSN() + "', Adress.N_V = '" + getN_V() + "', Adress.PC = '" + getPC() + "' "
-            "WHERE ID_E IN(SELECT ID_E FROM Employee WHERE Employee.N_E = '" + getS_E() + "' AND Employee.S_E = '" + getN_E() + "'); ";
+    return   "UPDATE Adress "
+            "SET SNB = '" + getSNB() + "', SN = '" + getSN() + "', N_V = '" + getN_V() + "', PC = '" + getPC() + "' "
+            "FROM Employee "
+            "WHERE Adress.ID_E = Employee.ID_E "
+            "AND Employee.N_E = '" + getS_E() + "' "
+            "AND Employee.S_E = '" + getN_E() + "' "
+            "AND Employee.HD_E = '" + getHD_E() + "'; ";
 }
 
 void NS_Comp_Map_Employees::CLMapEmployees::setID_E(System::String^ ID_E)
