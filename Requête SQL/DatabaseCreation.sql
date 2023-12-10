@@ -63,6 +63,7 @@ CREATE TABLE Adress(
 CREATE TABLE composed(
    ID_O INT,
    ID_A INT,
+   Quantity INT,
    PRIMARY KEY(ID_O, ID_A),
    FOREIGN KEY(ID_O) REFERENCES Customer_Order(ID_O),
    FOREIGN KEY(ID_A) REFERENCES Article(ID_A)
