@@ -88,7 +88,9 @@ private: System::Windows::Forms::TextBox^ textBox11;
 private: System::Windows::Forms::GroupBox^ groupBox2;
 private: System::Windows::Forms::GroupBox^ groupBox3;
 private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::TextBox^ textBox12;
+
+
 	protected:
 	private:
 		/// <summary>
@@ -155,7 +157,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
 			this->Group_Infos->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->View_Database))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -263,11 +265,13 @@ private: System::Windows::Forms::Panel^ panel1;
 			// View_Database
 			// 
 			this->View_Database->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::AllCells;
-			this->View_Database->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->View_Database->BackgroundColor = System::Drawing::Color::Bisque;
 			this->View_Database->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->View_Database->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->View_Database->GridColor = System::Drawing::Color::Bisque;
 			resources->ApplyResources(this->View_Database, L"View_Database");
 			this->View_Database->Name = L"View_Database";
+			this->View_Database->RowHeadersVisible = false;
 			this->View_Database->RowTemplate->Height = 24;
 			// 
 			// Btn_Delete
@@ -376,6 +380,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			resources->ApplyResources(this->button2, L"button2");
 			this->button2->Name = L"button2";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &OrderForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -430,9 +435,13 @@ private: System::Windows::Forms::Panel^ panel1;
 			// View_Database1
 			// 
 			this->View_Database1->AllowUserToOrderColumns = true;
+			this->View_Database1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->View_Database1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->View_Database1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->View_Database1->GridColor = System::Drawing::SystemColors::ButtonHighlight;
 			resources->ApplyResources(this->View_Database1, L"View_Database1");
 			this->View_Database1->Name = L"View_Database1";
+			this->View_Database1->RowHeadersVisible = false;
 			this->View_Database1->RowTemplate->Height = 28;
 			// 
 			// label10
@@ -562,6 +571,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::White;
+			this->panel1->Controls->Add(this->textBox12);
 			this->panel1->Controls->Add(this->View_Database1);
 			this->panel1->Controls->Add(this->label7);
 			this->panel1->Controls->Add(this->pictureBox1);
@@ -577,21 +587,19 @@ private: System::Windows::Forms::Panel^ panel1;
 			resources->ApplyResources(this->panel1, L"panel1");
 			this->panel1->Name = L"panel1";
 			// 
-			// button4
+			// textBox12
 			// 
-			this->button4->BackColor = System::Drawing::Color::YellowGreen;
-			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button4->FlatAppearance->BorderSize = 0;
-			resources->ApplyResources(this->button4, L"button4");
-			this->button4->Name = L"button4";
-			this->button4->UseVisualStyleBackColor = false;
+			this->textBox12->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->textBox12->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			resources->ApplyResources(this->textBox12, L"textBox12");
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->ReadOnly = true;
 			// 
 			// OrderForm
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Bisque;
-			this->Controls->Add(this->button4);
 			this->Controls->Add(this->Btn_Update);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button3);
@@ -669,6 +677,7 @@ private: System::Windows::Forms::Panel^ panel1;
 			this->textBox8->Text = this->oOrders->selectHT(this->TxtBox_ref->Text);
 			this->textBox9->Text = this->oOrders->selectTVA(this->TxtBox_ref->Text);
 			this->textBox10->Text = this->oOrders->selectTTC(this->TxtBox_ref->Text);
+			this->textBox12->Text = this->oOrders->discount(this->TxtBox_ref->Text);
 		}
 		else {
 			MessageBox::Show("Please enter the order reference!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -697,16 +706,27 @@ private: System::Windows::Forms::Panel^ panel1;
 	}
 	private: System::Void Btn_LoadCatalog_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->View_Database->Refresh();
-		this->oDs = this->oStock->loadArticles("Rsl");
+		this->oDs = this->oStock->loadArticles("Rsl2");
 		this->View_Database->DataSource = this->oDs;
-		this->View_Database->DataMember = "Rsl";
+		this->View_Database->DataMember = "Rsl2";
 	}
 private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	if (!String::IsNullOrWhiteSpace(this->TxtBox_ref->Text) && !String::IsNullOrWhiteSpace(this->textBox3->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Quantity->Text)) {
 		this->View_Database->Refresh();
-		this->oDs = this->oOrders->addArticle(this->TxtBox_ref->Text, this->textBox3->Text, this->txtBox_Quantity->Text,"Rsl");
+		this->oDs = this->oOrders->addArticle(this->TxtBox_ref->Text, this->textBox3->Text, this->txtBox_Quantity->Text, "Rsl3");
 		this->View_Database->DataSource = this->oDs;
-		this->View_Database->DataMember = "Rsl";
+		this->View_Database->DataMember = "Rsl3";
+	}
+	else {
+		MessageBox::Show("Please enter the order, the article reference and the quantity!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (!String::IsNullOrWhiteSpace(this->TxtBox_ref->Text) && !String::IsNullOrWhiteSpace(this->textBox3->Text) && !String::IsNullOrWhiteSpace(this->txtBox_Quantity->Text)) {
+		this->View_Database->Refresh();
+		this->oDs = this->oOrders->deleteArticle(this->TxtBox_ref->Text, this->textBox3->Text, this->txtBox_Quantity->Text, "Rsl4");
+		this->View_Database->DataSource = this->oDs;
+		this->View_Database->DataMember = "Rsl4";
 	}
 	else {
 		MessageBox::Show("Please enter the order, the article reference and the quantity!", "Warning", MessageBoxButtons::OK, MessageBoxIcon::Warning);
