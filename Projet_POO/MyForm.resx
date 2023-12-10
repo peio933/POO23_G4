@@ -378,6 +378,9 @@
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="button1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -741,6 +744,9 @@
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="button2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
   </data>
   <data name="button2.ToolTip" xml:space="preserve">
     <value>Customers Management</value>

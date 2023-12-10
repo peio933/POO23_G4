@@ -580,16 +580,6 @@ private: System::Boolean UpdateTextBoxAreFilled() {
 			!String::IsNullOrWhiteSpace(TxtBox_City->Text);
 			!String::IsNullOrWhiteSpace(textBoxPostal_code->Text);
  }
-private: System::Boolean TextBoxAreCorrectNumbers() {
-
-	int intStreetnumber, inttextBoxPostal_code;
-
-	return	Int32::TryParse(this->TxtBox_Streetnumber->Text, intStreetnumber) &&
-			intStreetnumber > 0 &&
-			Int32::TryParse(this->textBoxPostal_code->Text, inttextBoxPostal_code) &&
-			inttextBoxPostal_code > 0;
-
-}
 private: System::Void Btn_Load_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->View_Database->Refresh();
@@ -631,16 +621,12 @@ private: System::Void Btn_Delete_Click(System::Object^ sender, System::EventArgs
 private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if (CreateTextBoxAreFilled()) {
-		if (TextBoxAreCorrectNumbers()) {
+
 	this->oEmployees->insertEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text, this->listBoxmanager->Text, this->checkBoxManager->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
 	this->View_Database->Refresh();
 	this->oDs = this->oEmployees->selectEmployee(this->TxtSurname->Text, "Rsl3");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl3";
-	}
-		else {
-			MessageBox::Show("Please enter a correct street number !", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
 	}
 	else {
 		MessageBox::Show("Please fill all the fields !", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -657,16 +643,12 @@ private: System::Void Btn_create_Click(System::Object^ sender, System::EventArgs
 private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	if (UpdateTextBoxAreFilled()) {
-		if (TextBoxAreCorrectNumbers()) {
-	this->oEmployees->updateEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text);
+
+	this->oEmployees->updateEmployee(this->TxtSurname->Text, this->textName->Text, this->Date_Sending->Text, this->TxtBox_Streetnumber->Text, this->TxtBox_StreetName->Text, this->TxtBox_City->Text, this->textBoxPostal_code->Text);
 	this->View_Database->Refresh();
 	this->oDs = this->oEmployees->selectEmployee(this->TxtSurname->Text, "Rsl4");
 	this->View_Database->DataSource = this->oDs;
 	this->View_Database->DataMember = "Rsl4";
-	}
-		else {
-			MessageBox::Show("Please enter a correct street number !", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
-		}
 	}
 	else {
 		MessageBox::Show("Please enter a correct surname, a name and a data senting !", "Error", MessageBoxButtons::OK, MessageBoxIcon::Error);
@@ -674,6 +656,10 @@ private: System::Void Btn_Update_Click(System::Object^ sender, System::EventArgs
 	this->TxtSurname->Text = "";
 	this->textName->Text = "";
 	this->Date_Sending->Text = "";
+	this->TxtBox_Streetnumber->Text = "";
+	this->TxtBox_StreetName->Text = "";
+	this->TxtBox_City->Text = "";
+	this->textBoxPostal_code->Text = "";
 }
 private: System::Void checkBoxManager_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 
